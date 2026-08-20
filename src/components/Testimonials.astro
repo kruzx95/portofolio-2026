@@ -1,0 +1,114 @@
+---
+import { missionQuote, testimonialsData } from '../data/content';
+
+const testimonials = [
+  {
+    quote: "They turned a messy set of ideas into a site we finally feel proud to lead with.",
+    name: "Maya Chen",
+    role: "Cedar & Co.",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=86"
+  },
+  {
+    quote: "The process was calm, direct, and much faster than any website project we had attempted before.",
+    name: "Theo Martin",
+    role: "North House",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=86"
+  },
+  {
+    quote: "It feels like us, only clearer. Clients understand the offer before we even get on a call.",
+    name: "Amelia Hart",
+    role: "Field Office",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=86"
+  },
+  {
+    quote: "Outstanding work and zero theatre. Every week ended with visible progress.",
+    name: "Noah Bennett",
+    role: "Common Ground",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=86"
+  },
+  {
+    quote: "Getting this right was critical for the business. The result feels sharp, clear, and completely ours.",
+    name: "Katrina Miller",
+    role: "Evoke HR",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=86"
+  },
+  {
+    quote: "Results beyond what I could have imagined. The site finally reflects the quality of our work.",
+    name: "Syd Martin",
+    role: "Fern & Fellow",
+    avatar: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=160&h=160&q=86"
+  }
+];
+---
+
+<section class="testimonials" data-dark-section>
+  <div class="container testimonials__story">
+    
+    <div class="testimonials__lead" data-reveal>
+      <p class="eyebrow">{missionQuote.badge}</p>
+      <h2>{missionQuote.headline}</h2>
+      
+      <div class="testimonials__people">
+        <div class="testimonials__avatars">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=160&h=160&q=86" alt="" loading="lazy" />
+        </div>
+        <div class="testimonials__team-note" aria-hidden="true">
+          <span>Meet the senior team behind every launch</span>
+          <svg viewBox="0 0 92 70">
+            <path d="M83 7C73 31 57 49 15 60M15 60l13-1M15 60l7-11"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials__copy" data-reveal>
+      <p>We created Project Go because we kept meeting thoughtful founders and small teams doing excellent work—then losing trust at the exact moment someone landed on their website.</p>
+      <p>When your digital presence matches what you actually deliver, the conversation changes. You explain less, price with more confidence, and attract clients who already understand the value.</p>
+      <a class="button button--acid" href="/contact/">
+        <span>Start your project</span>
+        <i>→</i>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="testimonials__viewport" aria-label="Client testimonials">
+    <div class="testimonials__track">
+      <div class="testimonials__group" aria-hidden="false">
+        {testimonials.map((t) => (
+          <article>
+            <header>
+              <img src={t.avatar} alt="" loading="lazy" />
+              <span aria-hidden="true">”</span>
+            </header>
+            <p>{t.quote}</p>
+            <footer>
+              <b>{t.name}</b>
+              <span>{t.role}</span>
+            </footer>
+          </article>
+        ))}
+      </div>
+      <div class="testimonials__group" aria-hidden="true">
+        {testimonials.map((t) => (
+          <article>
+            <header>
+              <img src={t.avatar} alt="" loading="lazy" />
+              <span aria-hidden="true">”</span>
+            </header>
+            <p>{t.quote}</p>
+            <footer>
+              <b>{t.name}</b>
+              <span>{t.role}</span>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

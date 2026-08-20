@@ -1,0 +1,33 @@
+---
+import { showcaseData } from '../data/content';
+
+const projects = [
+  { slug: "north-house", name: "North House", num: "01", img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "North House team collaborating around a studio table" },
+  { slug: "field-office", name: "Field Office", num: "02", img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Field Office designer refining a digital interface" },
+  { slug: "sunday-goods", name: "Sunday Goods", num: "03", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Sunday Goods brand and ecommerce interface on a screen" },
+  { slug: "cedar-and-co", name: "Cedar & Co.", num: "04", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Cedar and Co. consultants discussing a strategy presentation" },
+  { slug: "gather-journal", name: "Gather Journal", num: "05", img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Gather Journal editorial workspace with daylight and plants" },
+  { slug: "common-ground", name: "Common Ground", num: "06", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Common Ground members working together at a shared table" }
+];
+---
+
+<section class="work section-pad" id="work">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">{showcaseData.badge}</p>
+      <h2>{showcaseData.headline}</h2>
+      <p>{showcaseData.description}</p>
+    </div>
+
+    <div class="work__stage" data-work-stage>
+      {projects.map((p) => (
+        <a class="work-card" href={`/work/${p.slug}/`} data-work-card>
+          <img src={p.img} alt={p.alt} loading="lazy" />
+          <span>{p.name}</span>
+          <i>↗</i>
+          <small>{p.num}</small>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

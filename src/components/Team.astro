@@ -1,0 +1,43 @@
+---
+import { teamData } from '../data/content';
+
+const members = [
+  { name: "Mara", role: "Strategy lead", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&h=900&q=86" },
+  { name: "Jon", role: "Creative director", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&h=900&q=86" },
+  { name: "Mina", role: "Senior copywriter", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&h=900&q=86" },
+  { name: "Theo", role: "Astro developer", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&h=900&q=86" }
+];
+---
+
+<section class="team section-pad">
+  <div class="container">
+    
+    <div class="section-head centered" data-reveal>
+      <p class="eyebrow">{teamData.badge}</p>
+      <h2>
+        <span>Small team.</span>
+        <span>Serious follow-through.</span>
+      </h2>
+      <p>{teamData.description}</p>
+    </div>
+
+    <div class="team__grid">
+      {members.map((m) => (
+        <article data-reveal>
+          <div>
+            <img src={m.img} alt={`${m.name}, ${m.role}`} loading="lazy" />
+            <span>+</span>
+          </div>
+          <h3>{m.name}</h3>
+          <p>{m.role}</p>
+        </article>
+      ))}
+    </div>
+
+    <a class="button button--acid team__cta" href="/contact/">
+      <span>{teamData.ctaText}</span>
+      <i>→</i>
+    </a>
+
+  </div>
+</section>

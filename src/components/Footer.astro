@@ -1,0 +1,55 @@
+---
+import { footerData } from '../data/content';
+---
+
+<footer class="footer">
+  <div class="container">
+    
+    <div class="footer__brand">
+      <a href="/">
+        <span>Project</span><strong>Go</strong>
+      </a>
+      <p>[ Ready to go? ]</p>
+    </div>
+
+    <div class="footer__cta">
+      <p>{footerData.tagline}</p>
+      <a href="/contact/">
+        Start now<span>→</span>
+      </a>
+    </div>
+
+    <div class="footer__bottom">
+      <p>
+        © {new Date().getFullYear()} Project Go Studio. All rights reserved.
+        <small>Theme by <a href="/" target="_blank" rel="noopener noreferrer">Project Go</a>.</small>
+      </p>
+
+      <div class="footer__columns">
+        <div>
+          <b>Navigate</b>
+          <a href="/#process">How it works</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#work">Work</a>
+          <a href="/blog/">Blog</a>
+          <a href="/initiative/">Initiative</a>
+          <a href="/contact/">Contact</a>
+        </div>
+
+        <div>
+          <b>Connect</b>
+          <a href="mailto:hello@projectgo.com">Email</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <div class="footer__legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="mailto:hello@projectgo.com">hello@projectgo.com</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

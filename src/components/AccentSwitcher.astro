@@ -1,0 +1,98 @@
+---
+// Accent theme switcher component
+const options = [
+  { name: "Acid", accent: "#c8ff46", accentText: "#171714" },
+  { name: "Sun", accent: "#ffd86f", accentText: "#171714" },
+  { name: "Sky", accent: "#67a8f5", accentText: "#171714" },
+  { name: "Tangerine", accent: "#ff9848", accentText: "#171714" },
+  { name: "Lavender", accent: "#a892f4", accentText: "#171714" },
+  { name: "Rose", accent: "#ee75b5", accentText: "#171714" },
+  { name: "Mint", accent: "#5ee0d1", accentText: "#171714" },
+  { name: "Cloud", accent: "#efefeb", accentText: "#171714" }
+];
+---
+
+<div class="preview-accent-switcher" data-storage-key="project-go:accent" data-default-accent="#c8ff46" data-default-accent-text="#171714">
+  <button type="button" class="preview-accent-toggle" aria-label="Open accent colors" aria-expanded="false" aria-controls="preview-accent-panel" id="accentToggleBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+    </svg>
+  </button>
+  
+  <div class="preview-accent-panel" id="preview-accent-panel" hidden>
+    <div class="preview-accent-panel__head">
+      <span>Accent</span>
+      <code>site.ts theme.accent</code>
+    </div>
+    <div class="preview-accent-grid" role="group" aria-label="Accent colors">
+      {options.map((opt) => (
+        <button 
+          type="button" 
+          class="preview-accent-swatch" 
+          data-name={opt.name} 
+          data-accent={opt.accent} 
+          data-accent-text={opt.accentText} 
+          aria-label={opt.name} 
+          aria-pressed={opt.name === "Acid" ? "true" : "false"}
+          title={opt.name} 
+          style={`--swatch:${opt.accent}`}
+        >
+          <span></span>
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('accentToggleBtn');
+  const panel = document.getElementById('preview-accent-panel');
+  const container = document.querySelector('.preview-accent-switcher');
+  const swatches = document.querySelectorAll('.preview-accent-swatch');
+
+  if (toggleBtn && panel && container) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+      if (isExpanded) {
+        panel.setAttribute('hidden', '');
+        container.classList.remove('is-open');
+      } else {
+        panel.removeAttribute('hidden');
+        container.classList.add('is-open');
+      }
+    });
+
+    swatches.forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        const accent = swatch.getAttribute('data-accent');
+        const accentText = swatch.getAttribute('data-accent-text');
+        const name = swatch.getAttribute('data-name');
+
+        if (accent && accentText) {
+          document.documentElement.style.setProperty('--accent', accent);
+          document.documentElement.style.setProperty('--accent-text', accentText);
+          localStorage.setItem('project-go:accent', JSON.stringify({ name, accent, accentText }));
+
+          swatches.forEach(s => s.setAttribute('aria-pressed', 'false'));
+          swatch.setAttribute('aria-pressed', 'true');
+        }
+      });
+    });
+
+    // Check stored accent on mount
+    try {
+      const stored = JSON.parse(localStorage.getItem('project-go:accent') || 'null');
+      if (stored && stored.name) {
+        swatches.forEach(s => {
+          if (s.getAttribute('data-name') === stored.name) {
+            s.setAttribute('aria-pressed', 'true');
+          } else {
+            s.setAttribute('aria-pressed', 'false');
+          }
+        });
+      }
+    } catch (_) {}
+  }
+</script>

@@ -1,0 +1,27 @@
+---
+import { faqsData } from '../data/content';
+---
+
+<section class="faq section-pad" id="faqs" data-dark-section>
+  <div class="container faq__panel" data-reveal>
+    <h2>FAQs</h2>
+    
+    <div class="faq__list">
+      {faqsData.map((item) => (
+        <details>
+          <summary>
+            <span>{item.question}</span>
+            <i aria-hidden="true">
+              <svg viewBox="0 0 12 12">
+                <path d="m3 4.5 3 3 3-3"></path>
+              </svg>
+            </i>
+          </summary>
+          <div class="faq__answer">
+            <p>{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

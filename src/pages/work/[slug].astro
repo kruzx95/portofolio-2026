@@ -1,0 +1,214 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'north-house' },
+      props: {
+        name: 'North House',
+        services: 'Positioning · Copywriting · Art direction · Astro development',
+        tagline: 'A warmer, clearer digital home for an independent architecture practice built around thoughtful collaboration.',
+        heroImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'North House had the work, reputation, and referrals—but its old website made the practice feel more distant than the team really was.',
+        storyP2: 'We rebuilt the story around a simple idea: rigorous architecture can still feel personal. The new site gives projects room to breathe while making the studio’s process easy to understand.',
+        metric: '2.4×',
+        metricLabel: 'more qualified enquiries',
+        gallery1: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'field-office',
+        nextName: 'Field Office',
+        nextImage: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    },
+    {
+      params: { slug: 'field-office' },
+      props: {
+        name: 'Field Office',
+        services: 'Brand Identity · Digital Strategy · UI/UX Design · Astro Build',
+        tagline: 'Modernizing a specialized environmental consulting firm to win enterprise advisory projects.',
+        heroImage: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'Field Office delivered world-class ecological analysis but struggled to communicate its complex scientific methodology to corporate decision makers.',
+        storyP2: 'We crafted structured case studies and an interactive data visualization module that clearly showcase impact and regulatory compliance.',
+        metric: '3.1×',
+        metricLabel: 'longer average session duration',
+        gallery1: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'sunday-goods',
+        nextName: 'Sunday Goods',
+        nextImage: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    },
+    {
+      params: { slug: 'sunday-goods' },
+      props: {
+        name: 'Sunday Goods',
+        services: 'E-Commerce · Visual Identity · Custom Product Filtering',
+        tagline: 'An elegant lifestyle goods storefront engineered for high conversion and effortless catalog updates.',
+        heroImage: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'Sunday Goods needed a digital experience as refined as their handcrafted homewares, moving away from slow generic marketplace templates.',
+        storyP2: 'We delivered an Astro-powered static storefront that loads in under 300ms, driving immediate cart conversions.',
+        metric: '48%',
+        metricLabel: 'boost in checkout completion',
+        gallery1: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'cedar-and-co',
+        nextName: 'Cedar & Co.',
+        nextImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    },
+    {
+      params: { slug: 'cedar-and-co' },
+      props: {
+        name: 'Cedar & Co.',
+        services: 'Executive Positioning · Web Strategy · Lead Generation',
+        tagline: 'Transforming a boutique management advisory firm into a recognized industry authority.',
+        heroImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'Cedar & Co. had high referral volume but needed a polished corporate digital footprint to validate multimillion-dollar retainers.',
+        storyP2: 'We created an editorial-first publication layout featuring their proprietary framework and founder commentary.',
+        metric: '92%',
+        metricLabel: 'of leads cited site clarity',
+        gallery1: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'gather-journal',
+        nextName: 'Gather Journal',
+        nextImage: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    },
+    {
+      params: { slug: 'gather-journal' },
+      props: {
+        name: 'Gather Journal',
+        services: 'Editorial Layout · Digital Magazine · Subscription Flow',
+        tagline: 'A bespoke digital home for an award-winning independent publication.',
+        heroImage: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'Gather Journal required an uncompromising digital translation of their printed design standards.',
+        storyP2: 'We built custom typography treatments and layout engines that respect white space while offering seamless mobile reading.',
+        metric: '4.2×',
+        metricLabel: 'digital subscriber growth',
+        gallery1: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'common-ground',
+        nextName: 'Common Ground',
+        nextImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    },
+    {
+      params: { slug: 'common-ground' },
+      props: {
+        name: 'Common Ground',
+        services: 'Platform Design · Community Portal · Membership System',
+        tagline: 'Uniting regional creative communities through a unified web presence.',
+        heroImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyP1: 'Common Ground grew from 50 to 5,000 members and needed an intuitive hub for event schedules, member directories, and resources.',
+        storyP2: 'We delivered a high-speed Astro application connected to automated membership tiers and localized event maps.',
+        metric: '10k+',
+        metricLabel: 'monthly active members',
+        gallery1: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1500&h=1000&q=86',
+        gallery2: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1500&h=1000&q=86',
+        nextSlug: 'north-house',
+        nextName: 'North House',
+        nextImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86'
+      }
+    }
+  ];
+}
+
+const { 
+  name, 
+  services, 
+  tagline, 
+  heroImage, 
+  storyP1, 
+  storyP2, 
+  metric, 
+  metricLabel, 
+  gallery1, 
+  gallery2, 
+  nextSlug, 
+  nextName, 
+  nextImage 
+} = Astro.props;
+---
+
+<Layout title={`${name} — Project Go Work`}>
+  <Navbar />
+  <main id="main" class="project-page">
+    <section class="project-hero">
+      <div class="container project-hero__grid">
+        <div class="project-hero__heading" data-reveal>
+          <a href="/#work">← All projects</a>
+          <p class="eyebrow">Brand strategy · Digital experience</p>
+          <h1>{name}</h1>
+        </div>
+        <div class="project-hero__intro" data-reveal>
+          <p>{tagline}</p>
+          <dl>
+            <div>
+              <dt>Year</dt>
+              <dd>2026</dd>
+            </div>
+            <div>
+              <dt>Services</dt>
+              <dd>{services}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <figure class="container project-hero__image" data-reveal>
+        <img src={heroImage} alt={`${name} project hero preview`} data-parallax="3" />
+        <figcaption>
+          <span>Project Go / {name}</span>
+          <span>2026</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="project-story">
+      <div class="container project-story__grid">
+        <p class="eyebrow" data-reveal>The brief and the shift</p>
+        <div class="project-story__copy" data-reveal>
+          <p>{storyP1}</p>
+          <p>{storyP2}</p>
+        </div>
+        <aside data-reveal>
+          <span>{metric}</span>
+          <p>{metricLabel}</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="container project-gallery__grid">
+        <figure data-reveal class="project-gallery__wide">
+          <img src={gallery1} alt={`${name} workspace details`} data-parallax="4" loading="lazy" />
+        </figure>
+        <figure data-reveal>
+          <img src={gallery2} alt={`${name} meeting and deliverables`} data-parallax="2" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-outcome">
+      <div class="container" data-reveal>
+        <p class="eyebrow">The outcome</p>
+        <h2>A more confident first impression and a clearer path from project discovery to enquiry.</h2>
+        <a class="project-button" href="/contact/">
+          <span>Start now</span>
+          <i>→</i>
+        </a>
+      </div>
+    </section>
+
+    <a class="next-project" href={`/work/${nextSlug}/`}>
+      <img src={nextImage} alt="" loading="lazy" />
+      <span class="eyebrow">Next project</span>
+      <strong>{nextName}</strong>
+      <i>↗</i>
+    </a>
+  </main>
+  <Footer />
+</Layout>

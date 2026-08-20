@@ -1,0 +1,60 @@
+---
+import { contactData } from '../data/content';
+---
+
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <div class="contact__head" data-reveal>
+      <p class="eyebrow">{contactData.badge}</p>
+      <h2>Your site won’t launch itself. We will.</h2>
+      <p>{contactData.description}</p>
+    </div>
+
+    <form class="contact-form" data-contact-form id="homeContactForm" method="post">
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" placeholder={contactData.form.namePlaceholder} required autocomplete="name" />
+      </label>
+
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" placeholder={contactData.form.emailPlaceholder} required autocomplete="email" />
+      </label>
+
+      <label>
+        <span>Company</span>
+        <input type="text" name="company" placeholder={contactData.form.companyPlaceholder} required autocomplete="organization" />
+      </label>
+
+      <label>
+        <span>Target launch</span>
+        <input type="text" name="timeline" placeholder={contactData.form.timelinePlaceholder} />
+      </label>
+
+      <label class="full">
+        <span>Project note</span>
+        <textarea name="message" placeholder={contactData.form.messagePlaceholder} required rows="5"></textarea>
+      </label>
+
+      <button class="contact-form__submit" type="submit">
+        <span>{contactData.form.submitText}</span>
+        <i>→</i>
+      </button>
+
+      <p class="form-status" id="homeFormStatus" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('homeContactForm') as HTMLFormElement;
+  const status = document.getElementById('homeFormStatus');
+
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.textContent = 'Thanks — your project note is ready. We’ll be in touch shortly.';
+      form.reset();
+    });
+  }
+</script>

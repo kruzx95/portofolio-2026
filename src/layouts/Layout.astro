@@ -1,23 +1,177 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+import { siteMeta } from '../data/content';
+import AccentSwitcher from '../components/AccentSwitcher.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = siteMeta.title, 
+  description = siteMeta.description 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" style="--accent:#c8ff46;--accent-text:#171714">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f6f2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteMeta.studioName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Client Theme Initializer -->
+    <script is:inline>
+      (() => {
+        const fallback = { accent: "#c8ff46", accentText: "#171714" };
+        const options = [
+          { name: "Acid", accent: "#c8ff46", accentText: "#171714" },
+          { name: "Sun", accent: "#ffd86f", accentText: "#171714" },
+          { name: "Sky", accent: "#67a8f5", accentText: "#171714" },
+          { name: "Tangerine", accent: "#ff9848", accentText: "#171714" },
+          { name: "Lavender", accent: "#a892f4", accentText: "#171714" },
+          { name: "Rose", accent: "#ee75b5", accentText: "#171714" },
+          { name: "Mint", accent: "#5ee0d1", accentText: "#171714" },
+          { name: "Cloud", accent: "#efefeb", accentText: "#171714" }
+        ];
+        let selected = fallback;
+        try {
+          const stored = JSON.parse(localStorage.getItem("project-go:accent") || "null");
+          if (stored && typeof stored === "object") {
+            selected = options.find((option) => option.name === stored.name || option.accent.toLowerCase() === String(stored.accent || "").toLowerCase()) || stored;
+          }
+        } catch (_) {}
+        document.documentElement.style.setProperty("--accent", typeof selected.accent === "string" ? selected.accent : fallback.accent);
+        document.documentElement.style.setProperty("--accent-text", typeof selected.accentText === "string" ? selected.accentText : fallback.accentText);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+    <AccentSwitcher />
+
+    <script is:inline>
+      // Reveal animations via IntersectionObserver
+      (function () {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const els = document.querySelectorAll('[data-reveal]');
+
+        if (prefersReduced) {
+          els.forEach(el => el.classList.add('is-revealed'));
+          document.documentElement.classList.add('no-motion');
+          return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+        els.forEach(el => observer.observe(el));
+      })();
+
+      // Parallax on data-parallax elements
+      (function () {
+        const items = Array.from(document.querySelectorAll('[data-parallax]'));
+        if (!items.length) return;
+        let ticking = false;
+        function update() {
+          items.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const speed = parseFloat(el.dataset.parallax) || 5;
+            const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+            el.style.transform = 'translateY(' + (center * speed * 0.008) + 'rem)';
+          });
+          ticking = false;
+        }
+        window.addEventListener('scroll', () => {
+          if (!ticking) { requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+      })();
+
+      // Work stage card scatter
+      (function () {
+        const stage = document.querySelector('[data-work-stage]');
+        if (!stage) return;
+        const cards = stage.querySelectorAll('[data-work-card]');
+        const positions = [
+          { r: -6, x: -25, y: 8 },
+          { r: 4, x: -12, y: -5 },
+          { r: -3, x: 0, y: 12 },
+          { r: 7, x: 12, y: -8 },
+          { r: -5, x: 24, y: 6 },
+          { r: 2, x: 36, y: -3 }
+        ];
+        cards.forEach((card, i) => {
+          const p = positions[i] || { r: 0, x: 0, y: 0 };
+          card.style.setProperty('--r', p.r + 'deg');
+          card.style.setProperty('--x', p.x + '%');
+          card.style.setProperty('--y', p.y + '%');
+        });
+
+        // Fan out on hover
+        stage.addEventListener('mouseenter', () => {
+          cards.forEach(c => c.classList.add('spread'));
+        });
+        stage.addEventListener('mouseleave', () => {
+          cards.forEach(c => c.classList.remove('spread'));
+        });
+      })();
+
+      // Pricing work preview cursor tracker
+      (function () {
+        const previewEl = document.querySelector('[data-price-work-preview]');
+        if (!previewEl) return;
+        const trigger = document.querySelector('[data-price-work-trigger]');
+        if (!trigger) return;
+        trigger.addEventListener('mousemove', (e) => {
+          const rect = trigger.getBoundingClientRect();
+          previewEl.style.left = (e.clientX - rect.left) + 'px';
+          previewEl.style.top = (e.clientY - rect.top) + 'px';
+          previewEl.classList.add('is-visible');
+        });
+        trigger.addEventListener('mouseleave', () => {
+          previewEl.classList.remove('is-visible');
+        });
+      })();
+
+      // FAQ details/summary smooth
+      (function () {
+        document.querySelectorAll('details').forEach(details => {
+          details.addEventListener('toggle', () => {
+            const icon = details.querySelector('summary i svg');
+            if (icon) {
+              icon.style.transform = details.open ? 'rotate(180deg)' : '';
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

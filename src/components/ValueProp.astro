@@ -1,0 +1,28 @@
+---
+import { valuePropsData } from '../data/content';
+---
+
+<section class="simple section-pad">
+  <div class="container">
+    
+    <div class="simple__head" data-reveal>
+      <p class="eyebrow">{valuePropsData.badge}</p>
+      <h2>Custom sites, remarkably simple.</h2>
+      <a class="button button--acid" href={valuePropsData.ctaLink}>
+        <span>{valuePropsData.ctaText}</span>
+        <i>→</i>
+      </a>
+    </div>
+
+    <div class="simple__grid">
+      {valuePropsData.cards.map((card, idx) => (
+        <article class={`simple-card ${idx % 2 === 0 ? 'simple-card--accent' : ''}`} data-reveal>
+          <span>✓</span>
+          <h3>{card.title}</h3>
+          <small>{card.number}</small>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

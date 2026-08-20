@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { contactData } from '../data/content';
+---
+
+<Layout title="Contact — Project Go">
+  <Navbar />
+  <main id="main" class="contact-page" data-dark-section>
+    <section class="contact-page__hero">
+      <div class="container contact-page__grid">
+        <div data-reveal>
+          <p class="eyebrow">Start with the real problem</p>
+          <h1>
+            <span>Let’s make your</span>
+            <span>next launch clear.</span>
+          </h1>
+        </div>
+        <div class="contact-page__intro" data-reveal>
+          <p>A useful first note does not need to be polished. Tell us what the business does, what the current site gets wrong, and what needs to happen next.</p>
+          <span>Replies within two working days</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-page__body">
+      <div class="container contact-page__body-grid">
+        <aside data-reveal>
+          <p class="eyebrow">Prefer a direct note?</p>
+          <a href="mailto:hello@projectgo.com">hello@projectgo.com</a>
+          <a href="tel:+15550102026">+1 555 010 2026</a>
+          <p>Remote studio · Worldwide</p>
+        </aside>
+
+        <div data-reveal>
+          <form class="contact-form" id="pageContactForm" method="post">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder={contactData.form.namePlaceholder} required autocomplete="name" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder={contactData.form.emailPlaceholder} required autocomplete="email" />
+            </label>
+            <label>
+              <span>Company</span>
+              <input type="text" name="company" placeholder={contactData.form.companyPlaceholder} required autocomplete="organization" />
+            </label>
+            <label>
+              <span>Target launch</span>
+              <input type="text" name="timeline" placeholder={contactData.form.timelinePlaceholder} />
+            </label>
+            <label class="full">
+              <span>Project note</span>
+              <textarea name="message" placeholder={contactData.form.messagePlaceholder} required rows="5"></textarea>
+            </label>
+            <button class="contact-form__submit" type="submit">
+              <span>Send enquiry</span>
+              <i>→</i>
+            </button>
+            <p class="form-status" id="pageFormStatus" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('pageContactForm') as HTMLFormElement;
+  const status = document.getElementById('pageFormStatus');
+
+  if (form && status) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.textContent = 'Thanks — your project note is ready. We’ll be in touch shortly.';
+      form.reset();
+    });
+  }
+</script>

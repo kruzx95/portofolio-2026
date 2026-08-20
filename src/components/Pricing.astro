@@ -1,0 +1,133 @@
+---
+import { pricingData } from '../data/content';
+
+const workItems = [
+  { name: "North House", href: "/work/north-house/", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86" },
+  { name: "Field Office", href: "/work/field-office/", image: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86" },
+  { name: "Sunday Goods", href: "/work/sunday-goods/", image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86" },
+  { name: "Cedar & Co.", href: "/work/cedar-and-co/", image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86" },
+  { name: "Gather Journal", href: "/work/gather-journal/", image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86" },
+  { name: "Common Ground", href: "/work/common-ground/", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86" }
+];
+---
+
+<section class="pricing section-pad" id="pricing">
+  <div class="container">
+    
+    <div class="section-head centered" data-reveal>
+      <p class="eyebrow">{pricingData.badge}</p>
+      <h2>{pricingData.headline}</h2>
+      <p>{pricingData.description}</p>
+    </div>
+
+    <div class="pricing__grid">
+      
+      <!-- Main Offer -->
+      <article class="price-card price-card--main" data-reveal>
+        <div class="price-card__offer">
+          <span class="label">{pricingData.mainPlan.tag}</span>
+          <div class="price">
+            <strong>{pricingData.mainPlan.price}</strong>
+            <small>{pricingData.mainPlan.period}</small>
+          </div>
+          <p>{pricingData.mainPlan.deliveryTime}</p>
+          <a class="button button--acid" href="/contact/">
+            <span>{pricingData.mainPlan.ctaText}</span>
+            <i>→</i>
+          </a>
+        </div>
+
+        <div class="price-card__includes">
+          <h3>{pricingData.mainPlan.includedTitle}</h3>
+          <ul>
+            {pricingData.mainPlan.features.map((feature) => (
+              <li>
+                <b>✓</b>{feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+
+      <!-- Side Grid -->
+      <div class="pricing__side">
+        <!-- Addon Card -->
+        <article class="price-card price-card--addon" data-reveal>
+          <span class="label">{pricingData.addonPlan.tag}</span>
+          <h3>{pricingData.addonPlan.title}</h3>
+          <p>{pricingData.addonPlan.subtitle}</p>
+          <strong>{pricingData.addonPlan.price} {pricingData.addonPlan.period}</strong>
+          <ul>
+            {pricingData.addonPlan.features.map((feature) => (
+              <li>
+                <b>✓</b>{feature}
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        <!-- Pricing Note -->
+        <article class="pricing-note" data-reveal>
+          <b>!</b>
+          <p>{pricingData.customScope.description}</p>
+        </article>
+      </div>
+
+      <!-- See Work Card with Preview Hover -->
+      <article class="price-card price-card--work" data-reveal data-pricing-work id="pricingWorkCard">
+        <h3>{pricingData.portfolioDirectory.title}</h3>
+        <p>{pricingData.portfolioDirectory.subtitle}</p>
+        <ul>
+          {workItems.map((item) => (
+            <li>
+              <a href={item.href} data-preview-image={item.image}>
+                {item.name} <span>↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <figure class="price-work-preview" data-price-work-preview aria-hidden="true">
+          <img src={workItems[0].image} alt="" id="pricingPreviewImg" />
+        </figure>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const workCard = document.getElementById('pricingWorkCard');
+  const previewFigure = document.querySelector<HTMLElement>('[data-price-work-preview]');
+  const previewImg = document.getElementById('pricingPreviewImg') as HTMLImageElement;
+
+  if (workCard && previewFigure && previewImg) {
+    const links = workCard.querySelectorAll<HTMLAnchorElement>('a[data-preview-image]');
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', (e) => {
+        const imgSrc = link.getAttribute('data-preview-image');
+        if (imgSrc) {
+          previewImg.src = imgSrc;
+          previewFigure.classList.add('is-visible');
+          workCard.classList.add('has-active-preview');
+          link.classList.add('is-preview-active');
+        }
+      });
+
+      link.addEventListener('mousemove', (e) => {
+        const rect = workCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        previewFigure.style.setProperty('--preview-x', `${x}px`);
+        previewFigure.style.setProperty('--preview-y', `${y}px`);
+      });
+
+      link.addEventListener('mouseleave', () => {
+        previewFigure.classList.remove('is-visible');
+        workCard.classList.remove('has-active-preview');
+        link.classList.remove('is-preview-active');
+      });
+    });
+  }
+</script>

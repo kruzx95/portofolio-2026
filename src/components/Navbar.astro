@@ -1,0 +1,61 @@
+---
+import { siteMeta } from '../data/content';
+---
+
+<header class="site-header" data-site-header>
+  <a class="wordmark" href="/" aria-label="Project Go home">
+    <span>Project</span><strong>Go</strong>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    <a href="/#process"><span>How it works</span></a>
+    <a href="/#pricing"><span>Pricing</span></a>
+    <a href="/#why-us"><span>Why us</span></a>
+    <a href="/#faqs"><span>FAQs</span></a>
+    <a href="/blog/"><span>Blog</span></a>
+  </nav>
+
+  <a class="header-cta" href="/contact/">
+    <span>Start now</span><i>→</i>
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" id="mobileToggleBtn">
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="/#process"><small>01</small><span>How it works</span><i>↗</i></a>
+      <a href="/#pricing"><small>02</small><span>Pricing</span><i>↗</i></a>
+      <a href="/#why-us"><small>03</small><span>Why us</span><i>↗</i></a>
+      <a href="/#faqs"><small>04</small><span>FAQs</span><i>↗</i></a>
+      <a href="/blog/"><small>05</small><span>Blog</span><i>↗</i></a>
+      <a class="mobile-menu__cta" href="/contact/"><span>Start now</span><i>→</i></a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobileToggleBtn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (toggleBtn && mobileMenu) {
+    const closeMenu = () => {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+    };
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.setAttribute('aria-hidden', String(isExpanded));
+      document.body.classList.toggle('menu-open', !isExpanded);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+</script>

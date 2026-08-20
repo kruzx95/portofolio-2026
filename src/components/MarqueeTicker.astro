@@ -1,0 +1,25 @@
+---
+const items = [
+  "Clear process",
+  "Custom design",
+  "Senior team",
+  "Responsive build",
+  "Launch support",
+  "Easy editing"
+];
+---
+
+<section class="proof-strip marquee" aria-label="Project Go highlights">
+  <div class="marquee__track">
+    <div class="marquee__group" aria-hidden="false">
+      {items.map((item) => (
+        <span>{item}<b>●</b></span>
+      ))}
+    </div>
+    <div class="marquee__group" aria-hidden="true">
+      {items.map((item) => (
+        <span>{item}<b>●</b></span>
+      ))}
+    </div>
+  </div>
+</section>

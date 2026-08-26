@@ -5,21 +5,21 @@ import Footer from '../components/Footer.astro';
 import { contactData } from '../data/content';
 ---
 
-<Layout title="Contact — Project Go">
+<Layout title="Kontak & Konsultasi Aplikasi — Mallik Studio">
   <Navbar />
   <main id="main" class="contact-page" data-dark-section>
     <section class="contact-page__hero">
       <div class="container contact-page__grid">
         <div data-reveal>
-          <p class="eyebrow">Start with the real problem</p>
+          <p class="eyebrow">Konsultasi Proyek &amp; Kebutuhan Aplikasi</p>
           <h1>
-            <span>Let’s make your</span>
-            <span>next launch clear.</span>
+            <span>Wujudkan Aplikasi</span>
+            <span>Impian Bisnis Anda.</span>
           </h1>
         </div>
         <div class="contact-page__intro" data-reveal>
-          <p>A useful first note does not need to be polished. Tell us what the business does, what the current site gets wrong, and what needs to happen next.</p>
-          <span>Replies within two working days</span>
+          <p>Sampaikan ide proyek Anda, kendala sistem yang dihadapi saat ini, atau fitur yang ingin dibangun. Kami siap memberikan masukan teknis dan estimasi yang transparan.</p>
+          <span>Respon cepat dalam 1x24 jam</span>
         </div>
       </div>
     </section>
@@ -27,36 +27,36 @@ import { contactData } from '../data/content';
     <section class="contact-page__body">
       <div class="container contact-page__body-grid">
         <aside data-reveal>
-          <p class="eyebrow">Prefer a direct note?</p>
-          <a href="mailto:hello@projectgo.com">hello@projectgo.com</a>
-          <a href="tel:+15550102026">+1 555 010 2026</a>
-          <p>Remote studio · Worldwide</p>
+          <p class="eyebrow">Kontak Langsung</p>
+          <a href="mailto:kruza8@gmail.com?subject=Konsultasi%20Pembuatan%20Aplikasi">kruza8@gmail.com</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kruza8@gmail.com&su=Konsultasi%20Pembuatan%20Aplikasi" target="_blank" rel="noopener" class="gmail-direct-btn">Buka via Gmail Web ↗</a>
+          <p>Full-Stack Engineer · Indonesia &amp; Remote</p>
         </aside>
 
         <div data-reveal>
-          <form class="contact-form" id="pageContactForm" method="post">
+          <form class="contact__form" id="pageContactForm" method="post">
             <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder={contactData.form.namePlaceholder} required autocomplete="name" />
+              <span>Nama Lengkap</span>
+              <input type="text" name="name" id="page_name" placeholder={contactData.form.namePlaceholder} required autocomplete="name" />
             </label>
             <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder={contactData.form.emailPlaceholder} required autocomplete="email" />
+              <span>Alamat Email</span>
+              <input type="email" name="email" id="page_email" placeholder={contactData.form.emailPlaceholder} required autocomplete="email" />
             </label>
             <label>
-              <span>Company</span>
-              <input type="text" name="company" placeholder={contactData.form.companyPlaceholder} required autocomplete="organization" />
+              <span>Perusahaan / Bisnis</span>
+              <input type="text" name="company" id="page_company" placeholder={contactData.form.companyPlaceholder} required autocomplete="organization" />
             </label>
             <label>
-              <span>Target launch</span>
-              <input type="text" name="timeline" placeholder={contactData.form.timelinePlaceholder} />
+              <span>Target Peluncuran</span>
+              <input type="text" name="timeline" id="page_timeline" placeholder={contactData.form.timelinePlaceholder} />
             </label>
             <label class="full">
-              <span>Project note</span>
-              <textarea name="message" placeholder={contactData.form.messagePlaceholder} required rows="5"></textarea>
+              <span>Detail Kebutuhan Aplikasi</span>
+              <textarea name="message" id="page_message" placeholder={contactData.form.messagePlaceholder} required rows="5"></textarea>
             </label>
-            <button class="contact-form__submit" type="submit">
-              <span>Send enquiry</span>
+            <button class="button button--acid" type="submit">
+              <span>Kirim Pesan via Email / Gmail</span>
               <i>→</i>
             </button>
             <p class="form-status" id="pageFormStatus" aria-live="polite"></p>
@@ -68,6 +68,85 @@ import { contactData } from '../data/content';
   <Footer />
 </Layout>
 
+<style>
+  .contact-page {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+    padding-top: 4rem;
+  }
+  .contact-page__hero {
+    padding: 6rem 0 3rem;
+  }
+  .contact-page__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+  .contact-page__grid h1 {
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    font-weight: 850;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-top: 1rem;
+  }
+  .contact-page__grid h1 span {
+    display: block;
+  }
+  .contact-page__intro p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #b0b0a8;
+  }
+  .contact-page__intro span {
+    display: block;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--acid);
+    font-family: var(--font-mono);
+  }
+  .contact-page__body {
+    padding: 4rem 0 8rem;
+    border-top: 1px solid #2a2a26;
+  }
+  .contact-page__body-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+  }
+  .contact-page aside {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .contact-page aside a {
+    color: var(--paper);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .contact-page aside a:hover {
+    color: var(--acid);
+    text-decoration: underline;
+  }
+  .contact-page aside .gmail-direct-btn {
+    color: var(--acid);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .contact-page aside p {
+    color: #888880;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    .contact-page__grid,
+    .contact-page__body-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+
 <script>
   const form = document.getElementById('pageContactForm') as HTMLFormElement;
   const status = document.getElementById('pageFormStatus');
@@ -75,8 +154,21 @@ import { contactData } from '../data/content';
   if (form && status) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      status.textContent = 'Thanks — your project note is ready. We’ll be in touch shortly.';
-      form.reset();
+      const formData = new FormData(form);
+      const name = (formData.get('name') as string) || '';
+      const email = (formData.get('email') as string) || '';
+      const company = (formData.get('company') as string) || '-';
+      const timeline = (formData.get('timeline') as string) || '-';
+      const message = (formData.get('message') as string) || '';
+
+      const subject = `[Konsultasi Proyek] Jasa Pembuatan Aplikasi - ${name}`;
+      const body = `Halo Mallik,\n\nSaya ingin berkonsultasi mengenai proyek aplikasi:\n\n- Nama: ${name}\n- Email: ${email}\n- Perusahaan / Bisnis: ${company}\n- Target Peluncuran: ${timeline}\n\nKebutuhan & Detail Aplikasi:\n${message}\n\nTerima kasih.`;
+
+      const mailtoUrl = `mailto:kruza8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      status.textContent = 'Membuka aplikasi email/Gmail untuk Anda... Silakan klik Kirim pada email Anda.';
+      
+      window.location.href = mailtoUrl;
     });
   }
 </script>

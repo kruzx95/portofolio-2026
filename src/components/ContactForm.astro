@@ -2,41 +2,41 @@
 import { contactData } from '../data/content';
 ---
 
-<section class="contact section-pad" id="contact">
+<section class="contact section-pad" id="contact" data-dark-section>
   <div class="container">
     <div class="contact__head" data-reveal>
       <p class="eyebrow">{contactData.badge}</p>
-      <h2>Your site won’t launch itself. We will.</h2>
+      <h2>{contactData.headline}</h2>
       <p>{contactData.description}</p>
     </div>
 
-    <form class="contact-form" data-contact-form id="homeContactForm" method="post">
+    <form class="contact__form" data-contact-form id="homeContactForm" method="post">
       <label>
-        <span>Name</span>
+        <span>Nama Lengkap</span>
         <input type="text" name="name" placeholder={contactData.form.namePlaceholder} required autocomplete="name" />
       </label>
 
       <label>
-        <span>Email</span>
+        <span>Alamat Email</span>
         <input type="email" name="email" placeholder={contactData.form.emailPlaceholder} required autocomplete="email" />
       </label>
 
       <label>
-        <span>Company</span>
+        <span>Perusahaan / Bisnis</span>
         <input type="text" name="company" placeholder={contactData.form.companyPlaceholder} required autocomplete="organization" />
       </label>
 
       <label>
-        <span>Target launch</span>
+        <span>Target Peluncuran</span>
         <input type="text" name="timeline" placeholder={contactData.form.timelinePlaceholder} />
       </label>
 
       <label class="full">
-        <span>Project note</span>
+        <span>Detail Kebutuhan Aplikasi</span>
         <textarea name="message" placeholder={contactData.form.messagePlaceholder} required rows="5"></textarea>
       </label>
 
-      <button class="contact-form__submit" type="submit">
+      <button class="button button--acid" type="submit">
         <span>{contactData.form.submitText}</span>
         <i>→</i>
       </button>
@@ -46,6 +46,81 @@ import { contactData } from '../data/content';
   </div>
 </section>
 
+<style>
+  .contact__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+  }
+  .contact__form label {
+    display: block;
+    position: relative;
+  }
+  .contact__form label.full {
+    grid-column: 1 / -1;
+  }
+  .contact__form label > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .contact__form input,
+  .contact__form textarea {
+    width: 100%;
+    color: var(--paper, #f6f6f2);
+    background: #272724;
+    border: 1px solid #4a4a45;
+    border-radius: 0.65rem;
+    padding: 1.15rem 1.25rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .contact__form input::placeholder,
+  .contact__form textarea::placeholder {
+    color: #8c8c85;
+    opacity: 1;
+  }
+  .contact__form input:focus,
+  .contact__form textarea:focus {
+    outline: none;
+    border-color: var(--acid, #c8ff46);
+    box-shadow: 0 0 0 2px rgba(200, 255, 70, 0.25);
+  }
+  .contact__form textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  .contact__form .button {
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .form-status {
+    text-align: center;
+    color: var(--acid, #c8ff46);
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  @media (max-width: 760px) {
+    .contact__form {
+      grid-template-columns: 1fr;
+      margin-top: 2.5rem;
+    }
+  }
+</style>
+
 <script>
   const form = document.getElementById('homeContactForm') as HTMLFormElement;
   const status = document.getElementById('homeFormStatus');
@@ -53,8 +128,21 @@ import { contactData } from '../data/content';
   if (form && status) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      status.textContent = 'Thanks — your project note is ready. We’ll be in touch shortly.';
-      form.reset();
+      const formData = new FormData(form);
+      const name = (formData.get('name') as string) || '';
+      const email = (formData.get('email') as string) || '';
+      const company = (formData.get('company') as string) || '-';
+      const timeline = (formData.get('timeline') as string) || '-';
+      const message = (formData.get('message') as string) || '';
+
+      const subject = `[Konsultasi Proyek] Jasa Pembuatan Aplikasi - ${name}`;
+      const body = `Halo Mallik,\n\nSaya ingin berkonsultasi mengenai proyek aplikasi:\n\n- Nama: ${name}\n- Email: ${email}\n- Perusahaan / Bisnis: ${company}\n- Target Peluncuran: ${timeline}\n\nKebutuhan & Detail Aplikasi:\n${message}\n\nTerima kasih.`;
+
+      const mailtoUrl = `mailto:kruza8@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      status.textContent = 'Membuka aplikasi email/Gmail untuk Anda... Silakan klik Kirim pada email Anda.';
+      
+      window.location.href = mailtoUrl;
     });
   }
 </script>

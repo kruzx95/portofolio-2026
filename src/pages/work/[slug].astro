@@ -6,111 +6,30 @@ import Footer from '../../components/Footer.astro';
 export function getStaticPaths() {
   return [
     {
-      params: { slug: 'north-house' },
+      params: { slug: 'mulya-lestari' },
       props: {
-        name: 'North House',
-        services: 'Positioning · Copywriting · Art direction · Astro development',
-        tagline: 'A warmer, clearer digital home for an independent architecture practice built around thoughtful collaboration.',
-        heroImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'North House had the work, reputation, and referrals—but its old website made the practice feel more distant than the team really was.',
-        storyP2: 'We rebuilt the story around a simple idea: rigorous architecture can still feel personal. The new site gives projects room to breathe while making the studio’s process easy to understand.',
-        metric: '2.4×',
-        metricLabel: 'more qualified enquiries',
-        gallery1: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'field-office',
-        nextName: 'Field Office',
-        nextImage: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86'
-      }
-    },
-    {
-      params: { slug: 'field-office' },
-      props: {
-        name: 'Field Office',
-        services: 'Brand Identity · Digital Strategy · UI/UX Design · Astro Build',
-        tagline: 'Modernizing a specialized environmental consulting firm to win enterprise advisory projects.',
-        heroImage: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'Field Office delivered world-class ecological analysis but struggled to communicate its complex scientific methodology to corporate decision makers.',
-        storyP2: 'We crafted structured case studies and an interactive data visualization module that clearly showcase impact and regulatory compliance.',
-        metric: '3.1×',
-        metricLabel: 'longer average session duration',
-        gallery1: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'sunday-goods',
-        nextName: 'Sunday Goods',
-        nextImage: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86'
-      }
-    },
-    {
-      params: { slug: 'sunday-goods' },
-      props: {
-        name: 'Sunday Goods',
-        services: 'E-Commerce · Visual Identity · Custom Product Filtering',
-        tagline: 'An elegant lifestyle goods storefront engineered for high conversion and effortless catalog updates.',
-        heroImage: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'Sunday Goods needed a digital experience as refined as their handcrafted homewares, moving away from slow generic marketplace templates.',
-        storyP2: 'We delivered an Astro-powered static storefront that loads in under 300ms, driving immediate cart conversions.',
-        metric: '48%',
-        metricLabel: 'boost in checkout completion',
-        gallery1: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'cedar-and-co',
-        nextName: 'Cedar & Co.',
-        nextImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86'
-      }
-    },
-    {
-      params: { slug: 'cedar-and-co' },
-      props: {
-        name: 'Cedar & Co.',
-        services: 'Executive Positioning · Web Strategy · Lead Generation',
-        tagline: 'Transforming a boutique management advisory firm into a recognized industry authority.',
-        heroImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'Cedar & Co. had high referral volume but needed a polished corporate digital footprint to validate multimillion-dollar retainers.',
-        storyP2: 'We created an editorial-first publication layout featuring their proprietary framework and founder commentary.',
-        metric: '92%',
-        metricLabel: 'of leads cited site clarity',
-        gallery1: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'gather-journal',
-        nextName: 'Gather Journal',
-        nextImage: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86'
-      }
-    },
-    {
-      params: { slug: 'gather-journal' },
-      props: {
-        name: 'Gather Journal',
-        services: 'Editorial Layout · Digital Magazine · Subscription Flow',
-        tagline: 'A bespoke digital home for an award-winning independent publication.',
-        heroImage: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'Gather Journal required an uncompromising digital translation of their printed design standards.',
-        storyP2: 'We built custom typography treatments and layout engines that respect white space while offering seamless mobile reading.',
-        metric: '4.2×',
-        metricLabel: 'digital subscriber growth',
-        gallery1: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'common-ground',
-        nextName: 'Common Ground',
-        nextImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86'
-      }
-    },
-    {
-      params: { slug: 'common-ground' },
-      props: {
-        name: 'Common Ground',
-        services: 'Platform Design · Community Portal · Membership System',
-        tagline: 'Uniting regional creative communities through a unified web presence.',
-        heroImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86',
-        storyP1: 'Common Ground grew from 50 to 5,000 members and needed an intuitive hub for event schedules, member directories, and resources.',
-        storyP2: 'We delivered a high-speed Astro application connected to automated membership tiers and localized event maps.',
-        metric: '10k+',
-        metricLabel: 'monthly active members',
-        gallery1: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1500&h=1000&q=86',
-        gallery2: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1500&h=1000&q=86',
-        nextSlug: 'north-house',
-        nextName: 'North House',
-        nextImage: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86'
+        name: 'Mulya Lestari',
+        category: 'Sistem Informasi Manajemen Bengkel Mobil Multi-Cabang',
+        services: 'Full-Stack Web App · Next.js · TailwindCSS · PostgreSQL · Multi-Cabang System',
+        tagline: 'Aplikasi manajemen bengkel mobil multi-cabang dengan pencatatan transaksi servis real-time, monitoring inventaris suku cadang, dan pelaporan otomatis.',
+        liveUrl: 'https://mulyalestari.my.id/',
+        heroImage: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&h=1100&q=86',
+        storyTitle: 'Latar Belakang & Kebutuhan Klien',
+        storyP1: 'Mulya Lestari mengelola beberapa cabang operasional bengkel mobil di Majalengka dan Pekanbaru. Sebelumnya, pencatatan transaksi servis harian, pemisahan tagihan pelanggan reguler dengan armada korporat, serta perhitungan laba-rugi masih mengandalkan rekap manual yang rentan selisih dan memakan banyak waktu.',
+        solutionTitle: 'Solusi Rekayasa Perangkat Lunak',
+        storyP2: 'Kami membangun web application modern berbasis Next.js dan PostgreSQL dengan dashboard performa terpusat. Sistem ini mengintegrasikan pemisahan transaksi reguler vs korporat, monitoring pergerakan kas & piutang, serta modul Laporan Laba Rugi Operasional (P&L) otomatis yang dapat difilter per cabang dan diekspor ke Excel.',
+        metric: '100%',
+        metricLabel: 'Operasional & Laporan Terdigitalisasi',
+        modules: [
+          { num: '01', title: 'Dashboard Overview Multi-Cabang', desc: 'Monitoring omset harian/bulanan, grafik tren pendapatan 7 hari, dan perbandingan performa cabang Majalengka & Pekanbaru.' },
+          { num: '02', title: 'Transaksi Reguler vs Korporat', desc: 'Pencatatan nota servis pelanggan ritel serta manajemen piutang armada korporat dengan pelacakan status lunas.' },
+          { num: '03', title: 'Laporan Laba Rugi Operasional (P&L)', desc: 'Perhitungan otomatis omset kotor, HPP suku cadang, gross margin, arus kas bersih, dan belanja supplier PO.' },
+          { num: '04', title: 'Filter Fleksibel & Ekspor Excel', desc: 'Penyaringan data berdasarkan rentang tanggal & cabang, serta fitur unduh rekapitulasi ke format Excel/CSV.' }
+        ],
+        gallery1: '/showcase/mulya-lestari/dashboard-overview.jpg',
+        gallery1Title: 'Dashboard Overview — Performa Bisnis & Multi-Cabang',
+        gallery2: '/showcase/mulya-lestari/laporan-ekspor.jpg',
+        gallery2Title: 'Laporan Laba Rugi (P&L) & Modul Ekspor Excel'
       }
     }
   ];
@@ -118,97 +37,692 @@ export function getStaticPaths() {
 
 const { 
   name, 
+  category,
   services, 
   tagline, 
+  liveUrl,
   heroImage, 
+  storyTitle,
   storyP1, 
+  solutionTitle,
   storyP2, 
   metric, 
   metricLabel, 
+  modules,
   gallery1, 
-  gallery2, 
-  nextSlug, 
-  nextName, 
-  nextImage 
+  gallery1Title,
+  gallery2,
+  gallery2Title
 } = Astro.props;
 ---
 
-<Layout title={`${name} — Project Go Work`}>
+<Layout title={`${name} — Studi Kasus Portofolio Mallik Studio`}>
   <Navbar />
-  <main id="main" class="project-page">
-    <section class="project-hero">
-      <div class="container project-hero__grid">
-        <div class="project-hero__heading" data-reveal>
-          <a href="/#work">← All projects</a>
-          <p class="eyebrow">Brand strategy · Digital experience</p>
-          <h1>{name}</h1>
+  
+  <main id="main" class="case-study">
+    
+    <!-- Hero Section -->
+    <section class="cs-hero">
+      <div class="container">
+        
+        <div class="cs-nav-back">
+          <a href="/#work" class="back-link">
+            <i>←</i>
+            <span>Kembali ke Portofolio</span>
+          </a>
         </div>
-        <div class="project-hero__intro" data-reveal>
-          <p>{tagline}</p>
-          <dl>
-            <div>
-              <dt>Year</dt>
-              <dd>2026</dd>
+
+        <div class="cs-header">
+          <div class="cs-header__main">
+            <span class="cs-badge">✦ STUDI KASUS PROYEK #01</span>
+            <h1 class="cs-title">{name}</h1>
+            <p class="cs-subtitle">{tagline}</p>
+          </div>
+
+          <div class="cs-meta-box">
+            <div class="meta-item">
+              <span class="meta-label">Kategori</span>
+              <strong class="meta-value">{category}</strong>
             </div>
-            <div>
-              <dt>Services</dt>
-              <dd>{services}</dd>
+            <div class="meta-item">
+              <span class="meta-label">Status Proyek</span>
+              <strong class="meta-value status-live">● Live Production (Aktif)</strong>
             </div>
-          </dl>
+            <div class="meta-item">
+              <span class="meta-label">Tech Stack</span>
+              <strong class="meta-value">{services}</strong>
+            </div>
+            {liveUrl && (
+              <div class="meta-cta">
+                <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="button button--acid cs-live-btn">
+                  <span>Buka Aplikasi Live</span>
+                  <i>↗</i>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Featured Mockup / Preview Image -->
+        <figure class="cs-hero-image" data-reveal>
+          <img src={heroImage} alt={`${name} preview`} />
+          <figcaption>
+            <span><strong>{name}</strong> · Production Web Application</span>
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer">{liveUrl} ↗</a>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- Story Breakdown -->
+    <section class="cs-story section-pad">
+      <div class="container">
+        
+        <div class="cs-story-grid">
+          
+          <!-- Story Copy -->
+          <div class="cs-story-copy" data-reveal>
+            <div class="story-block">
+              <span class="story-eyebrow">TANTANGAN BISNIS</span>
+              <h2>{storyTitle}</h2>
+              <p>{storyP1}</p>
+            </div>
+
+            <div class="story-block">
+              <span class="story-eyebrow">SOLUSI TEKNOLOGI</span>
+              <h2>{solutionTitle}</h2>
+              <p>{storyP2}</p>
+            </div>
+          </div>
+
+          <!-- Impact Metric Sidebar -->
+          <aside class="cs-metric-card" data-reveal>
+            <span class="metric-tag">HASIL PENCAPAIAN</span>
+            <strong class="metric-num">{metric}</strong>
+            <p class="metric-desc">{metricLabel}</p>
+            
+            <hr class="metric-divider" />
+
+            <div class="metric-tech-pills">
+              <span>Next.js</span>
+              <span>TailwindCSS</span>
+              <span>PostgreSQL</span>
+              <span>REST API</span>
+              <span>Cloud Server</span>
+            </div>
+
+            {liveUrl && (
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="metric-link">
+                Kunjungi Website Aplikasi ↗
+              </a>
+            )}
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Modules / Features -->
+    {modules && (
+      <section class="cs-modules">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">ARSITEKTUR &amp; FITUR</p>
+            <h2>Modul Utama Aplikasi</h2>
+            <p>Fitur-fitur inti yang dirancang khusus untuk mempermudah alur operasional bisnis sehari-hari.</p>
+          </div>
+
+          <div class="modules-grid" data-reveal>
+            {modules.map((m) => (
+              <article class="module-card">
+                <span class="module-num">{m.num}</span>
+                <h3>{m.title}</h3>
+                <p>{m.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Screenshot Gallery Section -->
+    <section class="cs-gallery section-pad">
+      <div class="container">
+        <div class="section-head section-head--light" data-reveal>
+          <p class="eyebrow">TAMPILAN ANTARMUKA</p>
+          <h2>Galeri Screenshot Sistem</h2>
+          <p>Tampilan antarmuka nyata dari sistem manajemen yang aktif digunakan.</p>
+        </div>
+
+        <div class="gallery-grid" data-reveal>
+          <figure class="gallery-item">
+            <div class="gallery-item__img-wrap">
+              <img src={gallery1} alt={gallery1Title} loading="lazy" />
+            </div>
+            <figcaption>
+              <b>01</b>
+              <span>{gallery1Title}</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="gallery-item__img-wrap">
+              <img src={gallery2} alt={gallery2Title} loading="lazy" />
+            </div>
+            <figcaption>
+              <b>02</b>
+              <span>{gallery2Title}</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
-
-      <figure class="container project-hero__image" data-reveal>
-        <img src={heroImage} alt={`${name} project hero preview`} data-parallax="3" />
-        <figcaption>
-          <span>Project Go / {name}</span>
-          <span>2026</span>
-        </figcaption>
-      </figure>
     </section>
 
-    <section class="project-story">
-      <div class="container project-story__grid">
-        <p class="eyebrow" data-reveal>The brief and the shift</p>
-        <div class="project-story__copy" data-reveal>
-          <p>{storyP1}</p>
-          <p>{storyP2}</p>
+    <!-- Bottom Outcome & CTA -->
+    <section class="cs-cta section-pad">
+      <div class="container">
+        <div class="cs-cta-box" data-reveal>
+          <span class="cs-badge">✦ MULAI PROYEK ANDA</span>
+          <h2>Tertarik Membangun Sistem Serupa untuk Bisnis Anda?</h2>
+          <p>Diskusikan alur bisnis, kebutuhan dashboard, atau ide aplikasi web Anda langsung bersama saya.</p>
+          
+          <div class="cs-cta-actions">
+            <a class="button button--acid" href="/contact/">
+              <span>Konsultasi Proyek Gratis</span>
+              <i>→</i>
+            </a>
+            <a class="cs-back-btn" href="/#work">
+              ← Kembali ke Beranda
+            </a>
+          </div>
         </div>
-        <aside data-reveal>
-          <span>{metric}</span>
-          <p>{metricLabel}</p>
-        </aside>
       </div>
     </section>
 
-    <section class="project-gallery">
-      <div class="container project-gallery__grid">
-        <figure data-reveal class="project-gallery__wide">
-          <img src={gallery1} alt={`${name} workspace details`} data-parallax="4" loading="lazy" />
-        </figure>
-        <figure data-reveal>
-          <img src={gallery2} alt={`${name} meeting and deliverables`} data-parallax="2" loading="lazy" />
-        </figure>
-      </div>
-    </section>
-
-    <section class="project-outcome">
-      <div class="container" data-reveal>
-        <p class="eyebrow">The outcome</p>
-        <h2>A more confident first impression and a clearer path from project discovery to enquiry.</h2>
-        <a class="project-button" href="/contact/">
-          <span>Start now</span>
-          <i>→</i>
-        </a>
-      </div>
-    </section>
-
-    <a class="next-project" href={`/work/${nextSlug}/`}>
-      <img src={nextImage} alt="" loading="lazy" />
-      <span class="eyebrow">Next project</span>
-      <strong>{nextName}</strong>
-      <i>↗</i>
-    </a>
   </main>
+
   <Footer />
 </Layout>
+
+<style>
+  .case-study {
+    background: var(--paper);
+    color: var(--ink);
+    padding-top: clamp(7.5rem, 10vw, 9.5rem);
+    min-height: 100vh;
+  }
+
+  .cs-nav-back {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    padding: 0.45rem 0.9rem;
+    background: #e8e8e2;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 2px 3px 0 var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 4px 0 var(--ink);
+  }
+
+  .cs-header {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+
+  .cs-badge {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.35rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .cs-title {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 850;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.25rem 0;
+    color: var(--ink);
+  }
+
+  .cs-subtitle {
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.5;
+    color: #4a4a45;
+    font-weight: 550;
+    margin: 0;
+  }
+
+  .cs-meta-box {
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 1rem;
+    box-shadow: 5px 6px 0 var(--ink);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666660;
+  }
+
+  .meta-value {
+    font-size: 0.95rem;
+    font-weight: 750;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .status-live {
+    color: #0d8a3e;
+    font-weight: 800;
+  }
+
+  .meta-cta {
+    margin-top: 0.5rem;
+  }
+
+  .cs-live-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cs-hero {
+    padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+  }
+
+  .cs-hero-image {
+    margin: 0;
+    border: 2px solid var(--ink);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 6px 8px 0 var(--ink);
+    background: #171714;
+  }
+
+  .cs-hero-image img {
+    width: 100%;
+    height: clamp(340px, 44vw, 540px);
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  .cs-hero-image figcaption {
+    background: #171714;
+    color: var(--paper);
+    padding: 1rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .cs-hero-image figcaption strong {
+    color: var(--acid);
+  }
+
+  .cs-hero-image figcaption a {
+    color: var(--acid);
+    text-decoration: underline;
+  }
+
+  /* Story Section */
+  .cs-story {
+    background: #f7f7f2;
+    border-top: 1px solid #dcdcd6;
+    border-bottom: 1px solid #dcdcd6;
+  }
+
+  .cs-story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  .story-block {
+    margin-bottom: 3rem;
+  }
+
+  .story-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .story-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    color: #6a6a62;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .story-block h2 {
+    font-size: 1.85rem;
+    font-weight: 850;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: var(--ink);
+  }
+
+  .story-block p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #383834;
+    margin: 0;
+  }
+
+  .cs-metric-card {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 1.25rem;
+    padding: 2.75rem 2.25rem;
+    box-shadow: 6px 7px 0 rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 6rem;
+  }
+
+  .metric-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--acid);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric-num {
+    font-size: clamp(3.5rem, 6vw, 4.8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--acid);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric-desc {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--paper);
+    margin: 0;
+  }
+
+  .metric-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 2rem 0 1.5rem;
+  }
+
+  .metric-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .metric-tech-pills span {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e5dc;
+    font-size: 0.76rem;
+    font-weight: 650;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .metric-link {
+    display: inline-block;
+    color: var(--acid);
+    font-weight: 750;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  /* Modules Section */
+  .cs-modules {
+    padding: clamp(4.5rem, 7vw, 7rem) 0;
+    background: var(--paper);
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .module-card {
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 0.9rem;
+    box-shadow: 4px 5px 0 var(--ink);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .module-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 7px 0 var(--ink);
+  }
+
+  .module-num {
+    background: var(--ink);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 850;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.3rem;
+    width: max-content;
+    margin-bottom: 1rem;
+  }
+
+  .module-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.65rem 0;
+    color: var(--ink);
+  }
+
+  .module-card p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #3e3e3a;
+    margin: 0;
+  }
+
+  /* Gallery Grid */
+  .cs-gallery {
+    background: #171714;
+    color: var(--paper);
+  }
+
+  .section-head--light h2 {
+    color: #fff;
+  }
+
+  .section-head--light p {
+    color: #a8a8a0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .gallery-item {
+    margin: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: #20201d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery-item__img-wrap {
+    height: 380px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .gallery-item__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  .gallery-item:hover .gallery-item__img-wrap img {
+    transform: scale(1.03);
+  }
+
+  .gallery-item figcaption {
+    padding: 1rem 1.25rem;
+    background: #1c1c18;
+    color: #e5e5dc;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gallery-item figcaption b {
+    background: var(--acid);
+    color: var(--ink);
+    font-size: 0.7rem;
+    font-weight: 850;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.25rem;
+  }
+
+  /* CTA Section */
+  .cs-cta {
+    background: var(--paper);
+  }
+
+  .cs-cta-box {
+    background: var(--acid);
+    border: 2px solid var(--ink);
+    border-radius: 1.25rem;
+    box-shadow: 6px 7px 0 var(--ink);
+    padding: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .cs-cta-box h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 850;
+    line-height: 1.1;
+    margin: 1rem 0 1rem;
+    color: var(--ink);
+  }
+
+  .cs-cta-box p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #2b2b27;
+    max-width: 54ch;
+    margin: 0 auto 2.25rem;
+  }
+
+  .cs-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cs-cta-actions .button {
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: none;
+    border: 2px solid var(--ink);
+  }
+
+  .cs-cta-actions .button i {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .cs-back-btn {
+    color: var(--ink);
+    font-weight: 750;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .cs-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .cs-story-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .modules-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-item__img-wrap {
+      height: 280px;
+    }
+  }
+</style>

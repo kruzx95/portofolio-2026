@@ -2,7 +2,7 @@
 import { statsTrustData } from '../data/content';
 ---
 
-<section class="proof section-pad">
+<section class="proof section-pad" data-dark-section>
   <div class="container">
     
     <div class="section-head proof__head" data-reveal>
@@ -25,35 +25,35 @@ import { statsTrustData } from '../data/content';
       </figure>
 
       <article data-reveal>
-        <strong>12+</strong>
-        <h3>years shaping digital work</h3>
-        <p>Senior thinking stays close to every detail</p>
+        <strong>{statsTrustData.stats[0].value}</strong>
+        <h3>{statsTrustData.stats[0].label}</h3>
+        <p>{statsTrustData.stats[0].sub}</p>
       </article>
 
       <article data-reveal>
-        <strong>100+</strong>
-        <h3>sites and products launched</h3>
-        <p>Each built around a real business problem</p>
+        <strong>{statsTrustData.stats[1].value}</strong>
+        <h3>{statsTrustData.stats[1].label}</h3>
+        <p>{statsTrustData.stats[1].sub}</p>
       </article>
 
       <figure data-reveal>
-        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&h=900&q=86" alt="Project team aligning around a launch plan" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&h=900&q=86" alt="Project team designing software roadmap" loading="lazy" />
       </figure>
 
       <figure data-reveal>
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&h=900&q=86" alt="Consultant presenting a digital strategy" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&h=900&q=86" alt="Consultant presenting software architecture" loading="lazy" />
       </figure>
 
       <article data-reveal>
-        <strong>14</strong>
-        <h3>countries reached</h3>
-        <p>Remote collaboration, without the distance</p>
+        <strong>{statsTrustData.stats[2].value}</strong>
+        <h3>{statsTrustData.stats[2].label}</h3>
+        <p>{statsTrustData.stats[2].sub}</p>
       </article>
 
       <article data-reveal>
-        <strong>4.9/5</strong>
-        <h3>average client rating</h3>
-        <p>Clear communication is part of the deliverable</p>
+        <strong>{statsTrustData.stats[3].value}</strong>
+        <h3>{statsTrustData.stats[3].label}</h3>
+        <p>{statsTrustData.stats[3].sub}</p>
       </article>
     </div>
 

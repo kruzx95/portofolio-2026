@@ -8,16 +8,16 @@ import { heroData, siteMeta } from '../data/content';
   <div class="hero__content" data-hero-copy>
     <p class="hero__badge">{heroData.badge}</p>
     <p class="eyebrow">{heroData.subheading}</p>
-    <h1>Your next launch, handled.</h1>
+    <h1>Bikin Aplikasi<br/>Cepat &amp; Skalabel.</h1>
     <p class="hero__body" data-split>{heroData.description}</p>
     
     <div class="hero__actions">
       <a class="button button--acid" href="/contact/">
-        <span>Start your project</span>
+        <span>Konsultasi Aplikasi</span>
         <i>→</i>
       </a>
       <a class="button button--dark" href="/#pricing">
-        <span>View pricing</span>
+        <span>Lihat Paket &amp; Biaya</span>
         <i>→</i>
       </a>
     </div>
@@ -62,6 +62,15 @@ import { heroData, siteMeta } from '../data/content';
     </p>
   </div>
 </section>
+
+<style>
+  .hero h1 {
+    max-width: 15ch;
+    text-wrap: balance;
+    letter-spacing: -0.045em;
+    line-height: 1.05;
+  }
+</style>
 
 <script>
   // Animate hero cards into view smoothly

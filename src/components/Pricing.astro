@@ -1,14 +1,5 @@
 ---
 import { pricingData } from '../data/content';
-
-const workItems = [
-  { name: "North House", href: "/work/north-house/", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86" },
-  { name: "Field Office", href: "/work/field-office/", image: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86" },
-  { name: "Sunday Goods", href: "/work/sunday-goods/", image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86" },
-  { name: "Cedar & Co.", href: "/work/cedar-and-co/", image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86" },
-  { name: "Gather Journal", href: "/work/gather-journal/", image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86" },
-  { name: "Common Ground", href: "/work/common-ground/", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86" }
-];
 ---
 
 <section class="pricing section-pad" id="pricing">
@@ -26,11 +17,16 @@ const workItems = [
       <article class="price-card price-card--main" data-reveal>
         <div class="price-card__offer">
           <span class="label">{pricingData.mainPlan.tag}</span>
-          <div class="price">
-            <strong>{pricingData.mainPlan.price}</strong>
-            <small>{pricingData.mainPlan.period}</small>
+          <div class="plan-header">
+            <h3>{pricingData.mainPlan.title}</h3>
+            <p class="plan-subtitle">{pricingData.mainPlan.description}</p>
           </div>
-          <p>{pricingData.mainPlan.deliveryTime}</p>
+          
+          <div class="scope-pill">
+            <strong>{pricingData.mainPlan.price}</strong>
+            <span>{pricingData.mainPlan.deliveryTime}</span>
+          </div>
+
           <a class="button button--acid" href="/contact/">
             <span>{pricingData.mainPlan.ctaText}</span>
             <i>→</i>
@@ -56,7 +52,10 @@ const workItems = [
           <span class="label">{pricingData.addonPlan.tag}</span>
           <h3>{pricingData.addonPlan.title}</h3>
           <p>{pricingData.addonPlan.subtitle}</p>
-          <strong>{pricingData.addonPlan.price} {pricingData.addonPlan.period}</strong>
+          <div class="addon-rate">
+            <strong>{pricingData.addonPlan.price}</strong>
+            <small>{pricingData.addonPlan.period}</small>
+          </div>
           <ul>
             {pricingData.addonPlan.features.map((feature) => (
               <li>
@@ -68,27 +67,38 @@ const workItems = [
 
         <!-- Pricing Note -->
         <article class="pricing-note" data-reveal>
-          <b>!</b>
+          <b>✦</b>
           <p>{pricingData.customScope.description}</p>
         </article>
       </div>
 
-      <!-- See Work Card with Preview Hover -->
-      <article class="price-card price-card--work" data-reveal data-pricing-work id="pricingWorkCard">
-        <h3>{pricingData.portfolioDirectory.title}</h3>
-        <p>{pricingData.portfolioDirectory.subtitle}</p>
-        <ul>
-          {workItems.map((item) => (
-            <li>
-              <a href={item.href} data-preview-image={item.image}>
-                {item.name} <span>↗</span>
-              </a>
-            </li>
-          ))}
+      <!-- Featured App Card -->
+      <article class="price-card price-card--work" data-reveal>
+        <span class="label">● LIVE PRODUCTION</span>
+        <div class="plan-header">
+          <h3>Mulya Lestari</h3>
+          <p class="plan-subtitle">Sistem Informasi Manajemen Bengkel Mobil Multi-Cabang</p>
+        </div>
+
+        <div class="featured-work-thumb">
+          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80" alt="Mulya Lestari Preview" loading="lazy" />
+        </div>
+
+        <ul class="featured-work-specs">
+          <li><b>✓</b>Pencatatan Servis &amp; Kasir Real-Time</li>
+          <li><b>✓</b>Monitoring Stok &amp; Multi-Cabang</li>
+          <li><b>✓</b>Next.js · TailwindCSS · PostgreSQL</li>
         </ul>
-        <figure class="price-work-preview" data-price-work-preview aria-hidden="true">
-          <img src={workItems[0].image} alt="" id="pricingPreviewImg" />
-        </figure>
+
+        <div class="featured-work-btns">
+          <a class="button button--acid" href="/work/mulya-lestari/">
+            <span>Lihat Studi Kasus</span>
+            <i>→</i>
+          </a>
+          <a class="featured-live-link" href="https://mulyalestari.my.id/" target="_blank" rel="noopener noreferrer">
+            Buka Live App ↗
+          </a>
+        </div>
       </article>
 
     </div>
@@ -96,38 +106,114 @@ const workItems = [
   </div>
 </section>
 
-<script>
-  const workCard = document.getElementById('pricingWorkCard');
-  const previewFigure = document.querySelector<HTMLElement>('[data-price-work-preview]');
-  const previewImg = document.getElementById('pricingPreviewImg') as HTMLImageElement;
-
-  if (workCard && previewFigure && previewImg) {
-    const links = workCard.querySelectorAll<HTMLAnchorElement>('a[data-preview-image]');
-
-    links.forEach(link => {
-      link.addEventListener('mouseenter', (e) => {
-        const imgSrc = link.getAttribute('data-preview-image');
-        if (imgSrc) {
-          previewImg.src = imgSrc;
-          previewFigure.classList.add('is-visible');
-          workCard.classList.add('has-active-preview');
-          link.classList.add('is-preview-active');
-        }
-      });
-
-      link.addEventListener('mousemove', (e) => {
-        const rect = workCard.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        previewFigure.style.setProperty('--preview-x', `${x}px`);
-        previewFigure.style.setProperty('--preview-y', `${y}px`);
-      });
-
-      link.addEventListener('mouseleave', () => {
-        previewFigure.classList.remove('is-visible');
-        workCard.classList.remove('has-active-preview');
-        link.classList.remove('is-preview-active');
-      });
-    });
+<style>
+  .plan-header {
+    margin-top: 0.75rem;
   }
-</script>
+  .plan-header h3 {
+    font-size: 1.45rem;
+    font-weight: 850;
+    line-height: 1.15;
+    color: var(--paper);
+  }
+  .plan-subtitle {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #b2b2aa;
+  }
+  .scope-pill {
+    margin: 1.15rem 0 1.25rem;
+    padding: 0.65rem 0.9rem;
+    background: #272724;
+    border: 1px solid #44443e;
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .scope-pill strong {
+    color: var(--acid);
+    font-size: 1.05rem;
+    font-weight: 800;
+  }
+  .scope-pill span {
+    color: #c4c4bc;
+    font-size: 0.74rem;
+  }
+  .price-card__offer > .button {
+    width: 100%;
+  }
+  .addon-rate {
+    margin: 0.6rem 0 0.8rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .addon-rate strong {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  .addon-rate small {
+    font-size: 0.76rem;
+    opacity: 0.8;
+  }
+  .pricing-note b {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .featured-work-thumb {
+    margin: 1rem 0;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .featured-work-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .featured-work-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    color: #d4d4cb;
+  }
+  .featured-work-specs li {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .featured-work-specs b {
+    color: var(--acid);
+  }
+  .featured-work-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .featured-work-btns .button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.65rem 1rem;
+  }
+  .featured-live-link {
+    text-align: center;
+    color: var(--acid);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: underline;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  .featured-live-link:hover {
+    opacity: 1;
+  }
+</style>

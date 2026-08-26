@@ -9,67 +9,97 @@ import { comparisonData } from '../data/content';
       <p class="eyebrow">{comparisonData.badge}</p>
       <h2>{comparisonData.headline}</h2>
       <p>{comparisonData.description}</p>
-      <em>It should feel like progress, not project management. ↙</em>
     </div>
 
-    <div class="comparison__scroller">
-      <div class="comparison__table" data-reveal>
-        
-        <div class="comparison__labels">
-          <span></span>
-          <b>Timeline</b>
-          <b>Price</b>
-          <b>Custom design</b>
-          <b>Copy + build</b>
-          <b>Guarantee</b>
-        </div>
-
-        <div class="comparison__column featured">
-          <strong>Project Go</strong>
-          <span><i>✓</i>4–6 weeks</span>
-          <span><i>✓</i>One clear price</span>
-          <span><i>✓</i>Always custom</span>
-          <span><i>✓</i>Copy + build included</span>
-          <span><i>✓</i>Launch guarantee</span>
-        </div>
-
-        <div class="comparison__column">
-          <strong>Agency</strong>
-          <span><i>×</i>3–6+ months</span>
-          <span><i>×</i>Large deposit</span>
-          <span><i>×</i>Usually custom</span>
-          <span><i>×</i>Often extra</span>
-          <span><i>×</i>Rarely</span>
-        </div>
-
-        <div class="comparison__column">
-          <strong>Freelancer</strong>
-          <span><i>×</i>4–12 weeks</span>
-          <span><i>×</i>Variable quote</span>
-          <span><i>×</i>Depends who you hire</span>
-          <span><i>×</i>Rarely included</span>
-          <span><i>×</i>Rarely</span>
-        </div>
-
-        <div class="comparison__column">
-          <strong>DIY</strong>
-          <span><i>×</i>When time appears</span>
-          <span><i>×</i>Your time</span>
-          <span><i>×</i>Template-led</span>
-          <span><i>×</i>All on you</span>
-          <span><i>×</i>No refund on time</span>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="comparison__cta">
-      <p>Ready for a clearer way to launch?</p>
-      <a class="button button--acid" href="/contact/">
-        <span>Choose the clearer path</span>
-        <i>→</i>
-      </a>
+    <div class="values-grid" data-reveal>
+      {comparisonData.pillars.map((pillar) => (
+        <article class="value-card">
+          <div class="value-card__top">
+            <span class="value-card__num">{pillar.num}</span>
+            <span class="value-card__tag">✦</span>
+          </div>
+          <h3>{pillar.title}</h3>
+          <p>{pillar.description}</p>
+        </article>
+      ))}
     </div>
 
   </div>
 </section>
+
+<style>
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1080px;
+    margin: 3.5rem auto 0;
+  }
+
+  .value-card {
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 0.9rem;
+    box-shadow: 4px 5px 0 var(--ink);
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+  }
+
+  .value-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 7px 0 var(--ink);
+  }
+
+  .value-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-card__num {
+    background: var(--ink);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    letter-spacing: 0.05em;
+  }
+
+  .value-card__tag {
+    color: var(--ink);
+    font-size: 0.9rem;
+    opacity: 0.4;
+  }
+
+  .value-card h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+  }
+
+  .value-card p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: #383834;
+  }
+
+  @media (max-width: 760px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .value-card {
+      padding: 1.5rem;
+    }
+    .value-card h3 {
+      font-size: 1.2rem;
+    }
+  }
+</style>

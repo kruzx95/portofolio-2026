@@ -3,20 +3,19 @@ import { siteMeta } from '../data/content';
 ---
 
 <header class="site-header" data-site-header>
-  <a class="wordmark" href="/" aria-label="Project Go home">
-    <span>Project</span><strong>Go</strong>
+  <a class="wordmark" href="/" aria-label="Mallik Studio home">
+    <span>Mallik</span><strong>Dev</strong>
   </a>
 
   <nav class="desktop-nav" aria-label="Primary navigation">
-    <a href="/#process"><span>How it works</span></a>
-    <a href="/#pricing"><span>Pricing</span></a>
-    <a href="/#why-us"><span>Why us</span></a>
-    <a href="/#faqs"><span>FAQs</span></a>
-    <a href="/blog/"><span>Blog</span></a>
+    <a href="/#process"><span>Alur Kerja</span></a>
+    <a href="/#pricing"><span>Skema Biaya</span></a>
+    <a href="/#work"><span>Portofolio</span></a>
+    <a href="/#why-us"><span>Keunggulan</span></a>
   </nav>
 
   <a class="header-cta" href="/contact/">
-    <span>Start now</span><i>→</i>
+    <span>Konsultasi</span><i>→</i>
   </a>
 
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" id="mobileToggleBtn">
@@ -26,15 +25,68 @@ import { siteMeta } from '../data/content';
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Mobile navigation">
-      <a href="/#process"><small>01</small><span>How it works</span><i>↗</i></a>
-      <a href="/#pricing"><small>02</small><span>Pricing</span><i>↗</i></a>
-      <a href="/#why-us"><small>03</small><span>Why us</span><i>↗</i></a>
-      <a href="/#faqs"><small>04</small><span>FAQs</span><i>↗</i></a>
-      <a href="/blog/"><small>05</small><span>Blog</span><i>↗</i></a>
-      <a class="mobile-menu__cta" href="/contact/"><span>Start now</span><i>→</i></a>
+      <a href="/#process"><small>01</small><span>Alur Kerja</span><i>↗</i></a>
+      <a href="/#pricing"><small>02</small><span>Skema Biaya</span><i>↗</i></a>
+      <a href="/#work"><small>03</small><span>Portofolio</span><i>↗</i></a>
+      <a href="/#why-us"><small>04</small><span>Keunggulan</span><i>↗</i></a>
+      <a class="mobile-menu__cta" href="/contact/"><span>Konsultasi Sekarang</span><i>→</i></a>
     </nav>
   </div>
 </header>
+
+<style>
+  /* Base transitions for adaptive header */
+  .site-header {
+    transition: color 0.3s ease, background 0.3s ease;
+  }
+  
+  .wordmark {
+    transition: color 0.3s ease;
+  }
+
+  .wordmark strong {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* When over dark sections */
+  :global(.site-header.is-dark) .wordmark {
+    color: var(--paper, #f6f6f2);
+  }
+
+  :global(.site-header.is-dark) .wordmark strong {
+    background: var(--acid, #c8ff46);
+    color: var(--ink, #171714);
+  }
+
+  :global(.site-header.is-dark) .desktop-nav {
+    background: #252522;
+    border: 1px solid #44443e;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.site-header.is-dark) .header-cta {
+    background: #252522;
+    border: 1px solid #44443e;
+    color: var(--paper, #f6f6f2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.site-header.is-dark) .menu-toggle span {
+    background: var(--paper, #f6f6f2);
+  }
+
+  @media (max-width: 760px) {
+    :global(.site-header.is-dark) {
+      background: rgba(23, 23, 20, 0.92);
+      color: var(--paper, #f6f6f2);
+    }
+  }
+</style>
 
 <script>
   const toggleBtn = document.getElementById('mobileToggleBtn');
@@ -58,4 +110,37 @@ import { siteMeta } from '../data/content';
       link.addEventListener('click', closeMenu);
     });
   }
+
+  // Real-time automatic light/dark theme detector for fixed header
+  const updateHeaderTheme = () => {
+    const header = document.querySelector('[data-site-header]');
+    if (!header) return;
+
+    const headerRect = header.getBoundingClientRect();
+    const headerMidY = headerRect.top + headerRect.height / 2;
+
+    const darkElements = document.querySelectorAll(
+      '[data-dark-section], .work, .proof, .testimonials, .contact, .footer, .contact-page, .project-page'
+    );
+
+    let isOverDark = false;
+    darkElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= headerMidY && rect.bottom >= headerMidY) {
+        isOverDark = true;
+      }
+    });
+
+    if (isOverDark) {
+      header.classList.add('is-dark');
+    } else {
+      header.classList.remove('is-dark');
+    }
+  };
+
+  window.addEventListener('scroll', updateHeaderTheme, { passive: true });
+  window.addEventListener('resize', updateHeaderTheme, { passive: true });
+  document.addEventListener('astro:page-load', updateHeaderTheme);
+  document.addEventListener('DOMContentLoaded', updateHeaderTheme);
+  updateHeaderTheme();
 </script>

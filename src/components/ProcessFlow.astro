@@ -5,7 +5,7 @@ import { processData } from '../data/content';
 <section class="process section-pad" id="process">
   <div class="container process__intro" data-reveal>
     <p class="eyebrow">{processData.badge}</p>
-    <h2>Meet Project <mark>Go</mark></h2>
+    <h2>Alur Pembuatan <mark>Aplikasi</mark></h2>
     <p>{processData.description}</p>
     
     <div>
@@ -15,7 +15,7 @@ import { processData } from '../data/content';
     </div>
 
     <em>
-      <span>Everything moves forward in one clear rhythm.</span>
+      <span>Setiap tahap berjalan dengan ritme terstruktur dan terukur.</span>
       <svg viewBox="0 0 76 66" aria-hidden="true">
         <path d="M65 4C61 26 47 43 15 54M15 54l10-1M15 54l5-10"></path>
       </svg>
@@ -24,67 +24,24 @@ import { processData } from '../data/content';
 
   <div class="process__viewport" data-process-viewport>
     <div class="process__phases" aria-hidden="true">
-      <span>Initial discovery</span>
-      <span>Direction &amp; structure</span>
-      <span>Design &amp; feedback</span>
-      <span>Astro build, SEO &amp; QA</span>
-      <span>Go live</span>
+      <span>Analisis Kebutuhan</span>
+      <span>Arsitektur &amp; UI/UX</span>
+      <span>Prototipe &amp; Review</span>
+      <span>Full-Stack Dev</span>
+      <span>QA &amp; Go Live</span>
     </div>
 
     <div class="process__track" data-process-track>
-      <article class="process-card" data-process-card>
-        <div>
-          <span>Kickoff</span>
-          <b>01</b>
-        </div>
-        <h3>Find the signal</h3>
-        <p>One focused call to understand your offer, audience, goals, and the proof your site needs to communicate.</p>
-      </article>
-
-      <article class="process-card" data-process-card>
-        <div>
-          <span>Direction</span>
-          <b>02</b>
-        </div>
-        <h3>Shape the story</h3>
-        <p>We turn the raw material into positioning, structure, and a visual direction everyone can stand behind.</p>
-      </article>
-
-      <article class="process-card" data-process-card>
-        <div>
-          <span>First look</span>
-          <b>03</b>
-        </div>
-        <h3>See it take form</h3>
-        <p>The full direction arrives together so you can react to a coherent site rather than disconnected fragments.</p>
-      </article>
-
-      <article class="process-card" data-process-card>
-        <div>
-          <span>Refine</span>
-          <b>04</b>
-        </div>
-        <h3>Make it unmistakable</h3>
-        <p>We apply one concentrated feedback round and polish the details across every breakpoint.</p>
-      </article>
-
-      <article class="process-card" data-process-card>
-        <div>
-          <span>Build</span>
-          <b>05</b>
-        </div>
-        <h3>Make it work</h3>
-        <p>We develop the responsive site, configure forms and content, then test the whole experience.</p>
-      </article>
-
-      <article class="process-card" data-process-card>
-        <div>
-          <span>Go live</span>
-          <b>06</b>
-        </div>
-        <h3>Open the doors</h3>
-        <p>We connect the domain, run the final checklist, and give you a site you are proud to send people to.</p>
-      </article>
+      {processData.steps.map((step, idx) => (
+        <article class="process-card" data-process-card>
+          <div>
+            <span>{step.tag}</span>
+            <b>{String(idx + 1).padStart(2, '0')}</b>
+          </div>
+          <h3>{step.title}</h3>
+          <p>{step.desc}</p>
+        </article>
+      ))}
     </div>
   </div>
 </section>

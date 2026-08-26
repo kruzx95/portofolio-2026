@@ -1,17 +1,8 @@
 ---
 import { showcaseData } from '../data/content';
-
-const projects = [
-  { slug: "north-house", name: "North House", num: "01", img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "North House team collaborating around a studio table" },
-  { slug: "field-office", name: "Field Office", num: "02", img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Field Office designer refining a digital interface" },
-  { slug: "sunday-goods", name: "Sunday Goods", num: "03", img: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Sunday Goods brand and ecommerce interface on a screen" },
-  { slug: "cedar-and-co", name: "Cedar & Co.", num: "04", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Cedar and Co. consultants discussing a strategy presentation" },
-  { slug: "gather-journal", name: "Gather Journal", num: "05", img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Gather Journal editorial workspace with daylight and plants" },
-  { slug: "common-ground", name: "Common Ground", num: "06", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1600&h=1100&q=86", alt: "Common Ground members working together at a shared table" }
-];
 ---
 
-<section class="work section-pad" id="work">
+<section class="work section-pad" id="work" data-dark-section>
   <div class="container">
     <div class="section-head" data-reveal>
       <p class="eyebrow">{showcaseData.badge}</p>
@@ -19,15 +10,236 @@ const projects = [
       <p>{showcaseData.description}</p>
     </div>
 
-    <div class="work__stage" data-work-stage>
-      {projects.map((p) => (
-        <a class="work-card" href={`/work/${p.slug}/`} data-work-card>
-          <img src={p.img} alt={p.alt} loading="lazy" />
-          <span>{p.name}</span>
-          <i>↗</i>
-          <small>{p.num}</small>
-        </a>
-      ))}
+    <div class="showcase-card" data-reveal>
+      <div class="showcase-card__image">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&h=1100&q=86" alt="Mulya Lestari - Sistem Informasi Manajemen Bengkel Mobil" loading="lazy" />
+        <span class="showcase-status">● LIVE PRODUCTION</span>
+      </div>
+
+      <div class="showcase-card__content">
+        <span class="showcase-tag">SISTEM INFORMASI BENGKEL MOBIL</span>
+        <h3>MULYA LESTARI</h3>
+        <p>Aplikasi web manajemen bengkel mobil multi-cabang. Mengelola pencatatan transaksi servis harian, monitoring inventaris suku cadang, dan pelaporan otomatis secara terpusat.</p>
+        
+        <div class="showcase-tech">
+          <span>Next.js</span>
+          <span>TailwindCSS</span>
+          <span>PostgreSQL</span>
+          <span>REST API</span>
+          <span>Cloud Server</span>
+        </div>
+
+        <div class="showcase-features">
+          <div><b>✓</b> Pencatatan Servis &amp; Transaksi Real-Time</div>
+          <div><b>✓</b> Monitoring Stok &amp; Multi-Cabang</div>
+          <div><b>✓</b> Rekap &amp; Laporan Otomatis</div>
+          <div><b>✓</b> Akses Terenkripsi &amp; Aman</div>
+        </div>
+
+        <div class="showcase-actions">
+          <a class="button button--acid" href="https://mulyalestari.my.id/" target="_blank" rel="noopener noreferrer">
+            <span>Buka Aplikasi Live</span>
+            <i>↗</i>
+          </a>
+          <a class="button--ghost" href="/work/mulya-lestari/">
+            <span>Detail Studi Kasus</span>
+            <i>→</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-upcoming" data-reveal>
+      <div class="upcoming-badge">✦ PROYEK BERIKUTNYA</div>
+      <p>Aplikasi web dan sistem informasi lainnya sedang dalam tahap pengembangan dan akan segera ditambahkan ke portofolio ini.</p>
     </div>
   </div>
 </section>
+
+<style>
+  .showcase-card {
+    background: #1e1e1a;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.25rem;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    overflow: hidden;
+    margin-top: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s;
+  }
+
+  .showcase-card:hover {
+    border-color: var(--acid);
+  }
+
+  .showcase-card__image {
+    position: relative;
+    min-height: 400px;
+    background: #121210;
+  }
+
+  .showcase-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .showcase-status {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    background: rgba(23, 23, 20, 0.85);
+    backdrop-filter: blur(8px);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(199, 244, 69, 0.3);
+  }
+
+  .showcase-card__content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--paper);
+  }
+
+  .showcase-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--acid);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .showcase-card__content h3 {
+    font-size: 2.2rem;
+    font-weight: 850;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .showcase-card__content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #b0b0a8;
+    margin-bottom: 1.5rem;
+  }
+
+  .showcase-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .showcase-tech span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e0d8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .showcase-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 0.88rem;
+    color: #d4d4cb;
+  }
+
+  .showcase-features b {
+    color: var(--acid);
+    margin-right: 0.35rem;
+  }
+
+  .showcase-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .button--ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .button--ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+  }
+
+  .showcase-upcoming {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .upcoming-badge {
+    background: rgba(199, 244, 69, 0.15);
+    color: var(--acid);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.4rem;
+    white-space: nowrap;
+    border: 1px solid rgba(199, 244, 69, 0.3);
+  }
+
+  .showcase-upcoming p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #9c9c94;
+  }
+
+  @media (max-width: 900px) {
+    .showcase-card {
+      grid-template-columns: 1fr;
+    }
+    .showcase-card__image {
+      min-height: 260px;
+    }
+    .showcase-card__content {
+      padding: 2rem 1.5rem;
+    }
+    .showcase-card__content h3 {
+      font-size: 1.75rem;
+    }
+    .showcase-features {
+      grid-template-columns: 1fr;
+    }
+    .showcase-upcoming {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.25rem;
+    }
+  }
+</style>

@@ -44,10 +44,51 @@ export const heroData = {
   description: "Membantu bisnis, founder, dan UMKM membangun aplikasi web modern, dashboard kustom, sistem informasi bisnis, serta web portal berkinerja tinggi yang cepat dan siap pakai.",
   annotationQuote: "Dari analisis sistem, desain UI/UX, hingga rilis siap pakai.",
   floatingCards: [
-    { title: "Mulya Lestari", tag: "Sistem Informasi Bengkel Mobil", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=500&auto=format&fit=crop&q=80", rotate: "-6deg" },
-    { title: "Custom Dashboard", tag: "Monitoring & Analytics", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=80", rotate: "4deg" },
-    { title: "E-Commerce System", tag: "Katalog & Transaksi", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=80", rotate: "-4deg" },
-    { title: "Business Web App", tag: "Sistem Informasi Kustom", image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=500&auto=format&fit=crop&q=80", rotate: "5deg" }
+    {
+      id: "card-1",
+      title: "Mulya Lestari",
+      tag: "Sistem Informasi Bengkel Mobil",
+      image: "/hero-cards/card-1.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=720&h=560&q=86",
+      cardClass: "card--one",
+      position: "Kiri Atas"
+    },
+    {
+      id: "card-2",
+      title: "Dashboard Analytics",
+      tag: "Monitoring & Business Intelligence",
+      image: "/hero-cards/card-2.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=720&h=560&q=86",
+      cardClass: "card--two",
+      position: "Kanan Atas"
+    },
+    {
+      id: "card-3",
+      title: "E-Commerce System",
+      tag: "Katalog & Transaksi",
+      image: "/hero-cards/card-3.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=720&h=560&q=86",
+      cardClass: "card--three",
+      position: "Kiri Bawah"
+    },
+    {
+      id: "card-4",
+      title: "Business Web App",
+      tag: "Sistem Informasi Kustom",
+      image: "/hero-cards/card-4.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=720&h=560&q=86",
+      cardClass: "card--four",
+      position: "Kanan Bawah"
+    },
+    {
+      id: "card-5",
+      title: "Custom Portal",
+      tag: "Portal Klien & Manajemen",
+      image: "/hero-cards/card-5.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=720&h=560&q=86",
+      cardClass: "card--five",
+      position: "Tengah Atas"
+    }
   ]
 };
 
@@ -191,7 +232,8 @@ export const pricingData = {
     title: "Proyek Unggulan",
     subtitle: "Aplikasi yang telah rilis dan aktif digunakan.",
     items: [
-      "Mulya Lestari ↗"
+      "Mulya Lestari ↗",
+      "Astro Commerce D2C ↗"
     ]
   }
 };
@@ -207,6 +249,13 @@ export const showcaseData = {
       category: "Sistem Informasi Manajemen Bengkel Mobil Multi-Cabang",
       year: "2026",
       image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1000&auto=format&fit=crop&q=80"
+    },
+    {
+      id: "02",
+      name: "Astro Commerce D2C",
+      category: "Sistem E-Commerce & Toko Online Mandiri",
+      year: "2026",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1000&auto=format&fit=crop&q=80"
     }
   ]
 };

@@ -1,0 +1,754 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const project = {
+  name: 'Astro Commerce D2C',
+  category: 'Sistem E-Commerce & Toko Online Mandiri',
+  services: 'Astro · React · TailwindCSS · TypeScript · Nanostores · Vercel / Cloudflare',
+  tagline: 'Platform toko online mandiri berkinerja tinggi (Astro Island Architecture) tanpa potongan komisi marketplace, dilengkapi integrasi hitung ongkir kurir ekspedisi, checkout QRIS, dan panel admin terpusat.',
+  liveUrl: 'https://astro-commerce.demo.my.id/',
+  heroImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1600&h=1100&q=86',
+  storyTitle: 'Tantangan: Kenaikan Biaya Komisi Marketplace & Kehilangan Data Pembeli',
+  storyP1: 'Banyak brand UMKM dan pemilik bisnis terbebani potongan biaya admin marketplace pihak ketiga yang kini mencapai 8–15% per transaksi, menggerus puluhan juta rupiah margin laba bersih setiap bulannya. Selain itu, brand kehilangan kendali atas data pelanggan (customer retention), rentan terdampak perang harga kompetitor, dan tidak memiliki identitas digital mandiri yang kuat.',
+  solutionTitle: 'Solusi: Arsitektur Astro Island & Toko Online Mandiri Full-Feature',
+  storyP2: 'Kami merancang toko online mandiri berbasis Astro Island Architecture dan React yang menghadirkan waktu muat halaman seketika (sub-second loading) dengan 0% potongan komisi. Dilengkapi fitur kalkulator hemat admin, katalog produk interaktif dengan instant filtering, checkout praktis terintegrasi tarif ongkir kurir ekspedisi otomatis, pembayaran QRIS instan, notifikasi pesanan 1-klik ke WhatsApp, serta dashboard admin inventaris yang terpusat.',
+  metric: '0%',
+  metricLabel: 'Potongan Komisi Marketplace (100% Margin Milik Brand)',
+  metricPill1: '98+ Skor Lighthouse',
+  metricPill2: '100% Kepemilikan Database Pelanggan',
+  modules: [
+    {
+      num: '01',
+      title: 'Katalog Interaktif & Instant Filter',
+      desc: 'Navigasi katalog produk ultra-cepat dengan pencarian kata kunci instan tanpa reload, filter multi-kategori, dan tampilan varian produk yang interaktif.'
+    },
+    {
+      num: '02',
+      title: 'Checkout Instan & Hitung Ongkir',
+      desc: 'Kalkulasi tarif ongkos kirim ekspedisi (JNE, SiCepat, J&T, Pos) secara otomatis dan real-time berdasarkan berat produk serta kecamatan tujuan pembeli.'
+    },
+    {
+      num: '03',
+      title: 'Integrasi QRIS & WhatsApp Order',
+      desc: 'Mendukung pembayaran digital instan via kode QRIS otomatis serta konfirmasi order 1-klik yang langsung terhubung ke WhatsApp customer service toko.'
+    },
+    {
+      num: '04',
+      title: 'Panel Admin & Manajemen Stok',
+      desc: 'Dashboard terpusat untuk mengelola inventaris produk, update harga & varian secara live, monitoring status pesanan, dan rekapitulasi data penjualan.'
+    }
+  ],
+  gallery1: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+  gallery1Title: 'Katalog Produk & Instant Filtering Engine Berkecepatan Ekstrem',
+  gallery2: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+  gallery2Title: 'Alur Checkout Praktis, Hitung Ongkir Otomatis & Pembayaran QRIS'
+};
+---
+
+<Layout title={`${project.name} — Studi Kasus Toko Online Mandiri | Portofolio Mallik`}>
+  <Navbar />
+  
+  <main id="main" class="case-study">
+    
+    <!-- Hero Section -->
+    <section class="cs-hero">
+      <div class="container">
+        
+        <div class="cs-nav-back">
+          <a href="/#work" class="back-link">
+            <i>←</i>
+            <span>Kembali ke Portofolio</span>
+          </a>
+        </div>
+
+        <div class="cs-header">
+          <div class="cs-header__main">
+            <span class="cs-badge">✦ STUDI KASUS PROYEK #02</span>
+            <h1 class="cs-title">{project.name}</h1>
+            <p class="cs-subtitle">{project.tagline}</p>
+          </div>
+
+          <div class="cs-meta-box">
+            <div class="meta-item">
+              <span class="meta-label">Kategori</span>
+              <strong class="meta-value">{project.category}</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Status Proyek</span>
+              <strong class="meta-value status-live">● Production Ready (Aktif)</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Tech Stack</span>
+              <strong class="meta-value">{project.services}</strong>
+            </div>
+            {project.liveUrl && (
+              <div class="meta-cta">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="button button--acid cs-live-btn">
+                  <span>Buka Aplikasi Live</span>
+                  <i>↗</i>
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Featured Mockup / Preview Image -->
+        <figure class="cs-hero-image" data-reveal>
+          <img src={project.heroImage} alt={`${project.name} preview`} />
+          <figcaption>
+            <span><strong>{project.name}</strong> · Production Web Application</span>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">{project.liveUrl} ↗</a>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- Story Breakdown -->
+    <section class="cs-story section-pad">
+      <div class="container">
+        
+        <div class="cs-story-grid">
+          
+          <!-- Story Copy -->
+          <div class="cs-story-copy" data-reveal>
+            <div class="story-block">
+              <span class="story-eyebrow">TANTANGAN BISNIS</span>
+              <h2>{project.storyTitle}</h2>
+              <p>{project.storyP1}</p>
+            </div>
+
+            <div class="story-block">
+              <span class="story-eyebrow">SOLUSI TEKNOLOGI</span>
+              <h2>{project.solutionTitle}</h2>
+              <p>{project.storyP2}</p>
+            </div>
+          </div>
+
+          <!-- Impact Metric Sidebar -->
+          <aside class="cs-metric-card" data-reveal>
+            <span class="metric-tag">HASIL PENCAPAIAN</span>
+            <strong class="metric-num">{project.metric}</strong>
+            <p class="metric-desc">{project.metricLabel}</p>
+            
+            <div class="metric-key-benefits">
+              <div class="benefit-item">
+                <b>✓</b> <span><strong>98+ Skor Lighthouse</strong> (Performa Ekstrem)</span>
+              </div>
+              <div class="benefit-item">
+                <b>✓</b> <span><strong>100% Kepemilikan Data</strong> Database Pelanggan</span>
+              </div>
+              <div class="benefit-item">
+                <b>✓</b> <span><strong>Hemat Biaya Admin</strong> Puluhan Juta / Bulan</span>
+              </div>
+            </div>
+
+            <hr class="metric-divider" />
+
+            <div class="metric-tech-pills">
+              <span>Astro</span>
+              <span>React</span>
+              <span>TailwindCSS</span>
+              <span>TypeScript</span>
+              <span>Nanostores</span>
+              <span>Cloudflare</span>
+            </div>
+
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="metric-link">
+                Kunjungi Website Aplikasi ↗
+              </a>
+            )}
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Modules / Features -->
+    {project.modules && (
+      <section class="cs-modules">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">ARSITEKTUR &amp; FITUR</p>
+            <h2>4 Modul Utama Platform</h2>
+            <p>Fitur-fitur inti yang dirancang khusus untuk kecepatan konversi penjualan dan kemudahan pengelolaan toko secara mandiri.</p>
+          </div>
+
+          <div class="modules-grid" data-reveal>
+            {project.modules.map((m) => (
+              <article class="module-card">
+                <span class="module-num">{m.num}</span>
+                <h3>{m.title}</h3>
+                <p>{m.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Screenshot Gallery Section -->
+    <section class="cs-gallery section-pad">
+      <div class="container">
+        <div class="section-head section-head--light" data-reveal>
+          <p class="eyebrow">TAMPILAN ANTARMUKA</p>
+          <h2>Galeri Fitur Sistem</h2>
+          <p>Tampilan nyata pengalaman pengguna (UX) dan antarmuka checkout yang responsif.</p>
+        </div>
+
+        <div class="gallery-grid" data-reveal>
+          <figure class="gallery-item">
+            <div class="gallery-item__img-wrap">
+              <img src={project.gallery1} alt={project.gallery1Title} loading="lazy" />
+            </div>
+            <figcaption>
+              <b>01</b>
+              <span>{project.gallery1Title}</span>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <div class="gallery-item__img-wrap">
+              <img src={project.gallery2} alt={project.gallery2Title} loading="lazy" />
+            </div>
+            <figcaption>
+              <b>02</b>
+              <span>{project.gallery2Title}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Outcome & CTA -->
+    <section class="cs-cta section-pad">
+      <div class="container">
+        <div class="cs-cta-box" data-reveal>
+          <span class="cs-badge">✦ MULAI PROYEK ANDA</span>
+          <h2>Tertarik Membangun Toko Online Mandiri Tanpa Potongan Komisi?</h2>
+          <p>Tingkatkan profit margin bisnis Anda dan miliki database pembeli secara penuh. Diskusikan ide aplikasi toko online atau e-commerce Anda langsung bersama saya.</p>
+          
+          <div class="cs-cta-actions">
+            <a class="button button--acid" href="/contact/">
+              <span>Konsultasi Proyek Gratis</span>
+              <i>→</i>
+            </a>
+            <a class="cs-back-btn" href="/#work">
+              ← Kembali ke Beranda
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .case-study {
+    background: var(--paper);
+    color: var(--ink);
+    padding-top: clamp(7.5rem, 10vw, 9.5rem);
+    min-height: 100vh;
+  }
+
+  .cs-nav-back {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    padding: 0.45rem 0.9rem;
+    background: #e8e8e2;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 2px 3px 0 var(--ink);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 4px 0 var(--ink);
+  }
+
+  .cs-header {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+
+  .cs-badge {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.35rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .cs-title {
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 850;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.25rem 0;
+    color: var(--ink);
+  }
+
+  .cs-subtitle {
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.5;
+    color: #4a4a45;
+    font-weight: 550;
+    margin: 0;
+  }
+
+  .cs-meta-box {
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 1rem;
+    box-shadow: 5px 6px 0 var(--ink);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .meta-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666660;
+  }
+
+  .meta-value {
+    font-size: 0.95rem;
+    font-weight: 750;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .status-live {
+    color: #0d8a3e;
+    font-weight: 800;
+  }
+
+  .meta-cta {
+    margin-top: 0.5rem;
+  }
+
+  .cs-live-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cs-hero {
+    padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+  }
+
+  .cs-hero-image {
+    margin: 0;
+    border: 2px solid var(--ink);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 6px 8px 0 var(--ink);
+    background: #171714;
+  }
+
+  .cs-hero-image img {
+    width: 100%;
+    height: clamp(340px, 44vw, 540px);
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  .cs-hero-image figcaption {
+    background: #171714;
+    color: var(--paper);
+    padding: 1rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .cs-hero-image figcaption strong {
+    color: var(--acid);
+  }
+
+  .cs-hero-image figcaption a {
+    color: var(--acid);
+    text-decoration: underline;
+  }
+
+  /* Story Section */
+  .cs-story {
+    background: #f7f7f2;
+    border-top: 1px solid #dcdcd6;
+    border-bottom: 1px solid #dcdcd6;
+  }
+
+  .cs-story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  .story-block {
+    margin-bottom: 3rem;
+  }
+
+  .story-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .story-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    color: #6a6a62;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .story-block h2 {
+    font-size: 1.85rem;
+    font-weight: 850;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: var(--ink);
+  }
+
+  .story-block p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #383834;
+    margin: 0;
+  }
+
+  .cs-metric-card {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 1.25rem;
+    padding: 2.75rem 2.25rem;
+    box-shadow: 6px 7px 0 rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 6rem;
+  }
+
+  .metric-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--acid);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric-num {
+    font-size: clamp(3.5rem, 6vw, 4.8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--acid);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .metric-desc {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--paper);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .metric-key-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    color: #deded6;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .benefit-item b {
+    color: var(--acid);
+  }
+
+  .benefit-item strong {
+    color: #fff;
+  }
+
+  .metric-divider {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 1.75rem 0 1.5rem;
+  }
+
+  .metric-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .metric-tech-pills span {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e5dc;
+    font-size: 0.76rem;
+    font-weight: 650;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .metric-link {
+    display: inline-block;
+    color: var(--acid);
+    font-weight: 750;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  /* Modules Section */
+  .cs-modules {
+    padding: clamp(4.5rem, 7vw, 7rem) 0;
+    background: var(--paper);
+  }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .module-card {
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 0.9rem;
+    box-shadow: 4px 5px 0 var(--ink);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .module-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 7px 0 var(--ink);
+  }
+
+  .module-num {
+    background: var(--ink);
+    color: var(--acid);
+    font-size: 0.72rem;
+    font-weight: 850;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.3rem;
+    width: max-content;
+    margin-bottom: 1rem;
+  }
+
+  .module-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 0.65rem 0;
+    color: var(--ink);
+  }
+
+  .module-card p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #3e3e3a;
+    margin: 0;
+  }
+
+  /* Gallery Grid */
+  .cs-gallery {
+    background: #171714;
+    color: var(--paper);
+  }
+
+  .section-head--light h2 {
+    color: #fff;
+  }
+
+  .section-head--light p {
+    color: #a8a8a0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .gallery-item {
+    margin: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: #20201d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery-item__img-wrap {
+    height: 380px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .gallery-item__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  .gallery-item:hover .gallery-item__img-wrap img {
+    transform: scale(1.03);
+  }
+
+  .gallery-item figcaption {
+    padding: 1rem 1.25rem;
+    background: #1c1c18;
+    color: #e5e5dc;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gallery-item figcaption b {
+    background: var(--acid);
+    color: var(--ink);
+    font-size: 0.7rem;
+    font-weight: 850;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.25rem;
+  }
+
+  /* CTA Section */
+  .cs-cta {
+    background: var(--paper);
+  }
+
+  .cs-cta-box {
+    background: var(--acid);
+    border: 2px solid var(--ink);
+    border-radius: 1.25rem;
+    box-shadow: 6px 7px 0 var(--ink);
+    padding: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .cs-cta-box h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 850;
+    line-height: 1.1;
+    margin: 1rem 0 1rem;
+    color: var(--ink);
+  }
+
+  .cs-cta-box p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #2b2b27;
+    max-width: 54ch;
+    margin: 0 auto 2.25rem;
+  }
+
+  .cs-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cs-cta-actions .button {
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: none;
+    border: 2px solid var(--ink);
+  }
+
+  .cs-cta-actions .button i {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .cs-back-btn {
+    color: var(--ink);
+    font-weight: 750;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .cs-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .cs-story-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .modules-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-item__img-wrap {
+      height: 280px;
+    }
+  }
+</style>

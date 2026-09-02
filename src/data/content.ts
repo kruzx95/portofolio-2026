@@ -233,7 +233,7 @@ export const pricingData = {
     subtitle: "Aplikasi yang telah rilis dan aktif digunakan.",
     items: [
       "Mulya Lestari ↗",
-      "Astro Commerce D2C ↗"
+      "KALA Studio ↗"
     ]
   }
 };
@@ -252,10 +252,10 @@ export const showcaseData = {
     },
     {
       id: "02",
-      name: "Astro Commerce D2C",
+      name: "KALA Studio",
       category: "Sistem E-Commerce & Toko Online Mandiri",
       year: "2026",
-      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1000&auto=format&fit=crop&q=80"
+      image: "/showcase/astro-commerce/hero.jpg"
     }
   ]
 };

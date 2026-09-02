@@ -4,50 +4,48 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const project = {
-  name: 'Astro Commerce D2C',
-  category: 'Sistem E-Commerce & Toko Online Mandiri',
-  services: 'Astro · React · TailwindCSS · TypeScript · Nanostores · Vercel / Cloudflare',
-  tagline: 'Platform toko online mandiri berkinerja tinggi (Astro Island Architecture) tanpa potongan komisi marketplace, dilengkapi integrasi hitung ongkir kurir ekspedisi, checkout QRIS, dan panel admin terpusat.',
-  liveUrl: 'https://astro-commerce.demo.my.id/',
-  heroImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1600&h=1100&q=86',
-  storyTitle: 'Tantangan: Kenaikan Biaya Komisi Marketplace & Kehilangan Data Pembeli',
-  storyP1: 'Banyak brand UMKM dan pemilik bisnis terbebani potongan biaya admin marketplace pihak ketiga yang kini mencapai 8–15% per transaksi, menggerus puluhan juta rupiah margin laba bersih setiap bulannya. Selain itu, brand kehilangan kendali atas data pelanggan (customer retention), rentan terdampak perang harga kompetitor, dan tidak memiliki identitas digital mandiri yang kuat.',
-  solutionTitle: 'Solusi: Arsitektur Astro Island & Toko Online Mandiri Full-Feature',
-  storyP2: 'Kami merancang toko online mandiri berbasis Astro Island Architecture dan React yang menghadirkan waktu muat halaman seketika (sub-second loading) dengan 0% potongan komisi. Dilengkapi fitur kalkulator hemat admin, katalog produk interaktif dengan instant filtering, checkout praktis terintegrasi tarif ongkir kurir ekspedisi otomatis, pembayaran QRIS instan, notifikasi pesanan 1-klik ke WhatsApp, serta dashboard admin inventaris yang terpusat.',
+  name: 'KALA Studio',
+  category: 'Sistem E-Commerce & Toko Online Mandiri (D2C)',
+  services: 'Astro 7 · React Islands · TailwindCSS · TypeScript · Nanostores · Vercel / Cloudflare',
+  tagline: 'Platform toko online mandiri berkecepatan ekstrem (sub-second loading) tanpa potongan komisi marketplace, dilengkapi integrasi hitung ongkir kurir ekspedisi, checkout QRIS, notifikasi 1-klik WhatsApp, dan panel admin terpusat.',
+  liveUrl: 'https://market-tau-lyart.vercel.app/',
+  heroImage: '/showcase/astro-commerce/hero.jpg',
+  storyTitle: 'Tantangan Bisnis: Potongan Komisi 8–15% & Kehilangan Kendali Database Pelanggan',
+  storyP1: 'Banyak pemilik brand ritel & UMKM terjebak dalam ketergantungan marketplace pihak ketiga. Setiap transaksi dipotong komisi admin platform dan biaya layanan yang terus naik hingga 8–15%, menggerus puluhan juta rupiah dari laba bersih bulanan. Selain itu, toko rentan terkena perang harga tidak sehat, algoritma yang berubah-ubah, dan tidak memiliki akses langsung ke database pembeli untuk strategi repeat order (retensi pelanggan).',
+  solutionTitle: 'Solusi Teknologi: Toko Online Mandiri Berarsitektur Astro Island & Zero Fee',
+  storyP2: 'Kami merancang sistem e-commerce mandiri berbasis Astro Island Architecture dan React yang menyajikan waktu muat halaman seketika (< 0.8 detik) dengan 0% potongan komisi per transaksi. Sistem ini mengintegrasikan kalkulasi tarif ongkir kurir nasional (JNE, SiCepat, J&T) secara otomatis, pembayaran QRIS dinamis & transfer bank, notifikasi pemesanan 1-klik via WhatsApp CS, serta panel pengelola toko terpadu untuk monitoring stok dan penjualan.',
   metric: '0%',
-  metricLabel: 'Potongan Komisi Marketplace (100% Margin Milik Brand)',
-  metricPill1: '98+ Skor Lighthouse',
-  metricPill2: '100% Kepemilikan Database Pelanggan',
+  metricLabel: 'Potongan Komisi Marketplace (100% Margin Laba Milik Brand)',
   modules: [
     {
       num: '01',
-      title: 'Katalog Interaktif & Instant Filter',
-      desc: 'Navigasi katalog produk ultra-cepat dengan pencarian kata kunci instan tanpa reload, filter multi-kategori, dan tampilan varian produk yang interaktif.'
+      title: 'Katalog Interaktif & Instant Filter (Sub-Detik)',
+      desc: 'Pengalaman belanja instan tanpa jeda muat (zero layout shift). Filter kategori, varian warna/ukuran, dan pencarian produk bekerja seketika di peramban pengguna.'
     },
     {
       num: '02',
-      title: 'Checkout Instan & Hitung Ongkir',
-      desc: 'Kalkulasi tarif ongkos kirim ekspedisi (JNE, SiCepat, J&T, Pos) secara otomatis dan real-time berdasarkan berat produk serta kecamatan tujuan pembeli.'
+      title: 'Kalkulasi Ongkir Otomatis Multi-Kurir',
+      desc: 'Integrasi tarif kurir ekspedisi nasional (JNE, J&T, SiCepat, Pos) yang otomatis dihitung berdasarkan berat timbangan produk dan lokasi kecamatan tujuan.'
     },
     {
       num: '03',
-      title: 'Integrasi QRIS & WhatsApp Order',
-      desc: 'Mendukung pembayaran digital instan via kode QRIS otomatis serta konfirmasi order 1-klik yang langsung terhubung ke WhatsApp customer service toko.'
+      title: 'Dual Checkout: QRIS Dinamis & Order WhatsApp',
+      desc: 'Fleksibilitas pembayaran instan bagi konsumen modern dengan QRIS (BCA, GoPay, OVO, ShopeePay) serta opsi checkout langsung ke WhatsApp CS untuk personal closing.'
     },
     {
       num: '04',
-      title: 'Panel Admin & Manajemen Stok',
-      desc: 'Dashboard terpusat untuk mengelola inventaris produk, update harga & varian secara live, monitoring status pesanan, dan rekapitulasi data penjualan.'
+      title: 'Panel Admin & Manajemen Stok Terpusat',
+      desc: 'Dashboard mandiri untuk input katalog baru, atur varian harga diskon, monitoring pesanan real-time, dan rekapitulasi data penjualan tanpa biaya sewa SaaS bulanan.'
     }
   ],
-  gallery1: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-  gallery1Title: 'Katalog Produk & Instant Filtering Engine Berkecepatan Ekstrem',
-  gallery2: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
-  gallery2Title: 'Alur Checkout Praktis, Hitung Ongkir Otomatis & Pembayaran QRIS'
+  gallery1: '/showcase/astro-commerce/hero.jpg',
+  gallery1Title: 'Katalog Produk & Instant Filtering Engine Berkecepatan Ekstrem (Skor 98+)',
+  gallery2: '/showcase/astro-commerce/checkout-admin.jpg',
+  gallery2Title: 'Alur Checkout Praktis, Hitung Ongkir QRIS & Panel Admin Pengelola Toko'
 };
 ---
 
-<Layout title={`${project.name} — Studi Kasus Toko Online Mandiri | Portofolio Mallik`}>
+<Layout title={`${project.name} — Solusi Toko Online Mandiri & E-Commerce | Portofolio Mallik`}>
   <Navbar />
   
   <main id="main" class="case-study">
@@ -72,12 +70,12 @@ const project = {
 
           <div class="cs-meta-box">
             <div class="meta-item">
-              <span class="meta-label">Kategori</span>
+              <span class="meta-label">Kategori Proyek</span>
               <strong class="meta-value">{project.category}</strong>
             </div>
             <div class="meta-item">
               <span class="meta-label">Status Proyek</span>
-              <strong class="meta-value status-live">● Production Ready (Aktif)</strong>
+              <strong class="meta-value status-live">● Live Production Demo (Aktif)</strong>
             </div>
             <div class="meta-item">
               <span class="meta-label">Tech Stack</span>
@@ -86,7 +84,7 @@ const project = {
             {project.liveUrl && (
               <div class="meta-cta">
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="button button--acid cs-live-btn">
-                  <span>Buka Aplikasi Live</span>
+                  <span>Buka Live Demo Toko</span>
                   <i>↗</i>
                 </a>
               </div>
@@ -98,7 +96,7 @@ const project = {
         <figure class="cs-hero-image" data-reveal>
           <img src={project.heroImage} alt={`${project.name} preview`} />
           <figcaption>
-            <span><strong>{project.name}</strong> · Production Web Application</span>
+            <span><strong>{project.name}</strong> · Production Web Application (KALA Studio Demo)</span>
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">{project.liveUrl} ↗</a>
           </figcaption>
         </figure>
@@ -125,40 +123,69 @@ const project = {
               <h2>{project.solutionTitle}</h2>
               <p>{project.storyP2}</p>
             </div>
+
+            <!-- Value Comparison Box -->
+            <div class="story-comparison-box">
+              <h3>Perbandingan Nilai Bisnis:</h3>
+              <div class="comp-grid">
+                <div class="comp-col comp-col--marketplace">
+                  <h4>Marketplace Konvensional</h4>
+                  <ul>
+                    <li>❌ Komisi 8% – 15% dari omset kotor</li>
+                    <li>❌ Database pembeli tidak bisa diakses</li>
+                    <li>❌ Perang harga brutal dengan kompetitor</li>
+                    <li>❌ Website lambat &amp; sarat iklan produk lain</li>
+                  </ul>
+                </div>
+                <div class="comp-col comp-col--astro">
+                  <h4>Toko Mandiri D2C (KALA Studio)</h4>
+                  <ul>
+                    <li>✅ <strong>0% Potongan Komisi</strong> (Margin 100% utuh)</li>
+                    <li>✅ <strong>100% Kepemilikan Database</strong> (Email/WhatsApp)</li>
+                    <li>✅ <strong>Eksklusif Brand Anda</strong> (Bebas perang harga)</li>
+                    <li>✅ <strong>Sub-Second Loading</strong> (Skor 98+ Lighthouse)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <!-- Impact Metric Sidebar -->
           <aside class="cs-metric-card" data-reveal>
-            <span class="metric-tag">HASIL PENCAPAIAN</span>
+            <span class="metric-tag">DAMPAK &amp; KEUNGGULAN BISNIS</span>
             <strong class="metric-num">{project.metric}</strong>
             <p class="metric-desc">{project.metricLabel}</p>
             
             <div class="metric-key-benefits">
               <div class="benefit-item">
-                <b>✓</b> <span><strong>98+ Skor Lighthouse</strong> (Performa Ekstrem)</span>
+                <b>✓</b> <span><strong>Hemat 8–15%</strong> dari total omset bulanan</span>
               </div>
               <div class="benefit-item">
-                <b>✓</b> <span><strong>100% Kepemilikan Data</strong> Database Pelanggan</span>
+                <b>✓</b> <span><strong>98+ Skor Lighthouse</strong> (Konversi naik hingga 3x)</span>
               </div>
               <div class="benefit-item">
-                <b>✓</b> <span><strong>Hemat Biaya Admin</strong> Puluhan Juta / Bulan</span>
+                <b>✓</b> <span><strong>100% Kepemilikan Data</strong> Pelanggan &amp; Pixel Iklan</span>
+              </div>
+              <div class="benefit-item">
+                <b>✓</b> <span><strong>Akses Kode Penuh</strong> Tanpa biaya lisensi bulanan</span>
               </div>
             </div>
 
             <hr class="metric-divider" />
 
             <div class="metric-tech-pills">
-              <span>Astro</span>
-              <span>React</span>
+              <span>Astro 7</span>
+              <span>React Islands</span>
               <span>TailwindCSS</span>
               <span>TypeScript</span>
               <span>Nanostores</span>
-              <span>Cloudflare</span>
+              <span>Vercel / Cloudflare</span>
             </div>
 
             {project.liveUrl && (
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="metric-link">
-                Kunjungi Website Aplikasi ↗
+                Coba Langsung Demo Toko ↗
               </a>
             )}
           </aside>
@@ -173,9 +200,9 @@ const project = {
       <section class="cs-modules">
         <div class="container">
           <div class="section-head" data-reveal>
-            <p class="eyebrow">ARSITEKTUR &amp; FITUR</p>
-            <h2>4 Modul Utama Platform</h2>
-            <p>Fitur-fitur inti yang dirancang khusus untuk kecepatan konversi penjualan dan kemudahan pengelolaan toko secara mandiri.</p>
+            <p class="eyebrow">ARSITEKTUR &amp; FITUR UNGGULAN</p>
+            <h2>4 Modul Utama Platform Toko Mandiri</h2>
+            <p>Fitur-fitur inti yang dirancang spesifik untuk memaksimalkan rasio konversi penjualan dan kemudahan operasional pemilik brand.</p>
           </div>
 
           <div class="modules-grid" data-reveal>
@@ -195,9 +222,9 @@ const project = {
     <section class="cs-gallery section-pad">
       <div class="container">
         <div class="section-head section-head--light" data-reveal>
-          <p class="eyebrow">TAMPILAN ANTARMUKA</p>
-          <h2>Galeri Fitur Sistem</h2>
-          <p>Tampilan nyata pengalaman pengguna (UX) dan antarmuka checkout yang responsif.</p>
+          <p class="eyebrow">TAMPILAN ANTARMUKA &amp; FITUR</p>
+          <h2>Galeri Tampilan Sistem Nyata</h2>
+          <p>Tampilan nyata pengalaman belanja responsif, checkout terintegrasi QRIS, dan dashboard admin pengelola toko.</p>
         </div>
 
         <div class="gallery-grid" data-reveal>
@@ -228,9 +255,9 @@ const project = {
     <section class="cs-cta section-pad">
       <div class="container">
         <div class="cs-cta-box" data-reveal>
-          <span class="cs-badge">✦ MULAI PROYEK ANDA</span>
+          <span class="cs-badge">✦ MULAI PROYEK TOKO ONLINE ANDA</span>
           <h2>Tertarik Membangun Toko Online Mandiri Tanpa Potongan Komisi?</h2>
-          <p>Tingkatkan profit margin bisnis Anda dan miliki database pembeli secara penuh. Diskusikan ide aplikasi toko online atau e-commerce Anda langsung bersama saya.</p>
+          <p>Tingkatkan margin laba bisnis Anda, lepas dari potongan komisi marketplace, dan miliki database pelanggan Anda sendiri. Diskusikan ide aplikasi toko online atau e-commerce Anda sekarang.</p>
           
           <div class="cs-cta-actions">
             <a class="button button--acid" href="/contact/">
@@ -386,7 +413,7 @@ const project = {
     width: 100%;
     height: clamp(340px, 44vw, 540px);
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center top;
     display: block;
   }
 
@@ -425,11 +452,7 @@ const project = {
   }
 
   .story-block {
-    margin-bottom: 3rem;
-  }
-
-  .story-block:last-child {
-    margin-bottom: 0;
+    margin-bottom: 2.5rem;
   }
 
   .story-eyebrow {
@@ -454,6 +477,58 @@ const project = {
     line-height: 1.65;
     color: #383834;
     margin: 0;
+  }
+
+  /* Story Comparison Box */
+  .story-comparison-box {
+    margin-top: 2.5rem;
+    padding: 1.75rem;
+    background: #efefe8;
+    border: 2px solid var(--ink);
+    border-radius: 1rem;
+    box-shadow: 4px 5px 0 var(--ink);
+  }
+
+  .story-comparison-box h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0 0 1.25rem 0;
+    color: var(--ink);
+  }
+
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .comp-col h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .comp-col--marketplace h4 {
+    color: #b91c1c;
+  }
+
+  .comp-col--astro h4 {
+    color: #047857;
+  }
+
+  .comp-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .comp-col li {
+    color: #33332e;
   }
 
   .cs-metric-card {
@@ -486,9 +561,9 @@ const project = {
   }
 
   .metric-desc {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.35;
     color: var(--paper);
     margin: 0 0 1.5rem 0;
   }
@@ -496,19 +571,21 @@ const project = {
   .metric-key-benefits {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.65rem;
     font-size: 0.88rem;
     color: #deded6;
   }
 
   .benefit-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
+    line-height: 1.4;
   }
 
   .benefit-item b {
     color: var(--acid);
+    margin-top: 0.1rem;
   }
 
   .benefit-item strong {
@@ -632,7 +709,7 @@ const project = {
 
   .gallery-item__img-wrap {
     height: 380px;
-    background: #f8f9fa;
+    background: #0f172a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -643,7 +720,7 @@ const project = {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
     display: block;
     transition: transform 0.6s var(--ease-out);
   }
@@ -740,6 +817,9 @@ const project = {
     .cs-story-grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;
+    }
+    .comp-grid {
+      grid-template-columns: 1fr;
     }
     .modules-grid {
       grid-template-columns: 1fr;

@@ -1,5 +1,6 @@
 ---
 import { heroData, siteMeta } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <section class="hero" data-hero>
@@ -12,11 +13,11 @@ import { heroData, siteMeta } from '../data/content';
     <p class="hero__body" data-split>{heroData.description}</p>
     
     <div class="hero__actions">
-      <a class="button button--acid" href="/contact/">
+      <a class="button button--acid" href={resolvePath("/contact/")}>
         <span>Konsultasi Aplikasi</span>
         <i>→</i>
       </a>
-      <a class="button button--dark" href="/#pricing">
+      <a class="button button--dark" href={resolvePath("/#pricing")}>
         <span>Lihat Paket &amp; Biaya</span>
         <i>→</i>
       </a>

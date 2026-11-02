@@ -1,5 +1,6 @@
 ---
 import { pricingData } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <section class="pricing section-pad" id="pricing">
@@ -27,7 +28,7 @@ import { pricingData } from '../data/content';
             <span>{pricingData.mainPlan.deliveryTime}</span>
           </div>
 
-          <a class="button button--acid" href="/contact/">
+          <a class="button button--acid" href={resolvePath("/contact/")}>
             <span>{pricingData.mainPlan.ctaText}</span>
             <i>→</i>
           </a>
@@ -91,7 +92,7 @@ import { pricingData } from '../data/content';
         </ul>
 
         <div class="featured-work-btns">
-          <a class="button button--acid" href="/work/mulya-lestari/">
+          <a class="button button--acid" href={resolvePath("/work/mulya-lestari/")}>
             <span>Lihat Studi Kasus</span>
             <i>→</i>
           </a>

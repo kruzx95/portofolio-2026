@@ -1,5 +1,6 @@
 ---
 import { showcaseData } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <section class="work section-pad" id="work" data-dark-section>
@@ -41,7 +42,7 @@ import { showcaseData } from '../data/content';
             <span>Buka Aplikasi Live</span>
             <i>↗</i>
           </a>
-          <a class="button--ghost" href="/work/mulya-lestari/">
+          <a class="button--ghost" href={resolvePath("/work/mulya-lestari/")}>
             <span>Detail Studi Kasus</span>
             <i>→</i>
           </a>
@@ -51,7 +52,7 @@ import { showcaseData } from '../data/content';
 
     <div class="showcase-card" data-reveal>
       <div class="showcase-card__image">
-        <img src="/showcase/astro-commerce/hero.jpg" alt="KALA Studio - Toko Online Mandiri & E-Commerce D2C" loading="lazy" />
+        <img src={resolvePath("/showcase/astro-commerce/hero.jpg")} alt="KALA Studio - Toko Online Mandiri & E-Commerce D2C" loading="lazy" />
         <span class="showcase-status">● LIVE PRODUCTION DEMO</span>
       </div>
 
@@ -81,7 +82,7 @@ import { showcaseData } from '../data/content';
             <span>Buka Live Demo Toko</span>
             <i>↗</i>
           </a>
-          <a class="button--ghost" href="/work/astro-commerce/">
+          <a class="button--ghost" href={resolvePath("/work/astro-commerce/")}>
             <span>Detail Studi Kasus</span>
             <i>→</i>
           </a>

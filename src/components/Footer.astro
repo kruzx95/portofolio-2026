@@ -1,12 +1,13 @@
 ---
 import { footerData } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <footer class="footer" data-dark-section>
   <div class="container">
     
     <div class="footer__brand">
-      <a href="/">
+      <a href={resolvePath("/")}>
         <span>Mallik</span><strong>Dev</strong>
       </a>
       <p>{footerData.readyTag}</p>
@@ -14,7 +15,7 @@ import { footerData } from '../data/content';
 
     <div class="footer__cta">
       <p>{footerData.tagline}</p>
-      <a href="/contact/">
+      <a href={resolvePath("/contact/")}>
         Konsultasi Sekarang<span>→</span>
       </a>
     </div>
@@ -28,11 +29,11 @@ import { footerData } from '../data/content';
       <div class="footer__columns">
         <div>
           <b>Navigasi</b>
-          <a href="/#process">Alur Kerja</a>
-          <a href="/#pricing">Skema Biaya</a>
-          <a href="/#work">Portofolio</a>
-          <a href="/#why-us">Keunggulan</a>
-          <a href="/contact/">Kontak &amp; Konsultasi</a>
+          <a href={resolvePath("/#process")}>Alur Kerja</a>
+          <a href={resolvePath("/#pricing")}>Skema Biaya</a>
+          <a href={resolvePath("/#work")}>Portofolio</a>
+          <a href={resolvePath("/#why-us")}>Keunggulan</a>
+          <a href={resolvePath("/contact/")}>Kontak &amp; Konsultasi</a>
         </div>
 
         <div>
@@ -44,8 +45,8 @@ import { footerData } from '../data/content';
       </div>
 
       <div class="footer__legal">
-        <a href="/privacy/">Kebijakan Privasi</a>
-        <a href="/terms/">Syarat &amp; Ketentuan</a>
+        <a href={resolvePath("/privacy/")}>Kebijakan Privasi</a>
+        <a href={resolvePath("/terms/")}>Syarat &amp; Ketentuan</a>
         <a href="mailto:kruza8@gmail.com">kruza8@gmail.com</a>
       </div>
     </div>

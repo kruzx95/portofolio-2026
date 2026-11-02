@@ -1,20 +1,21 @@
 ---
 import { siteMeta } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <header class="site-header" data-site-header>
-  <a class="wordmark" href="/" aria-label="Mallik Studio home">
+  <a class="wordmark" href={resolvePath("/")} aria-label="Mallik Studio home">
     <span>Mallik</span><strong>Dev</strong>
   </a>
 
   <nav class="desktop-nav" aria-label="Primary navigation">
-    <a href="/#process"><span>Alur Kerja</span></a>
-    <a href="/#pricing"><span>Skema Biaya</span></a>
-    <a href="/#work"><span>Portofolio</span></a>
-    <a href="/#why-us"><span>Keunggulan</span></a>
+    <a href={resolvePath("/#process")}><span>Alur Kerja</span></a>
+    <a href={resolvePath("/#pricing")}><span>Skema Biaya</span></a>
+    <a href={resolvePath("/#work")}><span>Portofolio</span></a>
+    <a href={resolvePath("/#why-us")}><span>Keunggulan</span></a>
   </nav>
 
-  <a class="header-cta" href="/contact/">
+  <a class="header-cta" href={resolvePath("/contact/")}>
     <span>Konsultasi</span><i>→</i>
   </a>
 
@@ -25,11 +26,11 @@ import { siteMeta } from '../data/content';
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Mobile navigation">
-      <a href="/#process"><small>01</small><span>Alur Kerja</span><i>↗</i></a>
-      <a href="/#pricing"><small>02</small><span>Skema Biaya</span><i>↗</i></a>
-      <a href="/#work"><small>03</small><span>Portofolio</span><i>↗</i></a>
-      <a href="/#why-us"><small>04</small><span>Keunggulan</span><i>↗</i></a>
-      <a class="mobile-menu__cta" href="/contact/"><span>Konsultasi Sekarang</span><i>→</i></a>
+      <a href={resolvePath("/#process")}><small>01</small><span>Alur Kerja</span><i>↗</i></a>
+      <a href={resolvePath("/#pricing")}><small>02</small><span>Skema Biaya</span><i>↗</i></a>
+      <a href={resolvePath("/#work")}><small>03</small><span>Portofolio</span><i>↗</i></a>
+      <a href={resolvePath("/#why-us")}><small>04</small><span>Keunggulan</span><i>↗</i></a>
+      <a class="mobile-menu__cta" href={resolvePath("/contact/")}><span>Konsultasi Sekarang</span><i>→</i></a>
     </nav>
   </div>
 </header>

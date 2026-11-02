@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { resolvePath } from '../utils/paths';
 ---
 
 <Layout title="Syarat & Ketentuan — Mallik Studio">
@@ -26,7 +27,7 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="legal-back-wrap">
-        <a href="/" class="btn btn-dark">← Kembali ke Beranda</a>
+        <a href={resolvePath("/")} class="btn btn-dark">← Kembali ke Beranda</a>
       </div>
     </div>
   </main>

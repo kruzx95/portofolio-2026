@@ -4,6 +4,8 @@
 // can be customized directly in this file.
 // ==========================================
 
+import { resolvePath } from '../utils/paths';
+
 export interface SiteMeta {
   title: string;
   description: string;
@@ -25,16 +27,16 @@ export const siteMeta: SiteMeta = {
   studioLocation: "Full-Stack Engineer · Indonesia & Worldwide",
   satisfactionGuarantee: "Garansi Kualitas Kode, Keamanan & Support Penuh Pasca Rilis",
   primaryCtaText: "KONSULTASI APLIKASI",
-  primaryCtaLink: "/contact/",
+  primaryCtaLink: resolvePath("/contact/"),
   secondaryCtaText: "SKEMA BIAYA & SCOPE",
-  secondaryCtaLink: "/#pricing",
+  secondaryCtaLink: resolvePath("/#pricing"),
 };
 
 export const navigationLinks = [
-  { label: "ALUR KERJA", href: "/#process" },
-  { label: "SKEMA BIAYA", href: "/#pricing" },
-  { label: "PORTOFOLIO", href: "/#work" },
-  { label: "KEUNGGULAN", href: "/#why-us" },
+  { label: "ALUR KERJA", href: resolvePath("/#process") },
+  { label: "SKEMA BIAYA", href: resolvePath("/#pricing") },
+  { label: "PORTOFOLIO", href: resolvePath("/#work") },
+  { label: "KEUNGGULAN", href: resolvePath("/#why-us") },
 ];
 
 export const heroData = {
@@ -48,7 +50,7 @@ export const heroData = {
       id: "card-1",
       title: "Mulya Lestari",
       tag: "Sistem Informasi Bengkel Mobil",
-      image: "/hero-cards/card-1.jpg",
+      image: resolvePath("/hero-cards/card-1.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--one",
       position: "Kiri Atas"
@@ -57,7 +59,7 @@ export const heroData = {
       id: "card-2",
       title: "Dashboard Analytics",
       tag: "Monitoring & Business Intelligence",
-      image: "/hero-cards/card-2.jpg",
+      image: resolvePath("/hero-cards/card-2.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--two",
       position: "Kanan Atas"
@@ -66,7 +68,7 @@ export const heroData = {
       id: "card-3",
       title: "E-Commerce System",
       tag: "Katalog & Transaksi",
-      image: "/hero-cards/card-3.jpg",
+      image: resolvePath("/hero-cards/card-3.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--three",
       position: "Kiri Bawah"
@@ -75,7 +77,7 @@ export const heroData = {
       id: "card-4",
       title: "Business Web App",
       tag: "Sistem Informasi Kustom",
-      image: "/hero-cards/card-4.jpg",
+      image: resolvePath("/hero-cards/card-4.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--four",
       position: "Kanan Bawah"
@@ -84,7 +86,7 @@ export const heroData = {
       id: "card-5",
       title: "Custom Portal",
       tag: "Portal Klien & Manajemen",
-      image: "/hero-cards/card-5.jpg",
+      image: resolvePath("/hero-cards/card-5.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--five",
       position: "Tengah Atas"
@@ -111,7 +113,7 @@ export const valuePropsData = {
   badge: "STANDAR TINGGI & PENGERJAAN TERUJI",
   headline: "Aplikasi Modern,\nTerstruktur & Handal.",
   ctaText: "KONSULTASIKAN PROYEK ANDA",
-  ctaLink: "/contact/",
+  ctaLink: resolvePath("/contact/"),
   cards: [
     { number: "01", title: "Full-Stack Engineer Senior", description: "Akses langsung ke developer tanpa perantara admin atau account manager.", isHighlighted: true },
     { number: "02", title: "Arsitektur Modern & Scalable", description: "Dibangun dengan Astro, React, Node.js, Flutter, dan PostgreSQL.", isHighlighted: true },
@@ -200,7 +202,7 @@ export const pricingData = {
     price: "Kustom Sesuai Kebutuhan",
     deliveryTime: "Rata-rata 2–4 pekan pengerjaan",
     ctaText: "KONSULTASI & ESTIMASI BIAYA",
-    ctaLink: "/contact/",
+    ctaLink: resolvePath("/contact/"),
     includedTitle: "STANDAR PENGERJAAN INTI:",
     features: [
       "Desain UI/UX Kustom, Modern & Responsif",
@@ -255,7 +257,7 @@ export const showcaseData = {
       name: "KALA Studio",
       category: "Sistem E-Commerce & Toko Online Mandiri",
       year: "2026",
-      image: "/showcase/astro-commerce/hero.jpg"
+      image: resolvePath("/showcase/astro-commerce/hero.jpg")
     }
   ]
 };
@@ -265,7 +267,7 @@ export const comparisonData = {
   headline: "Membangun Aplikasi\nTanpa Drama & Ribet.",
   description: "Fokus menghadirkan solusi aplikasi web yang fungsional, transparan, dan sesuai dengan kebutuhan nyata bisnis Anda.",
   ctaText: "KONSULTASIKAN KEBUTUHAN ANDA",
-  ctaLink: "/contact/",
+  ctaLink: resolvePath("/contact/"),
   pillars: [
     {
       num: "01",
@@ -313,7 +315,7 @@ export const teamData = {
   headline: "Keahlian Mendalam.\nEksekusi Tepat Waktu.",
   description: "Dipimpin oleh Lead Full-Stack Engineer dengan keahlian pengembangan aplikasi web modern, dashboard, dan sistem informasi kustom berkinerja tinggi.",
   ctaText: "DISKUSIKAN PROYEK DENGAN DEVELOPER",
-  ctaLink: "/contact/",
+  ctaLink: resolvePath("/contact/"),
   members: [
     {
       name: "Mallik",
@@ -347,7 +349,7 @@ export const missionQuote = {
   headline: "Setiap Bisnis Berhak Memiliki\nAplikasi yang Andal.",
   description: "Banyak ide hebat gagal tereksekusi hanya karena kendala teknis atau aplikasi yang lambat dan penuh bug.\n\nSaya hadir untuk memastikan aplikasi Anda dibangun dengan fondasi teknologi terbaik, antarmuka yang memikat pengguna, dan kode yang mudah dikembangkan di masa depan.",
   ctaText: "MULAI KONSULTASI SEKARANG",
-  ctaLink: "/contact/"
+  ctaLink: resolvePath("/contact/")
 };
 
 export const testimonialsData = [
@@ -431,7 +433,7 @@ export const impactData = {
   headline: "Punya Ide atau Kebutuhan Aplikasi Web?",
   description: "Ceritakan alur bisnis atau fitur yang ingin Anda bangun. Saya bantu petakan solusi teknologi, estimasi waktu, dan perkiraan biaya yang paling efisien — tanpa komitmen awal.",
   ctaText: "MULAI KONSULTASI SEKARANG",
-  ctaLink: "/contact/"
+  ctaLink: resolvePath("/contact/")
 };
 
 export const contactData = {
@@ -453,18 +455,18 @@ export const footerData = {
   readyTag: "[ Siap Memulai? ]",
   tagline: "Solusi Rekayasa Perangkat Lunak & Jasa Pembuatan Aplikasi Profesional.",
   ctaText: "KONSULTASI SEKARANG",
-  ctaLink: "/contact/",
+  ctaLink: resolvePath("/contact/"),
   copyright: `© ${new Date().getFullYear()} Mallik Dev Studio. All rights reserved.`,
   madeWith: "Dibuat dengan Astro & Presisi Tinggi.",
   navSections: [
     {
       title: "NAVIGASI",
       links: [
-        { label: "Alur Kerja", href: "/#process" },
-        { label: "Skema Biaya", href: "/#pricing" },
-        { label: "Portofolio Proyek", href: "/#work" },
-        { label: "Keunggulan", href: "/#why-us" },
-        { label: "Kontak & Konsultasi", href: "/contact/" }
+        { label: "Alur Kerja", href: resolvePath("/#process") },
+        { label: "Skema Biaya", href: resolvePath("/#pricing") },
+        { label: "Portofolio Proyek", href: resolvePath("/#work") },
+        { label: "Keunggulan", href: resolvePath("/#why-us") },
+        { label: "Kontak & Konsultasi", href: resolvePath("/contact/") }
       ]
     },
     {
@@ -478,8 +480,8 @@ export const footerData = {
     }
   ],
   legalLinks: [
-    { label: "Kebijakan Privasi", href: "/privacy/" },
-    { label: "Syarat & Ketentuan", href: "/terms/" },
+    { label: "Kebijakan Privasi", href: resolvePath("/privacy/") },
+    { label: "Syarat & Ketentuan", href: resolvePath("/terms/") },
     { label: "kruza8@gmail.com", href: "mailto:kruza8@gmail.com" }
   ]
 };

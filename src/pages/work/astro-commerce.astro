@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { resolvePath } from '../../utils/paths';
 
 const project = {
   name: 'KALA Studio',
@@ -9,7 +10,7 @@ const project = {
   services: 'Astro 7 · React Islands · TailwindCSS · TypeScript · Nanostores · Vercel / Cloudflare',
   tagline: 'Platform toko online mandiri berkecepatan ekstrem (sub-second loading) tanpa potongan komisi marketplace, dilengkapi integrasi hitung ongkir kurir ekspedisi, checkout QRIS, notifikasi 1-klik WhatsApp, dan panel admin terpusat.',
   liveUrl: 'https://market-tau-lyart.vercel.app/',
-  heroImage: '/showcase/astro-commerce/hero.jpg',
+  heroImage: resolvePath('/showcase/astro-commerce/hero.jpg'),
   storyTitle: 'Tantangan Bisnis: Potongan Komisi 8–15% & Kehilangan Kendali Database Pelanggan',
   storyP1: 'Banyak pemilik brand ritel & UMKM terjebak dalam ketergantungan marketplace pihak ketiga. Setiap transaksi dipotong komisi admin platform dan biaya layanan yang terus naik hingga 8–15%, menggerus puluhan juta rupiah dari laba bersih bulanan. Selain itu, toko rentan terkena perang harga tidak sehat, algoritma yang berubah-ubah, dan tidak memiliki akses langsung ke database pembeli untuk strategi repeat order (retensi pelanggan).',
   solutionTitle: 'Solusi Teknologi: Toko Online Mandiri Berarsitektur Astro Island & Zero Fee',
@@ -55,7 +56,7 @@ const project = {
       <div class="container">
         
         <div class="cs-nav-back">
-          <a href="/#work" class="back-link">
+          <a href={resolvePath("/#work")} class="back-link">
             <i>←</i>
             <span>Kembali ke Portofolio</span>
           </a>
@@ -260,11 +261,11 @@ const project = {
           <p>Tingkatkan margin laba bisnis Anda, lepas dari potongan komisi marketplace, dan miliki database pelanggan Anda sendiri. Diskusikan ide aplikasi toko online atau e-commerce Anda sekarang.</p>
           
           <div class="cs-cta-actions">
-            <a class="button button--acid" href="/contact/">
+            <a class="button button--acid" href={resolvePath("/contact/")}>
               <span>Konsultasi Proyek Gratis</span>
               <i>→</i>
             </a>
-            <a class="cs-back-btn" href="/#work">
+            <a class="cs-back-btn" href={resolvePath("/#work")}>
               ← Kembali ke Beranda
             </a>
           </div>

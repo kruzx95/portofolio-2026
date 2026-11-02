@@ -1,5 +1,6 @@
 ---
 import { teamData } from '../data/content';
+import { resolvePath } from '../utils/paths';
 ---
 
 <section class="team section-pad">
@@ -27,7 +28,7 @@ import { teamData } from '../data/content';
       ))}
     </div>
 
-    <a class="button button--acid team__cta" href="/contact/">
+    <a class="button button--acid team__cta" href={resolvePath("/contact/")}>
       <span>{teamData.ctaText}</span>
       <i>→</i>
     </a>

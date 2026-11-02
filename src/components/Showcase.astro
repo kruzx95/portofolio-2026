@@ -1,286 +1,357 @@
 ---
-import { showcaseData } from '../data/content';
-import { resolvePath } from '../utils/paths';
+const projects = [
+  {
+    title: "Website Resmi Diskominfo Kota Tasikmalaya",
+    category: "Portal Resmi Pemerintah · Modern Web Architecture",
+    role: "Frontend Developer",
+    period: "2024 – Sekarang",
+    organization: "Diskominfo Kota Tasikmalaya (Onsite)",
+    status: "PROYEK UTAMA",
+    description: "Pembangunan ulang (rebuild) portal resmi Diskominfo Kota Tasikmalaya dari awal. Berfokus pada peningkatan kecepatan muat, struktur antarmuka yang bersih, dan kemudahan akses informasi publik bagi masyarakat luas.",
+    contributions: [
+      "Mengimplementasikan arsitektur frontend modern menggunakan TypeScript dan Tailwind CSS.",
+      "Meningkatkan skor performa, efisiensi render, dan responsivitas lintas resolusi layar.",
+      "Berkolaborasi intensif dengan tim internal dinas untuk memetakan alur kebutuhan sistem."
+    ],
+    tech: ["TypeScript", "Tailwind CSS", "HTML5 & CSS3", "Web Performance", "Responsive UI"]
+  },
+  {
+    title: "Digitalisasi Website Instansi Pemerintah Daerah",
+    category: "Content Management System (CMS) & Layanan Publik",
+    role: "Web Developer",
+    period: "2024 – Sekarang",
+    organization: "Pemerintah Kota Tasikmalaya (Onsite)",
+    status: "SELESAI & AKTIF",
+    description: "Pengembangan website untuk berbagai instansi pemerintah daerah menggunakan WordPress sebagai solusi percepatan digitalisasi informasi, publikasi agenda, dan layanan warga yang mudah dikelola secara mandiri.",
+    contributions: [
+      "Kustomisasi tampilan dan struktur navigasi website agar ramah bagi pengguna awam.",
+      "Penerapan standar keterbukaan informasi publik dan optimasi kecepatan halaman.",
+      "Pendampingan operasional pengelolaan konten bagi tim administrasi instansi."
+    ],
+    tech: ["WordPress", "PHP", "Tailwind CSS / Custom CSS", "CMS Architecture", "Cross-Browser Testing"]
+  },
+  {
+    title: "Sistem Informasi SPJ Keuangan Berbasis Web",
+    category: "Sistem Informasi & Manajemen Alur Kerja",
+    role: "System Analyst & Web Developer (UNIKOM)",
+    period: "2017",
+    organization: "Diskominfo Kota Bandung",
+    status: "AKADEMIK & PEMDA",
+    description: "Sistem informasi berbasis web untuk otomatisasi dan verifikasi alur pengajuan Surat Pertanggungjawaban (SPJ) dinas guna menjamin transparansi pencatatan dan kecepatan rekapitulasi data keuangan.",
+    contributions: [
+      "Menganalisis alur kerja tim administrasi dinas untuk pemodelan sistem informasi.",
+      "Merancang skema database MySQL relasional guna memastikan integritas data transaksi.",
+      "Mengimplementasikan antarmuka entri dan verifikasi dokumen yang terstruktur rapi."
+    ],
+    tech: ["Web System", "MySQL", "Relational Database", "Workflow Automation", "Analisis Sistem"]
+  }
+];
 ---
 
 <section class="work section-pad" id="work" data-dark-section>
   <div class="container">
     <div class="section-head" data-reveal>
-      <p class="eyebrow">{showcaseData.badge}</p>
-      <h2>{showcaseData.headline}</h2>
-      <p>{showcaseData.description}</p>
+      <p class="eyebrow">PORTOFOLIO &amp; KARYA IMPLEMENTASI</p>
+      <h2>Proyek &amp; Sistem yang Dibangun.</h2>
+      <p>Pengalaman rekayasa web nyata di lingkungan instansi pemerintahan dan perancangan sistem informasi, berfokus pada keandalan, struktur kode rapi, dan kemudahan bagi pengguna.</p>
     </div>
 
-    <div class="showcase-card" data-reveal>
-      <div class="showcase-card__image">
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&h=1100&q=86" alt="Mulya Lestari - Sistem Informasi Manajemen Bengkel Mobil" loading="lazy" />
-        <span class="showcase-status">● LIVE PRODUCTION</span>
-      </div>
+    <div class="projects-list">
+      {projects.map((proj) => (
+        <article class="project-item" data-reveal>
+          <!-- Top Header Bar -->
+          <div class="project-header">
+            <div class="project-badges">
+              <span class="badge-status">{proj.status}</span>
+              <span class="badge-role">{proj.role}</span>
+            </div>
+            <div class="project-period-wrap">
+              <span class="project-period">{proj.period}</span>
+            </div>
+          </div>
 
-      <div class="showcase-card__content">
-        <span class="showcase-tag">SISTEM INFORMASI BENGKEL MOBIL</span>
-        <h3>MULYA LESTARI</h3>
-        <p>Aplikasi web manajemen bengkel mobil multi-cabang. Mengelola pencatatan transaksi servis harian, monitoring inventaris suku cadang, dan pelaporan otomatis secara terpusat.</p>
-        
-        <div class="showcase-tech">
-          <span>Next.js</span>
-          <span>TailwindCSS</span>
-          <span>PostgreSQL</span>
-          <span>REST API</span>
-          <span>Cloud Server</span>
-        </div>
+          <!-- Body Content -->
+          <div class="project-body">
+            <span class="project-category">{proj.category}</span>
+            <h3 class="project-title">{proj.title}</h3>
+            
+            <p class="project-org">
+              <span class="org-label">Instansi / Lembaga:</span>
+              <span class="org-name">{proj.organization}</span>
+            </p>
 
-        <div class="showcase-features">
-          <div><b>✓</b> Pencatatan Servis &amp; Transaksi Real-Time</div>
-          <div><b>✓</b> Monitoring Stok &amp; Multi-Cabang</div>
-          <div><b>✓</b> Rekap &amp; Laporan Otomatis</div>
-          <div><b>✓</b> Akses Terenkripsi &amp; Aman</div>
-        </div>
+            <p class="project-desc">{proj.description}</p>
 
-        <div class="showcase-actions">
-          <a class="button button--acid" href="https://mulyalestari.my.id/" target="_blank" rel="noopener noreferrer">
-            <span>Buka Aplikasi Live</span>
-            <i>↗</i>
-          </a>
-          <a class="button--ghost" href={resolvePath("/work/mulya-lestari/")}>
-            <span>Detail Studi Kasus</span>
-            <i>→</i>
-          </a>
-        </div>
-      </div>
-    </div>
+            <!-- Contribution Points Box -->
+            <div class="project-points">
+              <h4 class="points-label">Kontribusi &amp; Fokus Pengerjaan:</h4>
+              <ul class="points-ul">
+                {proj.contributions.map((item) => (
+                  <li class="point-li">
+                    <span class="bullet" aria-hidden="true">✓</span>
+                    <span class="point-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-    <div class="showcase-card" data-reveal>
-      <div class="showcase-card__image">
-        <img src={resolvePath("/showcase/astro-commerce/hero.jpg")} alt="KALA Studio - Toko Online Mandiri & E-Commerce D2C" loading="lazy" />
-        <span class="showcase-status">● LIVE PRODUCTION DEMO</span>
-      </div>
-
-      <div class="showcase-card__content">
-        <span class="showcase-tag">SISTEM E-COMMERCE &amp; TOKO ONLINE MANDIRI</span>
-        <h3>KALA STUDIO</h3>
-        <p>Solusi toko online mandiri berkecepatan ekstrem (<em>sub-second loading</em>) untuk brand &amp; UMKM. <strong>Bebas potongan komisi marketplace 0%</strong>, kendali 100% database pelanggan, checkout QRIS &amp; hitung ongkir otomatis, serta panel admin terpusat.</p>
-        
-        <div class="showcase-tech">
-          <span>Astro 7</span>
-          <span>React Islands</span>
-          <span>TailwindCSS</span>
-          <span>TypeScript</span>
-          <span>Nanostores</span>
-          <span>Vercel / Edge</span>
-        </div>
-
-        <div class="showcase-features">
-          <div><b>✓</b> 0% Potongan Komisi (Hemat 8–15% Omset/Bulan)</div>
-          <div><b>✓</b> 100% Database Pelanggan Milik Brand Sendiri</div>
-          <div><b>✓</b> Hitung Ongkir &amp; QRIS Otomatis + Notif WA</div>
-          <div><b>✓</b> Sub-Second Load (98+ Skor) Konversi Maksimal</div>
-        </div>
-
-        <div class="showcase-actions">
-          <a class="button button--acid" href="https://market-tau-lyart.vercel.app/" target="_blank" rel="noopener noreferrer">
-            <span>Buka Live Demo Toko</span>
-            <i>↗</i>
-          </a>
-          <a class="button--ghost" href={resolvePath("/work/astro-commerce/")}>
-            <span>Detail Studi Kasus</span>
-            <i>→</i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="showcase-upcoming" data-reveal>
-      <div class="upcoming-badge">✦ PROYEK BERIKUTNYA</div>
-      <p>Aplikasi web dan sistem informasi lainnya sedang dalam tahap pengembangan dan akan segera ditambahkan ke portofolio ini.</p>
+            <!-- Tech Stack Tags -->
+            <div class="tech-wrapper">
+              <span class="tech-label">Teknologi:</span>
+              <div class="project-tech">
+                {proj.tech.map((t) => (
+                  <span class="tech-tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .showcase-card {
-    background: #1e1e1a;
-    border: 2px solid rgba(255, 255, 255, 0.12);
-    border-radius: 1.25rem;
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    overflow: hidden;
-    margin-top: 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transition: border-color 0.3s;
+  .work {
+    background: #171714;
+    color: var(--paper, #f6f6f2);
+    padding: clamp(5rem, 8vw, 8rem) 0;
   }
 
-  .showcase-card:hover {
-    border-color: var(--acid);
-  }
-
-  .showcase-card__image {
-    position: relative;
-    min-height: 400px;
-    background: #121210;
-  }
-
-  .showcase-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .showcase-status {
-    position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
-    background: rgba(23, 23, 20, 0.85);
-    backdrop-filter: blur(8px);
-    color: var(--acid);
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
-    letter-spacing: 0.05em;
-    border: 1px solid rgba(199, 244, 69, 0.3);
-  }
-
-  .showcase-card__content {
-    padding: 3rem;
+  .projects-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: var(--paper);
+    gap: 2.5rem;
+    margin-top: 3.5rem;
   }
 
-  .showcase-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: var(--acid);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
+  .project-item {
+    background: #22221f;
+    border: 1.5px solid #3d3d37;
+    border-radius: 1.15rem;
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .showcase-card__content h3 {
-    font-size: 2.2rem;
-    font-weight: 850;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    color: #fff;
+  .project-item:hover {
+    border-color: var(--acid, #c8ff46);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
   }
 
-  .showcase-card__content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #b0b0a8;
-    margin-bottom: 1.5rem;
-  }
-
-  .showcase-tech {
+  /* Header Bar */
+  .project-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #363630;
     flex-wrap: wrap;
+  }
+
+  .project-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .badge-status {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--ink, #171714);
+    background: var(--acid, #c8ff46);
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.35rem;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+  .badge-role {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #e5e5dc;
+    background: #2f2f2b;
+    border: 1px solid #484841;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.35rem;
+    display: inline-block;
+  }
+
+  .project-period {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.82rem;
+    font-weight: 650;
+    color: #a5a59d;
+    background: #1d1d1a;
+    padding: 0.3rem 0.75rem;
+    border-radius: 0.35rem;
+    border: 1px solid #383832;
+    display: inline-block;
+  }
+
+  /* Body Content */
+  .project-category {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--acid, #c8ff46);
+    margin-bottom: 0.65rem;
+  }
+
+  .project-title {
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 850;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin: 0 0 0.85rem;
+  }
+
+  .project-org {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.35rem;
+    flex-wrap: wrap;
+  }
+
+  .org-label {
+    color: #9c9c94;
+    font-weight: 600;
+  }
+
+  .org-name {
+    color: #f0f0ea;
+    font-weight: 750;
+  }
+
+  .project-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d6d6ce;
+    margin: 0 0 1.75rem;
+    max-width: 82ch;
+  }
+
+  /* Points Box */
+  .project-points {
+    background: #1b1b18;
+    border: 1px solid #33332d;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.75rem;
     margin-bottom: 1.75rem;
   }
 
-  .showcase-tech span {
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.25rem 0.65rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.08);
-    color: #e0e0d8;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .points-label {
+    font-size: 0.8rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a8a89f;
+    margin: 0 0 1rem;
   }
 
-  .showcase-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .points-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
-    margin-bottom: 2rem;
-    font-size: 0.88rem;
-    color: #d4d4cb;
   }
 
-  .showcase-features b {
-    color: var(--acid);
-    margin-right: 0.35rem;
+  .point-li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #deded6;
   }
 
-  .showcase-actions {
+  .bullet {
+    color: var(--acid, #c8ff46);
+    font-weight: 900;
+    flex-shrink: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    display: inline-block;
+  }
+
+  .point-text {
+    flex-grow: 1;
+  }
+
+  /* Tech Tags */
+  .tech-wrapper {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.85rem;
     flex-wrap: wrap;
+    margin-top: 0.5rem;
   }
 
-  .button--ghost {
-    background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 0.75rem 1.25rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
+  .tech-label {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.76rem;
     font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    transition: all 0.25s;
+    color: #999990;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
-  .button--ghost:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-  }
-
-  .showcase-upcoming {
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 1rem;
+  .project-tech {
     display: flex;
-    align-items: center;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.55rem;
   }
 
-  .upcoming-badge {
-    background: rgba(199, 244, 69, 0.15);
-    color: var(--acid);
-    font-size: 0.75rem;
-    font-weight: 800;
+  .tech-tag {
+    font-size: 0.8rem;
+    font-weight: 650;
+    background: #2b2b27;
+    color: #ecece6;
     padding: 0.35rem 0.75rem;
     border-radius: 0.4rem;
-    white-space: nowrap;
-    border: 1px solid rgba(199, 244, 69, 0.3);
+    border: 1px solid #44443e;
+    display: inline-block;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
-  .showcase-upcoming p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #9c9c94;
+  .tech-tag:hover {
+    border-color: var(--acid, #c8ff46);
+    background: #33332e;
+    color: #ffffff;
   }
 
-  @media (max-width: 900px) {
-    .showcase-card {
-      grid-template-columns: 1fr;
-    }
-    .showcase-card__image {
-      min-height: 260px;
-    }
-    .showcase-card__content {
-      padding: 2rem 1.5rem;
-    }
-    .showcase-card__content h3 {
-      font-size: 1.75rem;
-    }
-    .showcase-features {
-      grid-template-columns: 1fr;
-    }
-    .showcase-upcoming {
+  @media (max-width: 680px) {
+    .project-header {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0.85rem;
+    }
+
+    .project-item {
+      padding: 1.5rem;
+    }
+
+    .project-points {
       padding: 1.25rem;
+    }
+
+    .tech-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
   }
 </style>

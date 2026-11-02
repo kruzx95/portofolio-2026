@@ -1,0 +1,408 @@
+---
+import { resolvePath } from '../utils/paths';
+
+const experiences = [
+  {
+    role: "Frontend Developer",
+    company: "Diskominfo Kota Tasikmalaya",
+    type: "Onsite",
+    period: "Januari 2024 – Sekarang",
+    current: true,
+    points: [
+      "Dipercaya membangun ulang website resmi Diskominfo Kota Tasikmalaya dari awal guna meningkatkan performa dan pengalaman pengguna.",
+      "Mengembangkan website untuk berbagai instansi menggunakan WordPress sebagai solusi awal digitalisasi.",
+      "Mengimplementasikan teknologi modern seperti TypeScript dan Tailwind CSS dalam pengembangan website.",
+      "Berkolaborasi aktif dengan tim internal untuk memastikan kebutuhan sistem terpenuhi secara tepat."
+    ],
+    tags: ["TypeScript", "Tailwind CSS", "WordPress", "Web Performance", "UI/UX"]
+  },
+  {
+    role: "Human Resources & IT Support",
+    company: "Kimia Farma Diagnostika Jakarta",
+    type: "Onsite",
+    period: "2020 (1 Tahun)",
+    current: false,
+    points: [
+      "Mengelola dan memperbarui data karyawan di beberapa cabang secara akurat.",
+      "Berkolaborasi dalam proses penyusunan laporan penggajian karyawan berkala.",
+      "Memberikan dukungan teknis (IT Support) dalam penanganan kendala perangkat keras dan jaringan kerja.",
+      "Memastikan kelancaran operasional melalui koordinasi lintas divisi."
+    ],
+    tags: ["HR Administration", "IT Support", "Troubleshooting Jaringan", "Koordinasi Lintas Divisi"]
+  },
+  {
+    role: "Sarjana Komputer (S.Kom.) — IPK 3.09",
+    company: "Universitas Komputer Indonesia (UNIKOM)",
+    type: "Sistem Informasi",
+    period: "2014 – 2019",
+    current: false,
+    points: [
+      "Berkolaborasi dengan tim administrasi untuk mengidentifikasi alur kerja, kemudian mengimplementasikannya ke dalam sistem SPJ berbasis web guna transparansi data keuangan (Diskominfo Kota Bandung 2017)."
+    ],
+    tags: ["Sistem Informasi", "Database Design", "Web SPJ", "Analisis Sistem"]
+  }
+];
+
+const skillCategories = [
+  {
+    title: "Frontend & Web Core",
+    skills: ["TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "WordPress", "HTML5 & Semantic Web", "Modern CSS & Responsive Design"]
+  },
+  {
+    title: "Database & Backend Basics",
+    skills: ["MySQL", "RESTful API Integration", "Relational Database Structure"]
+  },
+  {
+    title: "Tools, Version Control & Support",
+    skills: ["Git & GitHub", "Vite & Astro", "Troubleshooting Hardware / PC", "Setup Jaringan & IT Support"]
+  },
+  {
+    title: "Bahasa (Languages)",
+    skills: ["Bahasa Indonesia (Native)", "English (Conversation — TOEFL 490)"]
+  }
+];
+---
+
+<section class="experience-section section-pad" id="experience">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">REKAM JEJAK &amp; KEAHLIAN</p>
+      <h2>Pengalaman Kerja &amp; Keahlian Teknis.</h2>
+      <p>Kombinasi pengalaman teknis di instansi pemerintahan, pemahaman alur sistem bisnis, dan adaptabilitas komunikasi yang kuat.</p>
+    </div>
+
+    <div class="exp-grid">
+      <!-- Left: Experience Timeline -->
+      <div class="timeline-column" data-reveal>
+        <h3 class="column-heading">
+          <span class="heading-icon">💼</span>
+          <span>Pengalaman Kerja &amp; Pendidikan</span>
+        </h3>
+
+        <div class="timeline-track">
+          {experiences.map((exp) => (
+            <div class={`timeline-card ${exp.current ? 'is-current' : ''}`}>
+              <div class="timeline-meta">
+                <span class="timeline-period">{exp.period}</span>
+                <span class="timeline-type">{exp.type}</span>
+              </div>
+              <h4 class="exp-role">{exp.role}</h4>
+              <p class="exp-company">{exp.company}</p>
+
+              <ul class="exp-points">
+                {exp.points.map((pt) => (
+                  <li>{pt}</li>
+                ))}
+              </ul>
+
+              <div class="exp-tags">
+                {exp.tags.map((t) => (
+                  <span class="tag-chip">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Skills & CV Callout -->
+      <div class="skills-column" id="skills" data-reveal>
+        <h3 class="column-heading">
+          <span class="heading-icon">⚡</span>
+          <span>Keahlian &amp; Tech Stack</span>
+        </h3>
+
+        <div class="skills-card-wrap">
+          {skillCategories.map((cat) => (
+            <div class="skill-category-card">
+              <h4 class="category-title">{cat.title}</h4>
+              <div class="skill-chips">
+                {cat.skills.map((s) => (
+                  <span class="skill-item">{s}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quick CV Box -->
+        <div class="cv-prompt-card">
+          <div class="cv-prompt-content">
+            <h4>Butuh CV / Resume Lengkap?</h4>
+            <p>Lihat versi web interaktif atau unduh dokumen PDF siap cetak untuk keperluan rekrutmen.</p>
+          </div>
+          <div class="cv-prompt-actions">
+            <a href={resolvePath("/cv/")} class="btn-cv-view">
+              <span>Buka Halaman CV</span>
+              <i>→</i>
+            </a>
+            <a href={resolvePath("/cv.pdf")} download="MALLIK_RUSHAMIDIWINATA_CV.pdf" class="btn-cv-pdf">
+              <span>Unduh PDF</span>
+              <i>⬇</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    background: #f4f4ef;
+    color: var(--ink, #171714);
+    border-top: 1px solid #e2e2dc;
+    border-bottom: 1px solid #e2e2dc;
+  }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+
+  .column-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-icon {
+    font-size: 1.25rem;
+  }
+
+  /* Timeline */
+  .timeline-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+  }
+
+  .timeline-card {
+    background: #ffffff;
+    border: 2px solid var(--ink, #171714);
+    border-radius: 0.85rem;
+    padding: 1.6rem;
+    box-shadow: 4px 5px 0 var(--ink, #171714);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 7px 0 var(--ink, #171714);
+  }
+
+  .timeline-card.is-current {
+    border-color: var(--ink, #171714);
+    background: #ffffff;
+    position: relative;
+  }
+
+  .timeline-card.is-current::before {
+    content: "AKTIF";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--acid, #c8ff46);
+    color: var(--ink, #171714);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--ink, #171714);
+  }
+
+  .timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .timeline-period {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #4a4a45;
+  }
+
+  .timeline-type {
+    background: #f0f0ea;
+    font-size: 0.7rem;
+    font-weight: 650;
+    color: #555550;
+    padding: 0.1rem 0.45rem;
+    border-radius: 0.3rem;
+  }
+
+  .exp-role {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111111;
+    margin: 0 0 0.2rem;
+  }
+
+  .exp-company {
+    font-size: 0.92rem;
+    font-weight: 650;
+    color: #555550;
+    margin: 0 0 0.85rem;
+  }
+
+  .exp-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .exp-points li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #333330;
+    position: relative;
+    padding-left: 1.15rem;
+  }
+
+  .exp-points li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #111111;
+    font-weight: 900;
+  }
+
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tag-chip {
+    font-size: 0.72rem;
+    font-weight: 650;
+    background: #f5f5ef;
+    color: #444440;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.3rem;
+    border: 1px solid #e0e0d8;
+  }
+
+  /* Skills Column */
+  .skills-card-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-category-card {
+    background: #ffffff;
+    border: 1.5px solid #deded8;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .category-title {
+    font-size: 0.82rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #555550;
+    margin: 0 0 0.75rem;
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .skill-item {
+    font-size: 0.82rem;
+    font-weight: 650;
+    background: #f4f4ee;
+    color: #171714;
+    padding: 0.35rem 0.7rem;
+    border-radius: 0.4rem;
+    border: 1px solid #e2e2dc;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .skill-item:hover {
+    background: #ffffff;
+    border-color: var(--ink, #171714);
+  }
+
+  /* CV Prompt Card */
+  .cv-prompt-card {
+    background: var(--ink, #171714);
+    color: var(--paper, #f6f6f2);
+    border-radius: 0.85rem;
+    padding: 1.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .cv-prompt-content h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 0 0 0.35rem;
+    color: #ffffff;
+  }
+
+  .cv-prompt-content p {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #a5a5a0;
+    margin: 0 0 1.15rem;
+  }
+
+  .cv-prompt-actions {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-cv-view,
+  .btn-cv-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .btn-cv-view {
+    background: var(--acid, #c8ff46);
+    color: var(--accent-text, #171714);
+  }
+
+  .btn-cv-pdf {
+    background: #2a2a26;
+    color: #ffffff;
+    border: 1px solid #4a4a44;
+  }
+
+  .btn-cv-view:hover,
+  .btn-cv-pdf:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .exp-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

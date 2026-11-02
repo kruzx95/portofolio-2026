@@ -9,14 +9,14 @@ import { resolvePath } from '../utils/paths';
   </a>
 
   <nav class="desktop-nav" aria-label="Primary navigation">
-    <a href={resolvePath("/#process")}><span>Alur Kerja</span></a>
-    <a href={resolvePath("/#pricing")}><span>Skema Biaya</span></a>
-    <a href={resolvePath("/#work")}><span>Portofolio</span></a>
-    <a href={resolvePath("/#why-us")}><span>Keunggulan</span></a>
+    <a href={resolvePath("/#experience")}><span>Pengalaman</span></a>
+    <a href={resolvePath("/#skills")}><span>Keahlian</span></a>
+    <a href={resolvePath("/cv/")}><span>CV</span></a>
+    <a href={resolvePath("/#contact")}><span>Kontak</span></a>
   </nav>
 
-  <a class="header-cta" href={resolvePath("/contact/")}>
-    <span>Konsultasi</span><i>→</i>
+  <a class="header-cta" href={resolvePath("/cv/")}>
+    <span>Buka CV</span><i>→</i>
   </a>
 
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" id="mobileToggleBtn">
@@ -26,11 +26,11 @@ import { resolvePath } from '../utils/paths';
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Mobile navigation">
-      <a href={resolvePath("/#process")}><small>01</small><span>Alur Kerja</span><i>↗</i></a>
-      <a href={resolvePath("/#pricing")}><small>02</small><span>Skema Biaya</span><i>↗</i></a>
-      <a href={resolvePath("/#work")}><small>03</small><span>Portofolio</span><i>↗</i></a>
-      <a href={resolvePath("/#why-us")}><small>04</small><span>Keunggulan</span><i>↗</i></a>
-      <a class="mobile-menu__cta" href={resolvePath("/contact/")}><span>Konsultasi Sekarang</span><i>→</i></a>
+      <a href={resolvePath("/#experience")}><small>01</small><span>Pengalaman Kerja</span><i>↗</i></a>
+      <a href={resolvePath("/#skills")}><small>02</small><span>Keahlian Teknis</span><i>↗</i></a>
+      <a href={resolvePath("/cv/")}><small>03</small><span>Curriculum Vitae</span><i>↗</i></a>
+      <a href={resolvePath("/#contact")}><small>04</small><span>Hubungi Saya</span><i>↗</i></a>
+      <a class="mobile-menu__cta" href={resolvePath("/cv/")}><span>Lihat CV Lengkap</span><i>→</i></a>
     </nav>
   </div>
 </header>

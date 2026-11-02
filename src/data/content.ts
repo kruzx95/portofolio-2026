@@ -20,54 +20,54 @@ export interface SiteMeta {
 }
 
 export const siteMeta: SiteMeta = {
-  title: "Mallik — Full-Stack Developer & Jasa Pembuatan Aplikasi Web",
-  description: "Portofolio profesional, CV teknis, dan layanan jasa pembuatan aplikasi web modern, dashboard kustom, sistem informasi bisnis, serta arsitektur web berkinerja tinggi.",
-  studioName: "Mallik Studio",
-  studioTagline: "Solusi Rekayasa Perangkat Lunak & Jasa Pembuatan Aplikasi Profesional",
-  studioLocation: "Full-Stack Engineer · Indonesia & Worldwide",
-  satisfactionGuarantee: "Garansi Kualitas Kode, Keamanan & Support Penuh Pasca Rilis",
-  primaryCtaText: "KONSULTASI APLIKASI",
-  primaryCtaLink: resolvePath("/contact/"),
-  secondaryCtaText: "SKEMA BIAYA & SCOPE",
-  secondaryCtaLink: resolvePath("/#pricing"),
+  title: "Mallik Rushamidiwinata — Web & Frontend Developer",
+  description: "Portofolio profesional dan CV teknis Mallik Rushamidiwinata. Web Developer berpengalaman dengan TypeScript, Tailwind CSS, WordPress, dan Sistem Informasi.",
+  studioName: "Mallik Rushamidiwinata",
+  studioTagline: "Web Developer · Frontend & WordPress Specialist",
+  studioLocation: "Tasikmalaya, Indonesia",
+  satisfactionGuarantee: "Terbuka untuk Peluang Karir Full-Time & Proyek Web",
+  primaryCtaText: "LIHAT CV LENGKAP",
+  primaryCtaLink: resolvePath("/cv/"),
+  secondaryCtaText: "PENGALAMAN & KEAHLIAN",
+  secondaryCtaLink: resolvePath("/#experience"),
 };
 
 export const navigationLinks = [
-  { label: "ALUR KERJA", href: resolvePath("/#process") },
-  { label: "SKEMA BIAYA", href: resolvePath("/#pricing") },
-  { label: "PORTOFOLIO", href: resolvePath("/#work") },
-  { label: "KEUNGGULAN", href: resolvePath("/#why-us") },
+  { label: "PENGALAMAN", href: resolvePath("/#experience") },
+  { label: "KEAHLIAN", href: resolvePath("/#skills") },
+  { label: "CV", href: resolvePath("/cv/") },
+  { label: "KONTAK", href: resolvePath("/#contact") },
 ];
 
 export const heroData = {
-  badge: "✦ Modern Web Application Developer",
-  subheading: "PORTOFOLIO, CV & JASA PEMBUATAN APLIKASI WEB",
-  headline: "Bikin Aplikasi\nCepat & Skalabel.",
-  description: "Membantu bisnis, founder, dan UMKM membangun aplikasi web modern, dashboard kustom, sistem informasi bisnis, serta web portal berkinerja tinggi yang cepat dan siap pakai.",
-  annotationQuote: "Dari analisis sistem, desain UI/UX, hingga rilis siap pakai.",
+  badge: "✦ Web Developer · Available for Opportunities",
+  subheading: "PORTOFOLIO & CURRICULUM VITAE",
+  headline: "Mallik\nRushamidiwinata",
+  description: "Web Developer dengan fokus pada pembuatan website instansi yang responsif, cepat, dan terstruktur rapi. Menguasai WordPress serta teknologi modern seperti TypeScript dan Tailwind CSS, didukung latar belakang Sistem Informasi dan pengalaman Human Resources.",
+  annotationQuote: "Pengalaman di Diskominfo & sistem informasi berbasis web.",
   floatingCards: [
     {
       id: "card-1",
       title: "Mulya Lestari",
-      tag: "Sistem Informasi Bengkel Mobil",
+      tag: "Sistem Manajemen Bengkel",
       image: resolvePath("/hero-cards/card-1.jpg"),
-      fallbackImage: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=720&h=560&q=86",
+      fallbackImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--one",
       position: "Kiri Atas"
     },
     {
       id: "card-2",
-      title: "Dashboard Analytics",
-      tag: "Monitoring & Business Intelligence",
-      image: resolvePath("/hero-cards/card-2.jpg"),
+      title: "KALA Studio",
+      tag: "E-Commerce & Online Store",
+      image: resolvePath("/showcase/astro-commerce/hero.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--two",
       position: "Kanan Atas"
     },
     {
       id: "card-3",
-      title: "E-Commerce System",
-      tag: "Katalog & Transaksi",
+      title: "Diskominfo Web",
+      tag: "Redesain Website Resmi",
       image: resolvePath("/hero-cards/card-3.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--three",
@@ -75,8 +75,8 @@ export const heroData = {
     },
     {
       id: "card-4",
-      title: "Business Web App",
-      tag: "Sistem Informasi Kustom",
+      title: "Sistem Informasi SPJ",
+      tag: "Transparansi Keuangan",
       image: resolvePath("/hero-cards/card-4.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--four",
@@ -84,8 +84,8 @@ export const heroData = {
     },
     {
       id: "card-5",
-      title: "Custom Portal",
-      tag: "Portal Klien & Manajemen",
+      title: "Curriculum Vitae",
+      tag: "Resume & Pengalaman",
       image: resolvePath("/hero-cards/card-5.jpg"),
       fallbackImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=720&h=560&q=86",
       cardClass: "card--five",
@@ -241,9 +241,9 @@ export const pricingData = {
 };
 
 export const showcaseData = {
-  badge: "PORTOFOLIO & STUDI KASUS",
-  headline: "Aplikasi yang Telah Rilis & Aktif.",
-  description: "Aplikasi web fungsional yang dibangun dengan standar performa modern dan langsung digunakan dalam operasional bisnis nyata.",
+  badge: "PORTOFOLIO PROYEK NYATA",
+  headline: "Karya & Aplikasi yang Dibangun.",
+  description: "Aplikasi web fungsional yang dikembangkan dengan arsitektur modern, performa tinggi, dan digunakan langsung dalam operasional bisnis nyata.",
   projects: [
     {
       id: "01",
@@ -451,37 +451,36 @@ export const contactData = {
 };
 
 export const footerData = {
-  brandName: "Mallik Studio",
-  readyTag: "[ Siap Memulai? ]",
-  tagline: "Solusi Rekayasa Perangkat Lunak & Jasa Pembuatan Aplikasi Profesional.",
-  ctaText: "KONSULTASI SEKARANG",
-  ctaLink: resolvePath("/contact/"),
-  copyright: `© ${new Date().getFullYear()} Mallik Dev Studio. All rights reserved.`,
+  brandName: "Mallik Rushamidiwinata",
+  readyTag: "",
+  tagline: "Web Developer · Frontend, WordPress, TypeScript, & Tailwind CSS.",
+  ctaText: "LIHAT CV LENGKAP",
+  ctaLink: resolvePath("/cv/"),
+  copyright: `© ${new Date().getFullYear()} Mallik Rushamidiwinata. All rights reserved.`,
   madeWith: "Dibuat dengan Astro & Presisi Tinggi.",
   navSections: [
     {
       title: "NAVIGASI",
       links: [
-        { label: "Alur Kerja", href: resolvePath("/#process") },
-        { label: "Skema Biaya", href: resolvePath("/#pricing") },
-        { label: "Portofolio Proyek", href: resolvePath("/#work") },
-        { label: "Keunggulan", href: resolvePath("/#why-us") },
-        { label: "Kontak & Konsultasi", href: resolvePath("/contact/") }
+        { label: "Pengalaman Kerja", href: resolvePath("/#experience") },
+        { label: "Keahlian Teknis", href: resolvePath("/#skills") },
+        { label: "Curriculum Vitae (CV)", href: resolvePath("/cv/") },
+        { label: "Kontak", href: resolvePath("/#contact") }
       ]
     },
     {
-      title: "HUBUNGI KAMI",
+      title: "KONTAK & JARINGAN",
       links: [
-        { label: "Email: kruza8@gmail.com", href: "mailto:kruza8@gmail.com?subject=Konsultasi%20Pembuatan%20Aplikasi" },
-        { label: "Buka Langsung di Gmail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=kruza8@gmail.com&su=Konsultasi%20Pembuatan%20Aplikasi", target: "_blank" },
-        { label: "GitHub Profil", href: "https://github.com" },
-        { label: "LinkedIn", href: "https://linkedin.com" }
+        { label: "Email: kruza8@gmail.com", href: "mailto:kruza8@gmail.com?subject=Undangan%20Interview%20/%20Diskusi%20Peluang" },
+        { label: "WhatsApp: +62 822-1573-9924", href: "https://wa.me/6282215739924", target: "_blank" },
+        { label: "LinkedIn: /in/malliknata", href: "https://linkedin.com/in/malliknata", target: "_blank" },
+        { label: "Website: mallik-winata.vercel.app", href: "https://mallik-winata.vercel.app", target: "_blank" }
       ]
     }
   ],
   legalLinks: [
-    { label: "Kebijakan Privasi", href: resolvePath("/privacy/") },
-    { label: "Syarat & Ketentuan", href: resolvePath("/terms/") },
-    { label: "kruza8@gmail.com", href: "mailto:kruza8@gmail.com" }
+    { label: "Curriculum Vitae", href: resolvePath("/cv/") },
+    { label: "kruza8@gmail.com", href: "mailto:kruza8@gmail.com" },
+    { label: "+62 822-1573-9924", href: "tel:+6282215739924" }
   ]
 };

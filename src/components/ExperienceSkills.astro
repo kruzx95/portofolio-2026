@@ -1,5 +1,5 @@
 ---
-import { resolvePath } from '../utils/paths';
+import { resolvePath } from "../utils/paths";
 
 const experiences = [
   {
@@ -12,9 +12,15 @@ const experiences = [
       "Dipercaya membangun ulang website resmi Diskominfo Kota Tasikmalaya dari awal guna meningkatkan performa dan pengalaman pengguna.",
       "Mengembangkan website untuk berbagai instansi menggunakan WordPress sebagai solusi awal digitalisasi.",
       "Mengimplementasikan teknologi modern seperti TypeScript dan Tailwind CSS dalam pengembangan website.",
-      "Berkolaborasi aktif dengan tim internal untuk memastikan kebutuhan sistem terpenuhi secara tepat."
+      "Berkolaborasi aktif dengan tim internal untuk memastikan kebutuhan sistem terpenuhi secara tepat.",
     ],
-    tags: ["TypeScript", "Tailwind CSS", "WordPress", "Web Performance", "UI/UX"]
+    tags: [
+      "TypeScript",
+      "Tailwind CSS",
+      "WordPress",
+      "Web Performance",
+      "UI/UX",
+    ],
   },
   {
     role: "Human Resources & IT Support",
@@ -26,9 +32,14 @@ const experiences = [
       "Mengelola dan memperbarui data karyawan di beberapa cabang secara akurat.",
       "Berkolaborasi dalam proses penyusunan laporan penggajian karyawan berkala.",
       "Memberikan dukungan teknis (IT Support) dalam penanganan kendala perangkat keras dan jaringan kerja.",
-      "Memastikan kelancaran operasional melalui koordinasi lintas divisi."
+      "Memastikan kelancaran operasional melalui koordinasi lintas divisi.",
     ],
-    tags: ["HR Administration", "IT Support", "Troubleshooting Jaringan", "Koordinasi Lintas Divisi"]
+    tags: [
+      "HR Administration",
+      "IT Support",
+      "Troubleshooting Jaringan",
+      "Koordinasi Lintas Divisi",
+    ],
   },
   {
     role: "Sarjana Komputer (S.Kom.) — IPK 3.09",
@@ -37,29 +48,32 @@ const experiences = [
     period: "2014 – 2019",
     current: false,
     points: [
-      "Berkolaborasi dengan tim administrasi untuk mengidentifikasi alur kerja, kemudian mengimplementasikannya ke dalam sistem SPJ berbasis web guna transparansi data keuangan (Diskominfo Kota Bandung 2017)."
+      "Berkolaborasi dengan tim administrasi untuk mengidentifikasi alur kerja, kemudian mengimplementasikannya ke dalam sistem SPJ berbasis web guna transparansi data keuangan (Diskominfo Kota Bandung 2017).",
     ],
-    tags: ["Sistem Informasi", "Database Design", "Web SPJ", "Analisis Sistem"]
-  }
+    tags: ["Sistem Informasi", "Database Design", "Web SPJ", "Analisis Sistem"],
+  },
 ];
 
 const skillCategories = [
   {
     title: "Frontend & Web Core",
-    skills: ["TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "WordPress", "HTML5 & Semantic Web", "Modern CSS & Responsive Design"]
-  },
-  {
-    title: "Database & Backend Basics",
-    skills: ["MySQL", "RESTful API Integration", "Relational Database Structure"]
+    skills: [
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "WordPress",
+      "HTML5 & Semantic Web",
+      "Modern CSS & Responsive Design",
+    ],
   },
   {
     title: "Tools, Version Control & Support",
-    skills: ["Git & GitHub", "Vite & Astro", "Troubleshooting Hardware / PC", "Setup Jaringan & IT Support"]
+    skills: ["GitHub", "Troubleshooting Hardware / PC", "IT Support"],
   },
   {
     title: "Bahasa (Languages)",
-    skills: ["Bahasa Indonesia (Native)", "English (Conversation — TOEFL 490)"]
-  }
+    skills: ["Bahasa Indonesia (Native)", "English (Conversation — TOEFL 490)"],
+  },
 ];
 ---
 
@@ -68,7 +82,10 @@ const skillCategories = [
     <div class="section-head" data-reveal>
       <p class="eyebrow">REKAM JEJAK &amp; KEAHLIAN</p>
       <h2>Pengalaman Kerja &amp; Keahlian Teknis.</h2>
-      <p>Kombinasi pengalaman teknis di instansi pemerintahan, pemahaman alur sistem bisnis, dan adaptabilitas komunikasi yang kuat.</p>
+      <p>
+        Kombinasi pengalaman teknis di instansi pemerintahan, pemahaman alur
+        sistem bisnis, dan adaptabilitas komunikasi yang kuat.
+      </p>
     </div>
 
     <div class="exp-grid">
@@ -80,28 +97,30 @@ const skillCategories = [
         </h3>
 
         <div class="timeline-track">
-          {experiences.map((exp) => (
-            <div class={`timeline-card ${exp.current ? 'is-current' : ''}`}>
-              <div class="timeline-meta">
-                <span class="timeline-period">{exp.period}</span>
-                <span class="timeline-type">{exp.type}</span>
-              </div>
-              <h4 class="exp-role">{exp.role}</h4>
-              <p class="exp-company">{exp.company}</p>
+          {
+            experiences.map((exp) => (
+              <div class={`timeline-card ${exp.current ? "is-current" : ""}`}>
+                <div class="timeline-meta">
+                  <span class="timeline-period">{exp.period}</span>
+                  <span class="timeline-type">{exp.type}</span>
+                </div>
+                <h4 class="exp-role">{exp.role}</h4>
+                <p class="exp-company">{exp.company}</p>
 
-              <ul class="exp-points">
-                {exp.points.map((pt) => (
-                  <li>{pt}</li>
-                ))}
-              </ul>
+                <ul class="exp-points">
+                  {exp.points.map((pt) => (
+                    <li>{pt}</li>
+                  ))}
+                </ul>
 
-              <div class="exp-tags">
-                {exp.tags.map((t) => (
-                  <span class="tag-chip">{t}</span>
-                ))}
+                <div class="exp-tags">
+                  {exp.tags.map((t) => (
+                    <span class="tag-chip">{t}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
@@ -113,30 +132,39 @@ const skillCategories = [
         </h3>
 
         <div class="skills-card-wrap">
-          {skillCategories.map((cat) => (
-            <div class="skill-category-card">
-              <h4 class="category-title">{cat.title}</h4>
-              <div class="skill-chips">
-                {cat.skills.map((s) => (
-                  <span class="skill-item">{s}</span>
-                ))}
+          {
+            skillCategories.map((cat) => (
+              <div class="skill-category-card">
+                <h4 class="category-title">{cat.title}</h4>
+                <div class="skill-chips">
+                  {cat.skills.map((s) => (
+                    <span class="skill-item">{s}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         <!-- Quick CV Box -->
         <div class="cv-prompt-card">
           <div class="cv-prompt-content">
             <h4>Butuh CV / Resume Lengkap?</h4>
-            <p>Lihat versi web interaktif atau unduh dokumen PDF siap cetak untuk keperluan rekrutmen.</p>
+            <p>
+              Lihat versi web interaktif atau unduh dokumen PDF siap cetak untuk
+              keperluan rekrutmen.
+            </p>
           </div>
           <div class="cv-prompt-actions">
             <a href={resolvePath("/cv/")} class="btn-cv-view">
               <span>Buka Halaman CV</span>
               <i>→</i>
             </a>
-            <a href={resolvePath("/cv.pdf")} download="MALLIK_RUSHAMIDIWINATA_CV.pdf" class="btn-cv-pdf">
+            <a
+              href={resolvePath("/cv.pdf")}
+              download="MALLIK_RUSHAMIDIWINATA_CV.pdf"
+              class="btn-cv-pdf"
+            >
               <span>Unduh PDF</span>
               <i>⬇</i>
             </a>
@@ -189,7 +217,9 @@ const skillCategories = [
     border-radius: 0.85rem;
     padding: 1.6rem;
     box-shadow: 4px 5px 0 var(--ink, #171714);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .timeline-card:hover {
@@ -333,7 +363,9 @@ const skillCategories = [
     padding: 0.35rem 0.7rem;
     border-radius: 0.4rem;
     border: 1px solid #e2e2dc;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .skill-item:hover {
@@ -405,4 +437,3 @@ const skillCategories = [
     }
   }
 </style>
-

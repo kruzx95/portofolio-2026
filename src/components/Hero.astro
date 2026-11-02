@@ -7,7 +7,10 @@ import { resolvePath } from '../utils/paths';
   <div class="hero__content" data-hero-copy>
     <p class="hero__badge">{heroData.badge}</p>
     <p class="eyebrow">{heroData.subheading}</p>
-    <h1 class="hero__title">Mallik<br/>Rushamidiwinata.</h1>
+    <h1 class="hero__title">
+      <span class="hero__title-first">Mallik</span>
+      <span class="hero__title-last">Rushamidiwinata<span class="hero__title-dot">.</span></span>
+    </h1>
     <p class="hero__role-badge">Web Developer · Frontend &amp; WordPress Specialist</p>
     <p class="hero__body" data-split>{heroData.description}</p>
     
@@ -91,12 +94,38 @@ import { resolvePath } from '../utils/paths';
   }
 
   .hero h1.hero__title {
+    font-family: var(--font-sans);
     max-width: 15ch;
     text-wrap: balance;
-    letter-spacing: -0.045em;
     line-height: 1.02;
+
     margin-bottom: 0.85rem;
     font-size: clamp(3rem, 6.2vw, 4.85rem);
+  }
+
+  .hero__title-first {
+    display: block;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+    color: var(--ink, #171714);
+  }
+
+  .hero__title-last {
+    display: block;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    color: var(--ink, #171714);
+  }
+
+  .hero__title-dot {
+    color: var(--accent, #c8ff46);
+    display: inline-block;
+    margin-left: 0.02em;
+    transition: transform 0.25s var(--ease-out, ease);
+  }
+
+  .hero h1.hero__title:hover .hero__title-dot {
+    transform: scale(1.35) translateY(-2px);
   }
 
   .hero__role-badge {
@@ -205,6 +234,11 @@ import { resolvePath } from '../utils/paths';
   }
 
   @media (max-width: 680px) {
+    .hero h1.hero__title {
+      font-size: clamp(2rem, 8.2vw, 2.75rem);
+      line-height: 1.02;
+      max-width: none;
+    }
     .hero--fullscreen {
       min-height: auto !important;
       padding-top: 6.5rem !important;

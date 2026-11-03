@@ -145,34 +145,7 @@ const {
         });
       })();
 
-      // Pricing work preview cursor tracker
-      (function () {
-        const previewEl = document.querySelector('[data-price-work-preview]');
-        if (!previewEl) return;
-        const trigger = document.querySelector('[data-price-work-trigger]');
-        if (!trigger) return;
-        trigger.addEventListener('mousemove', (e) => {
-          const rect = trigger.getBoundingClientRect();
-          previewEl.style.left = (e.clientX - rect.left) + 'px';
-          previewEl.style.top = (e.clientY - rect.top) + 'px';
-          previewEl.classList.add('is-visible');
-        });
-        trigger.addEventListener('mouseleave', () => {
-          previewEl.classList.remove('is-visible');
-        });
-      })();
 
-      // FAQ details/summary smooth
-      (function () {
-        document.querySelectorAll('details').forEach(details => {
-          details.addEventListener('toggle', () => {
-            const icon = details.querySelector('summary i svg');
-            if (icon) {
-              icon.style.transform = details.open ? 'rotate(180deg)' : '';
-            }
-          });
-        });
-      })();
     </script>
   </body>
 </html>

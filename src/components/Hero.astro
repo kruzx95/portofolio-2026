@@ -249,6 +249,8 @@ import { resolvePath } from '../utils/paths';
     gap: 0.75rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .hero__contacts-strip {
@@ -343,8 +345,22 @@ import { resolvePath } from '../utils/paths';
 
     .hero__actions {
       flex-direction: column;
+      align-items: center;
       width: 100%;
-      max-width: 18rem;
+      max-width: 20rem;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      gap: 0.85rem;
+    }
+
+    .hero__actions .button {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      justify-content: space-between;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     .hero__scroll-cue {

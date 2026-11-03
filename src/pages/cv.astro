@@ -26,6 +26,7 @@ const cvData = {
       role: "Frontend Developer",
       period: "Januari 2024 – Sekarang",
       current: true,
+      liveUrl: "https://diskominfo.tasikmalayakota.go.id/",
       points: [
         "Mengembangkan website untuk berbagai instansi menggunakan WordPress sebagai solusi awal kebutuhan digitalisasi.",
         "Dipercaya untuk membangun ulang website resmi Diskominfo Kota Tasikmalaya dari awal guna meningkatkan performa dan pengalaman pengguna.",
@@ -202,7 +203,14 @@ const cvData = {
                   <div class="timeline-item">
                     <div class="timeline-header">
                       <div>
-                        <h3 class="company-name">{exp.company} <span class="work-type">({exp.type})</span></h3>
+                        <h3 class="company-name">
+                          {exp.company} <span class="work-type">({exp.type})</span>
+                          {exp.liveUrl && (
+                            <a href={exp.liveUrl} target="_blank" rel="noopener noreferrer" class="cv-company-link no-print" title="Kunjungi website resmi instansi">
+                              <span>Website Resmi ↗</span>
+                            </a>
+                          )}
+                        </h3>
                         <p class="role-title">{exp.role}</p>
                       </div>
                       <div class="period-badge">{exp.period}</div>
@@ -621,6 +629,29 @@ const cvData = {
     font-size: 0.82rem;
     font-weight: 600;
     color: #666660;
+  }
+
+  .cv-company-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #171714;
+    background: #f0f0ea;
+    border: 1px solid #d4d4cb;
+    border-radius: 1rem;
+    padding: 0.15rem 0.55rem;
+    margin-left: 0.45rem;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+  }
+
+  .cv-company-link:hover {
+    background: var(--acid, #c8ff46);
+    border-color: #171714;
+    color: #171714;
   }
 
   .role-title {

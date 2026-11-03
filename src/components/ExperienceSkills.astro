@@ -8,6 +8,8 @@ const experiences = [
     type: "Onsite",
     period: "Januari 2024 – Sekarang",
     current: true,
+    liveUrl: "https://diskominfo.tasikmalayakota.go.id/",
+    liveLabel: "Buka Portal Resmi",
     points: [
       "Dipercaya membangun ulang website resmi Diskominfo Kota Tasikmalaya dari awal guna meningkatkan performa dan pengalaman pengguna.",
       "Mengembangkan website untuk berbagai instansi menggunakan WordPress sebagai solusi awal digitalisasi.",
@@ -105,7 +107,26 @@ const skillCategories = [
                   <span class="timeline-type">{exp.type}</span>
                 </div>
                 <h4 class="exp-role">{exp.role}</h4>
-                <p class="exp-company">{exp.company}</p>
+                <div class="exp-company-row">
+                  <p class="exp-company">{exp.company}</p>
+                  {exp.liveUrl && (
+                    <a
+                      href={exp.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="exp-live-btn"
+                      title="Kunjungi website resmi yang dibangun/dikelola"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                      </svg>
+                      <span>{exp.liveLabel}</span>
+                      <i>↗</i>
+                    </a>
+                  )}
+                </div>
 
                 <ul class="exp-points">
                   {exp.points.map((pt) => (
@@ -278,11 +299,47 @@ const skillCategories = [
     margin: 0 0 0.2rem;
   }
 
+  .exp-company-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0 0 0.85rem;
+  }
+
   .exp-company {
     font-size: 0.92rem;
     font-weight: 650;
     color: #555550;
-    margin: 0 0 0.85rem;
+    margin: 0;
+  }
+
+  .exp-live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #f4f4ee;
+    color: var(--ink, #171714);
+    border: 1.5px solid var(--ink, #171714);
+    border-radius: 2rem;
+    padding: 0.2rem 0.65rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 2px 2px 0 var(--ink, #171714);
+    transition: all 0.2s ease;
+  }
+
+  .exp-live-btn:hover {
+    background: var(--acid, #c8ff46);
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0 var(--ink, #171714);
+  }
+
+  .exp-live-btn i {
+    font-style: normal;
+    font-size: 0.75rem;
   }
 
   .exp-points {

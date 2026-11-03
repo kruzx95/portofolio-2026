@@ -107,7 +107,7 @@ export const footerData = {
         { label: "Email: kruza8@gmail.com", href: "mailto:kruza8@gmail.com?subject=Undangan%20Interview%20/%20Diskusi%20Peluang" },
         { label: "WhatsApp: +62 822-1573-9924", href: "https://wa.me/6282215739924", target: "_blank" },
         { label: "LinkedIn: /in/malliknata", href: "https://linkedin.com/in/malliknata", target: "_blank" },
-        { label: "Website: mallik-winata.vercel.app", href: "https://mallik-winata.vercel.app", target: "_blank" }
+        { label: "Website: mallik.web.id", href: "https://mallik.web.id", target: "_blank" }
       ]
     }
   ],

@@ -329,14 +329,16 @@ import { resolvePath } from '../utils/paths';
 
   @media (max-width: 680px) {
     .hero h1.hero__title {
-      font-size: clamp(2rem, 8.2vw, 2.75rem);
-      line-height: 1.02;
+      font-size: clamp(1.75rem, 8.2vw, 2.75rem);
+      line-height: 1.06;
       max-width: none;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
     .hero--fullscreen {
       min-height: auto !important;
-      padding-top: 6.5rem !important;
-      padding-bottom: 4rem !important;
+      padding-top: 5.75rem !important;
+      padding-bottom: 3.5rem !important;
     }
 
     .hero__actions {
@@ -347,6 +349,14 @@ import { resolvePath } from '../utils/paths';
 
     .hero__scroll-cue {
       display: none;
+    }
+
+    .strip-pill {
+      font-size: 0.76rem;
+      padding: 0.4rem 0.75rem;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 </style>

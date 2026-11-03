@@ -521,12 +521,14 @@ const cvData = {
   }
 
   .cv-name {
-    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-size: clamp(1.65rem, 5vw, 2.85rem);
     font-weight: 850;
     letter-spacing: -0.04em;
     line-height: 1.05;
     color: #111111;
     margin: 0.2rem 0 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .cv-role-subtitle {
@@ -926,6 +928,33 @@ const cvData = {
       width: 80px;
       height: 80px;
       border-radius: 0.75rem;
+    }
+
+    .cv-paper {
+      padding: 1.25rem 1rem !important;
+      box-shadow: 3px 4px 0 var(--ink, #171714) !important;
+    }
+
+    .cv-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.65rem;
+    }
+
+    .toolbar-link,
+    .btn-action {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .toolbar-actions {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+
+    .cv-contacts-grid {
+      grid-template-columns: 1fr;
     }
   }
 

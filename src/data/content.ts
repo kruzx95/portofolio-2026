@@ -69,20 +69,6 @@ export const heroData = {
 
 
 
-export const contactData = {
-  badge: "KONSULTASI GRATIS",
-  headline: "Wujudkan Aplikasi Impian\nBisnis Anda Sekarang.",
-  description: "Ceritakan ide aplikasi Anda, target peluncuran, atau fitur yang ingin dibangun. Kami akan berikan estimasi teknis dan solusi terbaik.",
-  form: {
-    namePlaceholder: "Nama Lengkap*",
-    emailPlaceholder: "Alamat Email*",
-    companyPlaceholder: "Nama Bisnis / Perusahaan*",
-    timelinePlaceholder: "Target peluncuran (misal: 1 bulan)",
-    messagePlaceholder: "Jelaskan kebutuhan aplikasi Anda: jenis (Web App/Dashboard/Sistem), fitur utama, dan estimasi budget.",
-    submitText: "KIRIM PESAN & KONSULTASI"
-  }
-};
-
 export const footerData = {
   brandName: "Mallik Rushamidiwinata",
   readyTag: "",
@@ -107,6 +93,7 @@ export const footerData = {
         { label: "Email: kruza8@gmail.com", href: "mailto:kruza8@gmail.com?subject=Undangan%20Interview%20/%20Diskusi%20Peluang" },
         { label: "WhatsApp: +62 822-1573-9924", href: "https://wa.me/6282215739924", target: "_blank" },
         { label: "LinkedIn: /in/mallikwinata", href: "https://www.linkedin.com/in/mallikwinata", target: "_blank" },
+        { label: "GitHub: github.com/kruzx95", href: "https://github.com/kruzx95", target: "_blank" },
         { label: "Website: mallik.web.id", href: "https://mallik.web.id", target: "_blank" }
       ]
     }

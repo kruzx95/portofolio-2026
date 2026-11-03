@@ -5,6 +5,28 @@ import { resolvePath } from '../utils/paths';
 
 <section class="hero hero--fullscreen" data-hero id="about">
   <div class="hero__content" data-hero-copy>
+    <!-- Profile Avatar with Status -->
+    <div class="hero__avatar-container">
+      <div class="hero__avatar-wrapper">
+        <picture>
+          <source srcset={resolvePath("/avatar.webp")} type="image/webp" />
+          <img 
+            src={resolvePath("/avatar.jpg")} 
+            alt="Mallik Rushamidiwinata" 
+            class="hero__avatar-img" 
+            width="104" 
+            height="104" 
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
+        <span class="hero__status-badge" title="Tersedia untuk Peluang Karir">
+          <span class="status-pulse"></span>
+          <span class="status-dot"></span>
+        </span>
+      </div>
+    </div>
+
     <p class="hero__badge">{heroData.badge}</p>
     <p class="eyebrow">{heroData.subheading}</p>
     <h1 class="hero__title">
@@ -92,6 +114,77 @@ import { resolvePath } from '../utils/paths';
     width: 100% !important;
     margin: auto 0 !important;
     z-index: 2 !important;
+  }
+
+  /* Profile Avatar */
+  .hero__avatar-container {
+    margin-bottom: 1.25rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .hero__avatar-wrapper {
+    position: relative;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--acid, #c8ff46) 0%, rgba(23, 23, 20, 0.2) 100%);
+    box-shadow: 0 10px 25px -5px rgba(23, 23, 20, 0.1), 0 0 0 1px rgba(23, 23, 20, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  }
+
+  .hero__avatar-wrapper:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 14px 30px -4px rgba(23, 23, 20, 0.16), 0 0 0 2px var(--acid, #c8ff46);
+  }
+
+  .hero__avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background: #e2e2dc;
+  }
+
+  .hero__status-badge {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+  }
+
+  .status-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #10b981;
+    opacity: 0.6;
+    animation: statusPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes statusPing {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
 
   .hero h1.hero__title {

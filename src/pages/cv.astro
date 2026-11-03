@@ -119,10 +119,26 @@ const cvData = {
         <!-- Header Profil -->
         <header class="cv-header">
           <div class="header-main">
-            <div class="name-block">
-              <span class="badge-role">{cvData.title}</span>
-              <h1 class="cv-name">{cvData.name}</h1>
-              <p class="cv-role-subtitle">{cvData.subTitle}</p>
+            <div class="header-identity">
+              <div class="cv-avatar-wrap">
+                <picture>
+                  <source srcset={resolvePath("/avatar.webp")} type="image/webp" />
+                  <img 
+                    src={resolvePath("/avatar.jpg")} 
+                    alt={cvData.name} 
+                    class="cv-avatar-img" 
+                    width="96" 
+                    height="96" 
+                    loading="eager"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <div class="name-block">
+                <span class="badge-role">{cvData.title}</span>
+                <h1 class="cv-name">{cvData.name}</h1>
+                <p class="cv-role-subtitle">{cvData.subTitle}</p>
+              </div>
             </div>
             
             <div class="location-badge">
@@ -458,6 +474,30 @@ const cvData = {
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
+  }
+
+  .header-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cv-avatar-wrap {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px solid #e2e2dc;
+    background: #f4f4ef;
+    box-shadow: 0 4px 14px rgba(23, 23, 20, 0.08);
+  }
+
+  .cv-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .name-block {
@@ -866,12 +906,26 @@ const cvData = {
     .header-main {
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
     .cv-paper {
       padding: 1.5rem;
       box-shadow: 4px 5px 0 var(--ink, #171714);
+    }
+  }
+
+  @media (max-width: 580px) {
+    .header-identity {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .cv-avatar-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 0.75rem;
     }
   }
 
@@ -924,6 +978,18 @@ const cvData = {
       border-bottom: 2px solid #000000 !important;
       padding-bottom: 10pt !important;
       margin-bottom: 14pt !important;
+    }
+
+    .header-identity {
+      gap: 12pt !important;
+    }
+
+    .cv-avatar-wrap {
+      width: 60pt !important;
+      height: 60pt !important;
+      border: 1pt solid #999999 !important;
+      border-radius: 6pt !important;
+      box-shadow: none !important;
     }
 
     .cv-name {

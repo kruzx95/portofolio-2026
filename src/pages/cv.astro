@@ -1,13 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { resolvePath } from '../utils/paths';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { resolvePath } from "../utils/paths";
 
 const cvData = {
   name: "MALLIK RUSHAMIDIWINATA",
   title: "Web Developer",
-  subTitle: "Frontend & WordPress Specialist",
   location: "Tasikmalaya, Indonesia",
   phone: "+6282215739924",
   phoneFormatted: "+62 822-1573-9924",
@@ -18,7 +17,8 @@ const cvData = {
   githubUrl: "https://github.com/kruzx95",
   portfolio: "mallik.web.id",
   portfolioUrl: "https://mallik.web.id",
-  summary: "Web Developer di Diskominfo Kota Tasikmalaya yang membangun dan merawat website instansi pemerintah. Menggunakan WordPress untuk solusi praktis, serta TypeScript dan Tailwind CSS untuk pengembangan sistem modern. Latar belakang Sistem Informasi UNIKOM dan pengalaman kerja HR mempermudah koordinasi serta komunikasi lintas tim.",
+  summary:
+    "Web Developer di Diskominfo Kota Tasikmalaya yang membangun dan merawat website instansi pemerintah. Menggunakan WordPress untuk solusi praktis, serta TypeScript dan Tailwind CSS untuk pengembangan sistem modern. Latar belakang Sistem Informasi UNIKOM dan pengalaman kerja HR mempermudah koordinasi serta komunikasi lintas tim.",
   experiences: [
     {
       company: "Diskominfo Kota Tasikmalaya",
@@ -31,9 +31,15 @@ const cvData = {
         "Mengembangkan website untuk berbagai instansi menggunakan WordPress sebagai solusi awal kebutuhan digitalisasi.",
         "Dipercaya untuk membangun ulang website resmi Diskominfo Kota Tasikmalaya dari awal guna meningkatkan performa dan pengalaman pengguna.",
         "Mengimplementasikan teknologi modern seperti TypeScript dan Tailwind CSS dalam pengembangan website.",
-        "Berkoordinasi dengan tim internal untuk menerjemahkan kebutuhan instansi ke dalam spesifikasi teknis dan implementasi website."
+        "Berkoordinasi dengan tim internal untuk menerjemahkan kebutuhan instansi ke dalam spesifikasi teknis dan implementasi website.",
       ],
-      tags: ["TypeScript", "Tailwind CSS", "WordPress", "Government Web", "UI/UX"]
+      tags: [
+        "TypeScript",
+        "Tailwind CSS",
+        "WordPress",
+        "Government Web",
+        "UI/UX",
+      ],
     },
     {
       company: "Kimia Farma Diagnostika Jakarta",
@@ -45,10 +51,15 @@ const cvData = {
         "Mengelola dan memperbarui data karyawan di beberapa cabang untuk memastikan akurasi dan kelengkapan administrasi HR.",
         "Berkolaborasi dengan tim terkait dalam proses penyusunan laporan penggajian karyawan secara berkala.",
         "Memberikan dukungan teknis (IT Support) dalam menangani kendala perangkat keras dan jaringan internet di lingkungan kerja.",
-        "Membantu memastikan kelancaran operasional melalui koordinasi lintas divisi."
+        "Membantu memastikan kelancaran operasional melalui koordinasi lintas divisi.",
       ],
-      tags: ["HR Administration", "IT Support", "Troubleshooting", "Payroll Reporting"]
-    }
+      tags: [
+        "HR Administration",
+        "IT Support",
+        "Troubleshooting",
+        "Payroll Reporting",
+      ],
+    },
   ],
   education: [
     {
@@ -57,24 +68,29 @@ const cvData = {
       degree: "Sarjana Komputer (S.Kom.)",
       gpa: "3.09",
       period: "2014 – 2019",
-      notes: "Berkolaborasi dengan tim administrasi untuk mengidentifikasi kebutuhan alur kerja, kemudian mengimplementasikannya ke dalam sistem SPJ berbasis web guna memastikan transparansi data keuangan. (Diskominfo Kota Bandung 2017)"
-    }
+      notes:
+        "Berkolaborasi dengan tim administrasi untuk mengidentifikasi kebutuhan alur kerja, kemudian mengimplementasikannya ke dalam sistem SPJ berbasis web guna memastikan transparansi data keuangan. (Diskominfo Kota Bandung 2017)",
+    },
   ],
   skills: {
     frontend: ["TypeScript", "HTML5", "CSS3", "Tailwind CSS", "WordPress"],
     database: ["MySQL"],
     tools: ["Git", "GitHub", "Troubleshoot Computer & Jaringan"],
-    soft: ["Kolaborasi Lintas Tim", "Komunikasi & HR Administration", "Problem Solving"]
+    soft: [
+      "Kolaborasi Lintas Tim",
+      "Komunikasi & HR Administration",
+      "Problem Solving",
+    ],
   },
   languages: [
     { name: "Indonesia", level: "Native" },
-    { name: "English", level: "Conversation (TOEFL 490) 2022" }
-  ]
+    { name: "English", level: "Conversation (TOEFL 490) 2022" },
+  ],
 };
 ---
 
-<Layout 
-  title={`${cvData.name}: Curriculum Vitae (Web Version)`} 
+<Layout
+  title={`${cvData.name}: Curriculum Vitae (Web Version)`}
   description={`CV & Resume profesional Mallik Rushamidiwinata: ${cvData.title} dengan pengalaman TypeScript, Tailwind CSS, WordPress, dan Sistem Informasi.`}
 >
   <div class="no-print">
@@ -86,7 +102,16 @@ const cvData = {
       <!-- Toolbar / Action Bar (Non-print) -->
       <div class="cv-toolbar no-print">
         <a href={resolvePath("/")} class="toolbar-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
@@ -94,17 +119,47 @@ const cvData = {
         </a>
 
         <div class="toolbar-actions">
-          <button type="button" class="btn-action btn-print" onclick="window.print()" title="Cetak atau simpan sebagai PDF">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            type="button"
+            class="btn-action btn-print"
+            onclick="window.print()"
+            title="Cetak atau simpan sebagai PDF"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <polyline points="6 9 6 2 18 2 18 9"></polyline>
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <path
+                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+              ></path>
               <rect x="6" y="14" width="12" height="8"></rect>
             </svg>
             <span>Cetak / Save PDF</span>
           </button>
 
-          <a href={resolvePath("/cv.pdf")} download="cv-2026-Mallik Rushamidiwinata.pdf" class="btn-action btn-download" title="Unduh file PDF asli">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a
+            href={resolvePath("/cv.pdf")}
+            download="cv-2026-Mallik Rushamidiwinata.pdf"
+            class="btn-action btn-download"
+            title="Unduh file PDF asli"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -122,13 +177,16 @@ const cvData = {
             <div class="header-identity">
               <div class="cv-avatar-wrap">
                 <picture>
-                  <source srcset={resolvePath("/avatar.webp")} type="image/webp" />
-                  <img 
-                    src={resolvePath("/avatar.jpg")} 
-                    alt={cvData.name} 
-                    class="cv-avatar-img" 
-                    width="96" 
-                    height="96" 
+                  <source
+                    srcset={resolvePath("/avatar.webp")}
+                    type="image/webp"
+                  />
+                  <img
+                    src={resolvePath("/avatar.jpg")}
+                    alt={cvData.name}
+                    class="cv-avatar-img"
+                    width="96"
+                    height="96"
                     loading="eager"
                     decoding="async"
                   />
@@ -137,12 +195,20 @@ const cvData = {
               <div class="name-block">
                 <span class="badge-role">{cvData.title}</span>
                 <h1 class="cv-name">{cvData.name}</h1>
-                <p class="cv-role-subtitle">{cvData.subTitle}</p>
               </div>
             </div>
-            
+
             <div class="location-badge">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
@@ -152,42 +218,125 @@ const cvData = {
 
           <!-- Quick Contacts Grid -->
           <div class="cv-contacts-grid">
-            <a href={`https://wa.me/${cvData.phone.replace('+', '')}`} target="_blank" rel="noopener noreferrer" class="contact-pill" title="WhatsApp / Telepon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            <a
+              href={`https://wa.me/${cvData.phone.replace("+", "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+              title="WhatsApp / Telepon"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
               </svg>
               <span>{cvData.phoneFormatted}</span>
             </a>
 
-            <a href={`mailto:${cvData.email}`} class="contact-pill" title="Kirim Email">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <a
+              href={`mailto:${cvData.email}`}
+              class="contact-pill"
+              title="Kirim Email"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
               <span>{cvData.email}</span>
             </a>
 
-            <a href={cvData.linkedinUrl} target="_blank" rel="noopener noreferrer" class="contact-pill" title="Profil LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <a
+              href={cvData.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+              title="Profil LinkedIn"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
               <span>{cvData.linkedin}</span>
             </a>
 
-            <a href={cvData.githubUrl} target="_blank" rel="noopener noreferrer" class="contact-pill" title="Profil GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            <a
+              href={cvData.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+              title="Profil GitHub"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
               </svg>
               <span>{cvData.github}</span>
             </a>
 
-            <a href={cvData.portfolioUrl} target="_blank" rel="noopener noreferrer" class="contact-pill" title="Website Portofolio">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <a
+              href={cvData.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-pill"
+              title="Website Portofolio"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                ></path>
               </svg>
               <span>{cvData.portfolio}</span>
             </a>
@@ -215,38 +364,47 @@ const cvData = {
               </div>
 
               <div class="timeline-list">
-                {cvData.experiences.map((exp) => (
-                  <div class="timeline-item">
-                    <div class="timeline-header">
-                      <div>
-                        <h3 class="company-name">
-                          {exp.company} <span class="work-type">({exp.type})</span>
-                          {exp.liveUrl && (
-                            <a href={exp.liveUrl} target="_blank" rel="noopener noreferrer" class="cv-company-link no-print" title="Kunjungi website resmi instansi">
-                              <span>Website Resmi ↗</span>
-                            </a>
-                          )}
-                        </h3>
-                        <p class="role-title">{exp.role}</p>
+                {
+                  cvData.experiences.map((exp) => (
+                    <div class="timeline-item">
+                      <div class="timeline-header">
+                        <div>
+                          <h3 class="company-name">
+                            {exp.company}{" "}
+                            <span class="work-type">({exp.type})</span>
+                            {exp.liveUrl && (
+                              <a
+                                href={exp.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="cv-company-link no-print"
+                                title="Kunjungi website resmi instansi"
+                              >
+                                <span>Website Resmi ↗</span>
+                              </a>
+                            )}
+                          </h3>
+                          <p class="role-title">{exp.role}</p>
+                        </div>
+                        <div class="period-badge">{exp.period}</div>
                       </div>
-                      <div class="period-badge">{exp.period}</div>
-                    </div>
-                    
-                    <ul class="points-list">
-                      {exp.points.map((pt) => (
-                        <li>{pt}</li>
-                      ))}
-                    </ul>
 
-                    {exp.tags && (
-                      <div class="tag-row no-print">
-                        {exp.tags.map((tg) => (
-                          <span class="skill-tag">{tg}</span>
+                      <ul class="points-list">
+                        {exp.points.map((pt) => (
+                          <li>{pt}</li>
                         ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      </ul>
+
+                      {exp.tags && (
+                        <div class="tag-row no-print">
+                          {exp.tags.map((tg) => (
+                            <span class="skill-tag">{tg}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))
+                }
               </div>
             </section>
 
@@ -257,21 +415,26 @@ const cvData = {
                 <div class="section-line"></div>
               </div>
 
-              {cvData.education.map((edu) => (
-                <div class="timeline-item edu-item">
-                  <div class="timeline-header">
-                    <div>
-                      <h3 class="company-name">{edu.institution}</h3>
-                      <p class="role-title">{edu.degree} · {edu.major} <span class="gpa-badge">GPA {edu.gpa}</span></p>
+              {
+                cvData.education.map((edu) => (
+                  <div class="timeline-item edu-item">
+                    <div class="timeline-header">
+                      <div>
+                        <h3 class="company-name">{edu.institution}</h3>
+                        <p class="role-title">
+                          {edu.degree} · {edu.major}{" "}
+                          <span class="gpa-badge">GPA {edu.gpa}</span>
+                        </p>
+                      </div>
+                      <div class="period-badge">{edu.period}</div>
                     </div>
-                    <div class="period-badge">{edu.period}</div>
+
+                    <ul class="points-list">
+                      <li>{edu.notes}</li>
+                    </ul>
                   </div>
-                  
-                  <ul class="points-list">
-                    <li>{edu.notes}</li>
-                  </ul>
-                </div>
-              ))}
+                ))
+              }
             </section>
           </div>
 
@@ -287,27 +450,33 @@ const cvData = {
               <div class="skills-group">
                 <h4 class="skills-group-title">Languages & Frontend</h4>
                 <div class="pill-cloud">
-                  {cvData.skills.frontend.map((s) => (
-                    <span class="skill-pill highlight">{s}</span>
-                  ))}
+                  {
+                    cvData.skills.frontend.map((s) => (
+                      <span class="skill-pill highlight">{s}</span>
+                    ))
+                  }
                 </div>
               </div>
 
               <div class="skills-group">
                 <h4 class="skills-group-title">Database</h4>
                 <div class="pill-cloud">
-                  {cvData.skills.database.map((s) => (
-                    <span class="skill-pill">{s}</span>
-                  ))}
+                  {
+                    cvData.skills.database.map((s) => (
+                      <span class="skill-pill">{s}</span>
+                    ))
+                  }
                 </div>
               </div>
 
               <div class="skills-group">
                 <h4 class="skills-group-title">Tools & Systems</h4>
                 <div class="pill-cloud">
-                  {cvData.skills.tools.map((s) => (
-                    <span class="skill-pill">{s}</span>
-                  ))}
+                  {
+                    cvData.skills.tools.map((s) => (
+                      <span class="skill-pill">{s}</span>
+                    ))
+                  }
                 </div>
               </div>
             </section>
@@ -320,12 +489,14 @@ const cvData = {
               </div>
 
               <div class="lang-list">
-                {cvData.languages.map((l) => (
-                  <div class="lang-item">
-                    <span class="lang-name">{l.name}</span>
-                    <span class="lang-level">{l.level}</span>
-                  </div>
-                ))}
+                {
+                  cvData.languages.map((l) => (
+                    <div class="lang-item">
+                      <span class="lang-name">{l.name}</span>
+                      <span class="lang-level">{l.level}</span>
+                    </div>
+                  ))
+                }
               </div>
             </section>
 
@@ -333,13 +504,24 @@ const cvData = {
             <section class="cv-section no-print contact-box-section">
               <div class="connect-card">
                 <h4 class="connect-title">Tertarik Berkolaborasi?</h4>
-                <p class="connect-desc">Terbuka untuk diskusi proyek web, full-stack, maupun peluang karir profesional.</p>
+                <p class="connect-desc">
+                  Terbuka untuk diskusi proyek web, full-stack, maupun peluang
+                  karir profesional.
+                </p>
                 <div class="connect-btns">
-                  <a href={`https://wa.me/${cvData.phone.replace('+', '')}`} target="_blank" rel="noopener noreferrer" class="btn-connect btn-connect-wa">
+                  <a
+                    href={`https://wa.me/${cvData.phone.replace("+", "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-connect btn-connect-wa"
+                  >
                     <span>Chat WhatsApp</span>
                     <i>→</i>
                   </a>
-                  <a href={`mailto:${cvData.email}`} class="btn-connect btn-connect-mail">
+                  <a
+                    href={`mailto:${cvData.email}`}
+                    class="btn-connect btn-connect-mail"
+                  >
                     <span>Kirim Email</span>
                     <i>✉</i>
                   </a>
@@ -420,7 +602,9 @@ const cvData = {
     border-radius: 0.55rem;
     cursor: pointer;
     border: 1.5px solid var(--ink, #171714);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
     text-decoration: none;
   }
 
@@ -529,13 +713,6 @@ const cvData = {
     margin: 0.2rem 0 0;
     word-break: break-word;
     overflow-wrap: break-word;
-  }
-
-  .cv-role-subtitle {
-    font-size: 1.05rem;
-    font-weight: 650;
-    color: #555550;
-    margin: 0;
   }
 
   .location-badge {
@@ -973,7 +1150,8 @@ const cvData = {
       visibility: hidden !important;
     }
 
-    html, body {
+    html,
+    body {
       background: #ffffff !important;
       color: #000000 !important;
       margin: 0 !important;
@@ -1024,11 +1202,6 @@ const cvData = {
     .cv-name {
       font-size: 20pt !important;
       color: #000000 !important;
-    }
-
-    .cv-role-subtitle {
-      font-size: 11pt !important;
-      color: #333333 !important;
     }
 
     .badge-role {

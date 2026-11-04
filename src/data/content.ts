@@ -20,7 +20,7 @@ export interface SiteMeta {
 }
 
 export const siteMeta: SiteMeta = {
-  title: "Mallik Rushamidiwinata — Web & Frontend Developer",
+  title: "Mallik Rushamidiwinata: Web & Frontend Developer",
   description: "Portofolio profesional dan CV teknis Mallik Rushamidiwinata. Web Developer berpengalaman dengan TypeScript, Tailwind CSS, WordPress, dan Sistem Informasi.",
   studioName: "Mallik Rushamidiwinata",
   studioTagline: "Web Developer · Frontend & WordPress Specialist",
@@ -40,34 +40,11 @@ export const navigationLinks = [
 ];
 
 export const heroData = {
-  badge: "✦ Web Developer · Available for Opportunities",
-  subheading: "PORTOFOLIO & CURRICULUM VITAE",
+  badge: "Web Developer · Available for Opportunities",
+  subheading: "PORTOFOLIO & REKAM JEJAK TEKNIS",
   headline: "Mallik\nRushamidiwinata",
   description: "Web Developer dengan fokus pada pembuatan website instansi yang responsif, cepat, dan terstruktur rapi. Menguasai WordPress serta teknologi modern seperti TypeScript dan Tailwind CSS, didukung latar belakang Sistem Informasi dan pengalaman Human Resources.",
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const footerData = {
   brandName: "Mallik Rushamidiwinata",

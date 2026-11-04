@@ -20,3 +20,12 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Recommended Skills & Workflow
+
+For any feature or modification in this portfolio:
+- **UI & Layout:** Prioritize `antislop-ui`, `antislop-layoutmobile`, and `frontend-patterns`. Ensure responsive design across phone, tablet, and desktop without horizontal overflow.
+- **Copywriting:** Prioritize `antislop-copywriting` for bio, headlines, project descriptions, and CV. Avoid AI clichés and generic filler text.
+- **Code Standards:** Adhere to `coding-standards` and `antislop-code` (remove redundant/obvious AI-generated comments).
+- **Quality Gate:** Before finishing any task or committing changes, run `verification-loop` by verifying that `npm run build` succeeds cleanly.
+

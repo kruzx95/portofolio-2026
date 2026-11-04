@@ -44,7 +44,7 @@ const experiences = [
     ],
   },
   {
-    role: "Sarjana Komputer (S.Kom.) — IPK 3.09",
+    role: "Sarjana Komputer (S.Kom.), IPK 3.09",
     company: "Universitas Komputer Indonesia (UNIKOM)",
     type: "Sistem Informasi",
     period: "2014 – 2019",
@@ -74,7 +74,7 @@ const skillCategories = [
   },
   {
     title: "Bahasa (Languages)",
-    skills: ["Bahasa Indonesia (Native)", "English (Conversation — TOEFL 490)"],
+    skills: ["Bahasa Indonesia (Native)", "English (Conversation, TOEFL 490)"],
   },
 ];
 ---
@@ -94,7 +94,12 @@ const skillCategories = [
       <!-- Left: Experience Timeline -->
       <div class="timeline-column" data-reveal>
         <h3 class="column-heading">
-          <span class="heading-icon">💼</span>
+          <span class="heading-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </span>
           <span>Pengalaman Kerja &amp; Pendidikan</span>
         </h3>
 
@@ -148,7 +153,12 @@ const skillCategories = [
       <!-- Right: Skills & CV Callout -->
       <div class="skills-column" id="skills" data-reveal>
         <h3 class="column-heading">
-          <span class="heading-icon">⚡</span>
+          <span class="heading-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </span>
           <span>Keahlian &amp; Tech Stack</span>
         </h3>
 
@@ -179,7 +189,12 @@ const skillCategories = [
           <div class="cv-prompt-actions">
             <a href={resolvePath("/cv/")} class="btn-cv-view">
               <span>Buka Halaman CV</span>
-              <i>→</i>
+              <i>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </i>
             </a>
             <a
               href={resolvePath("/cv.pdf")}
@@ -187,7 +202,13 @@ const skillCategories = [
               class="btn-cv-pdf"
             >
               <span>Unduh PDF</span>
-              <i>⬇</i>
+              <i>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </i>
             </a>
           </div>
         </div>
@@ -222,7 +243,18 @@ const skillCategories = [
   }
 
   .heading-icon {
-    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink, #171714);
+  }
+
+  .btn-cv-view i,
+  .btn-cv-pdf i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
   }
 
   /* Timeline */

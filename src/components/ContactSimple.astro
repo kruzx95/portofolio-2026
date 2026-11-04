@@ -7,7 +7,7 @@ import { resolvePath } from '../utils/paths';
     <div class="contact-grid">
       <!-- Left Column: Direct Outreach & Info -->
       <div class="contact-info" data-reveal>
-        <span class="contact-badge">✦ TERBUKA UNTUK PELUANG KERJA</span>
+        <span class="contact-badge">TERBUKA UNTUK PELUANG KERJA</span>
         <h2 class="contact-headline">Mari Terhubung &amp;<br />Mulai Diskusi.</h2>
         <p class="contact-intro">
           Terbuka untuk posisi <strong>Web / Frontend Developer</strong> (Full-Time, Kontrak, maupun Remote). 
@@ -86,7 +86,14 @@ import { resolvePath } from '../utils/paths';
         <!-- CV Highlight Card -->
         <div class="cv-highlight-card">
           <div class="cv-card-head">
-            <span class="cv-icon">📄</span>
+            <span class="cv-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </span>
             <div>
               <span class="cv-sublabel">RESUME &amp; REKAM JEJAK</span>
               <h3 class="cv-card-title">Curriculum Vitae (CV)</h3>
@@ -98,11 +105,22 @@ import { resolvePath } from '../utils/paths';
           <div class="cv-card-btns">
             <a href={resolvePath("/cv/")} class="cv-btn cv-btn-primary">
               <span>Buka Versi Web</span>
-              <i>↗</i>
+              <i>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </i>
             </a>
             <a href={resolvePath("/cv.pdf")} download="cv-2026-Mallik Rushamidiwinata.pdf" class="cv-btn cv-btn-secondary">
               <span>Unduh PDF</span>
-              <i>⬇</i>
+              <i>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </i>
             </a>
           </div>
         </div>
@@ -130,7 +148,12 @@ import { resolvePath } from '../utils/paths';
 
             <button type="submit" class="button button--acid form-submit-btn">
               <span>Kirim Pesan via Email</span>
-              <i>→</i>
+              <i>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </i>
             </button>
             <p class="form-status" id="directFormStatus" aria-live="polite"></p>
           </form>
@@ -297,7 +320,17 @@ import { resolvePath } from '../utils/paths';
   }
 
   .cv-icon {
-    font-size: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--acid, #c8ff46);
+  }
+
+  .cv-btn i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
   }
 
   .cv-sublabel {

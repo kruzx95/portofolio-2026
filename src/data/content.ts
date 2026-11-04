@@ -41,7 +41,6 @@ export const navigationLinks = [
 
 export const heroData = {
   badge: "Web Developer · Available for Opportunities",
-  subheading: "PORTOFOLIO & REKAM JEJAK TEKNIS",
   headline: "Mallik\nRushamidiwinata",
   description: "Web Developer yang membangun website instansi pemerintah, mulai dari WordPress hingga stack TypeScript dan Tailwind CSS. Lulusan Sistem Informasi UNIKOM dengan pengalaman kerja di bidang Human Resources sebelum fokus penuh ke pengembangan frontend.",
 };

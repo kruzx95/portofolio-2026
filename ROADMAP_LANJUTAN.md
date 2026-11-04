@@ -110,3 +110,4 @@ Bila menggunakan asisten AI di rumah, ingatkan untuk selalu mengacu ke:
 1. **`antislop-ui` & `antislop-layoutmobile`:** Untuk styling dan responsivitas layar HP hingga desktop.
 2. **`antislop-copywriting`:** Untuk penulisan deskripsi proyek dan heading (hindari em dash, jargon hampa, dan klaim tanpa bukti).
 3. **`verification-loop`:** Wajib menjalankan `npm run build` sebelum commit/selesai.
+

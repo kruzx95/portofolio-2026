@@ -43,13 +43,13 @@ export const heroData = {
   badge: "Web Developer · Available for Opportunities",
   subheading: "PORTOFOLIO & REKAM JEJAK TEKNIS",
   headline: "Mallik\nRushamidiwinata",
-  description: "Web Developer dengan fokus pada pembuatan website instansi yang responsif, cepat, dan terstruktur rapi. Menguasai WordPress serta teknologi modern seperti TypeScript dan Tailwind CSS, didukung latar belakang Sistem Informasi dan pengalaman Human Resources.",
+  description: "Web Developer yang membangun website instansi pemerintah, mulai dari WordPress hingga stack TypeScript dan Tailwind CSS. Lulusan Sistem Informasi UNIKOM dengan pengalaman kerja di bidang Human Resources sebelum fokus penuh ke pengembangan frontend.",
 };
 
 export const footerData = {
   brandName: "Mallik Rushamidiwinata",
   readyTag: "",
-  tagline: "Web Developer · Frontend, WordPress, TypeScript, & Tailwind CSS.",
+  tagline: "Frontend Developer · Membangun website instansi yang cepat, terstruktur, dan mudah dikelola.",
   ctaText: "LIHAT CV LENGKAP",
   ctaLink: resolvePath("/cv/"),
   copyright: `© ${new Date().getFullYear()} Mallik Rushamidiwinata. All rights reserved.`,
